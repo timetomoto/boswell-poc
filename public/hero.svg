@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="240" viewBox="0 0 800 240">
+  <rect width="800" height="240" fill="#e8e4d8"/>
+  <rect x="0" y="0" width="800" height="240" fill="url(#g)" fill-opacity="0.3"/>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="800" y2="240">
+      <stop offset="0" stop-color="#c9b78a"/>
+      <stop offset="1" stop-color="#7a6b4a"/>
+    </linearGradient>
+  </defs>
+  <text x="400" y="130" text-anchor="middle" font-family="Georgia, serif" font-size="36" fill="#333">
+    Boswell POC — placeholder image
+  </text>
+  <text x="400" y="170" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#555">
+    swap me from the Tina editor
+  </text>
+</svg>
