@@ -1,19 +1,24 @@
 # boswell-poc
 
-**Throwaway.** Proves whether the owner edit → save → commit → redeploy loop works on Astro + TinaCMS (TinaCloud) + Vercel + GitHub. Not the real build. Delete when done.
+**Throwaway POC #2.** Proves whether the owner edit → save → commit → redeploy loop works on **Astro + Decap CMS + GitHub OAuth + Vercel + GitHub repo**. Replaces the earlier Tina POC (blocked by an unresolved TinaCloud cloud-check bug — see `discovery/07-poc-tina-astro-verdict.md`). Not the real build.
 
 ## Stack (verified 2026-07-08)
 
-- Astro `^6.4.4` (starter-pinned; latest 7.0.7 held back for @tinacms/astro compat)
-- `@tinacms/astro` `^0.5.1`
-- `tinacms` `^3.10.0`, `@tinacms/cli` `^2.5.3`
-- `@astrojs/vercel` `^10.0.8`
+- `astro` `^6.4.4`
+- `decap-cms` (via CDN) `^3.14.0` — latest 3.14.1 released 2026-06-15
+- Vercel serverless functions (Node runtime) using only Node built-ins — no OAuth library dependency
 - Node `>=22.22.0`
 
-## Content
+## What's here
 
-Two page entries (`home`, `about`) + one article (`hello-boz`), each with `title`, `heroImage`, and Markdown body. Placeholder SVG at `/public/hero.svg`.
+- Astro static site with 3 pages (Home, About, one article) and a placeholder SVG.
+- Decap admin at `/admin/` (CDN loader).
+- `/admin/config.yml` served **dynamically** by `/api/admin-config` so `base_url` auto-matches whatever URL Vercel assigns — no manual edit after deploy.
+- Two OAuth functions:
+  - `/api/auth` — redirects to GitHub's authorize URL.
+  - `/api/callback` — exchanges the code for an access token and posts it back to the Decap admin popup.
+- OAuth Client Secret lives in Vercel env vars only. Nothing sensitive in this repo.
 
 ## Owner-side steps
 
-See the accompanying handoff document (`discovery/07-poc-tina-astro-handoff.md`) for the exact click-by-click steps to connect TinaCloud, set env vars, and deploy on Vercel. Do NOT try to run those steps from this README — the handoff doc has the specifics.
+See `discovery/09-poc-decap-verdict.md` for the click-by-click handoff. Do not follow steps from this README alone; the handoff doc is the source of truth.

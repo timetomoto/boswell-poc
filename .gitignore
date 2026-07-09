@@ -3,11 +3,6 @@ dist/
 .astro/
 .env
 .env.local
+.env.*.local
 .vercel/
 .DS_Store
-
-# Tina admin bundle (built at deploy time; do not commit)
-public/admin/
-
-# Tina content-index cache
-tina/__generated__/
