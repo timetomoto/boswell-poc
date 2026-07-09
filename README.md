@@ -1,6 +1,8 @@
-# boswell-poc
+# boswell
 
-**Throwaway POC #2.** Proves whether the owner edit → save → commit → redeploy loop works on **Astro + Decap CMS + GitHub OAuth + Vercel + GitHub repo**. Replaces the earlier Tina POC (blocked by an unresolved TinaCloud cloud-check bug — see `discovery/07-poc-tina-astro-verdict.md`). Not the real build.
+Foundation repo for the Boswell site. Stack: **Astro (static) + Decap CMS + GitHub OAuth login + Vercel + GitHub repo**.
+
+The public site is pure static HTML. Content lives in `src/content/` as Markdown; an editor logs into `/admin/` via GitHub OAuth, saves changes as commits to this repo, Vercel auto-rebuilds.
 
 ## Stack (verified 2026-07-08)
 
@@ -9,16 +11,20 @@
 - Vercel serverless functions (Node runtime) using only Node built-ins — no OAuth library dependency
 - Node `>=22.22.0`
 
-## What's here
+## Layout
 
-- Astro static site with 3 pages (Home, About, one article) and a placeholder SVG.
-- Decap admin at `/admin/` (CDN loader).
-- `/admin/config.yml` served **dynamically** by `/api/admin-config` so `base_url` auto-matches whatever URL Vercel assigns — no manual edit after deploy.
-- Two OAuth functions:
-  - `/api/auth` — redirects to GitHub's authorize URL.
-  - `/api/callback` — exchanges the code for an access token and posts it back to the Decap admin popup.
-- OAuth Client Secret lives in Vercel env vars only. Nothing sensitive in this repo.
+- `src/` — Astro site: pages, layouts, and content collections.
+- `public/admin/index.html` — Decap CDN loader.
+- `api/` — three Vercel serverless functions:
+  - `auth.js` — starts the GitHub OAuth flow (issues an HMAC-signed CSRF state cookie).
+  - `callback.js` — verifies state, exchanges the code for a token, posts it back to the Decap admin.
+  - `admin-config.js` — serves `/admin/config.yml` dynamically with `base_url` auto-matched to the request host.
+- `vercel.json` — one rewrite: `/admin/config.yml` → `/api/admin-config`.
 
-## Owner-side steps
+## Env vars
 
-See `discovery/09-poc-decap-verdict.md` for the click-by-click handoff. Do not follow steps from this README alone; the handoff doc is the source of truth.
+Set in Vercel Project Settings → Environment Variables. Never in this repo. See `.env.example` for the full list and purpose of each.
+
+## Detailed reference
+
+See `MASTER_DOC.md` (local only, git-ignored) for full architecture, editor-login flow explanation, and build roadmap.
