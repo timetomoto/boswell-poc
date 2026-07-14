@@ -1,0 +1,83 @@
+---
+import Base from '../../layouts/Base.astro';
+import MusicBackdrop from '../../components/MusicBackdrop.astro';
+import { getEntry, render } from 'astro:content';
+
+const page = await getEntry('pages', 'charts');
+if (!page) throw new Error('Missing src/content/pages/charts.md');
+const { Content: PageContent } = await render(page);
+---
+<Base title={page.data.title as string} description={page.data.subtitle as string | undefined}>
+  <section class="page-hero ground-purple">
+    <MusicBackdrop variant="vinyl" opacity={0.09} color="var(--yellow-soft)" />
+    <div class="container-narrow page-hero__inner">
+      <a href="/music/" class="page-hero__back">← Music</a>
+      {page.data.eyebrow && <span class="eyebrow page-hero__eyebrow">{page.data.eyebrow}</span>}
+      <h1 class="page-hero__title">{page.data.title}</h1>
+      {page.data.subtitle && <p class="page-hero__subtitle">{page.data.subtitle}</p>}
+    </div>
+  </section>
+
+  <section class="section ground-paper">
+    <div class="container-narrow prose charts-body">
+      <PageContent />
+    </div>
+  </section>
+</Base>
+
+<style>
+  .page-hero { padding-block: clamp(var(--space-6), 4vw, var(--space-8)); position: relative; overflow: hidden; }
+  .page-hero__inner { position: relative; z-index: 1; }
+  .page-hero__back { display: block; width: fit-content; font-family: var(--font-ui); font-weight: 500; font-size: var(--step--1); letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--yellow-soft); border: 0; margin-bottom: var(--space-5); }
+  .page-hero__back:hover { color: #F5DE8C; }
+  .page-hero__eyebrow { color: var(--yellow-soft); }
+  .page-hero__title { font-family: var(--font-display); font-weight: 300; font-size: clamp(var(--step-5), 6vw, var(--step-7)); line-height: 1; letter-spacing: var(--track-tight); color: #F5EAD1; margin-top: var(--space-2); }
+  .page-hero__subtitle { margin-top: var(--space-4); font-family: var(--font-body); font-size: clamp(var(--step-1), 1.4vw + 0.3rem, var(--step-2)); color: rgba(245, 234, 209, 0.9); max-width: 52ch; }
+
+  /* Charts prose — tables get full editorial treatment */
+  .prose { font-family: var(--font-body); font-size: var(--step-1); line-height: var(--leading-loose); color: var(--text-on-paper); }
+  .prose :global(p) { max-width: 62ch; }
+  .prose :global(p) + :global(p), .prose :global(p) + :global(h2), .prose :global(p) + :global(h3) { margin-top: var(--space-4); }
+  .prose :global(h2), .prose :global(h3) { margin-top: var(--space-8); margin-bottom: var(--space-3); font-family: var(--font-display); font-weight: 400; letter-spacing: var(--track-tight); }
+  .prose :global(h2) { font-size: var(--step-4); }
+  .prose :global(h3) { font-size: var(--step-3); }
+  .prose :global(em) { font-family: var(--font-ui); font-style: italic; color: var(--text-on-paper-muted); font-size: var(--step-0); }
+  .prose :global(strong) { color: var(--purple); }
+
+  /* Chart tables — editorial ledger */
+  .prose :global(table) {
+    width: 100%;
+    max-width: none;
+    border-collapse: collapse;
+    margin: var(--space-4) 0 var(--space-6);
+    font-family: var(--font-body);
+    font-size: var(--step-0);
+    font-variant-numeric: tabular-nums;
+  }
+  .prose :global(thead) { display: table-header-group; }
+  .prose :global(th) {
+    text-align: left;
+    padding: var(--space-3) var(--space-4);
+    background: color-mix(in oklab, var(--paper) 92%, var(--purple) 8%);
+    border-bottom: 2px solid var(--purple);
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: var(--step--1);
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+    color: var(--purple);
+  }
+  .prose :global(td) {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--paper-hairline);
+    vertical-align: top;
+  }
+  .prose :global(tbody tr:nth-child(odd)) { background: color-mix(in oklab, var(--paper) 97%, var(--purple) 3%); }
+  .prose :global(tbody tr:hover) { background: color-mix(in oklab, var(--paper) 93%, var(--yellow) 7%); }
+  /* First column (date) — purple caps for scanning */
+  .prose :global(td:first-child) { font-family: var(--font-ui); font-weight: 500; color: var(--purple); white-space: nowrap; }
+  /* Peak position column — brass for accent */
+  .prose :global(td:nth-child(2)) { font-family: var(--font-display); font-size: var(--step-2); font-weight: 400; color: var(--brass); text-align: center; }
+  /* Weeks charted */
+  .prose :global(td:nth-child(3)) { text-align: center; color: var(--text-on-paper-muted); }
+</style>

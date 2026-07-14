@@ -1,0 +1,183 @@
+---
+import Base from '../../../layouts/Base.astro';
+import MusicBackdrop from '../../../components/MusicBackdrop.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const lessons = await getCollection('lessons');
+  return lessons.map(l => ({
+    params: { order: String(l.data.order) },
+    props: { lesson: l },
+  }));
+}
+
+const { lesson } = Astro.props;
+const { Content: LessonContent } = await render(lesson);
+
+const all = (await getCollection('lessons')).sort(
+  (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0)
+);
+const currentIdx = all.findIndex(l => l.id === lesson.id);
+const prev = currentIdx > 0 ? all[currentIdx - 1] : all[all.length - 1];
+const next = currentIdx < all.length - 1 ? all[currentIdx + 1] : all[0];
+---
+<Base title={`${lesson.data.title} — Lesson ${lesson.data.order}`} description={lesson.data.summary}>
+  <section class="lesson-hero ground-purple">
+    <MusicBackdrop variant="staves" opacity={0.08} color="var(--yellow-soft)" />
+    <div class="container-narrow lesson-hero__inner">
+      <a href="/music/" class="lesson-hero__back">← Music</a>
+      <span class="eyebrow lesson-hero__eyebrow">Lesson {String(lesson.data.order).padStart(2, '0')} · Boz Beat</span>
+      <h1 class="lesson-hero__title">{lesson.data.title}</h1>
+      {lesson.data.summary && (
+        <p class="lesson-hero__summary">{lesson.data.summary}</p>
+      )}
+    </div>
+  </section>
+
+  <section class="section ground-paper lesson-player-section">
+    <div class="container-narrow">
+      <div class="lesson-player">
+        <div class="lesson-player__label">
+          <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+            <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1"/>
+            <path d="M15 12 L28 20 L15 28 Z" fill="currentColor"/>
+          </svg>
+          <div>
+            <span class="lesson-player__label-kicker">Boz Beat · Lesson {lesson.data.order}</span>
+            <span class="lesson-player__label-title">{lesson.data.title}</span>
+          </div>
+        </div>
+        <audio
+          class="lesson-player__audio"
+          controls
+          preload="metadata"
+          src={lesson.data.audioFile}
+        >
+          Your browser does not support the audio element.
+          <a href={lesson.data.audioFile}>Download the MP3</a>
+        </audio>
+        <a class="lesson-player__download" href={lesson.data.audioFile} download>
+          Download MP3
+        </a>
+      </div>
+
+      <div class="prose lesson-notes">
+        <LessonContent />
+      </div>
+    </div>
+  </section>
+
+  <nav class="section-tight ground-paper lesson-nav" aria-label="Lessons navigation">
+    <div class="container lesson-nav__inner">
+      <a href={`/music/lessons/${prev.data.order}/`} class="lesson-nav__link lesson-nav__link--prev">
+        <span class="lesson-nav__label">Previous</span>
+        <span class="lesson-nav__name">Lesson {prev.data.order} · {prev.data.title}</span>
+      </a>
+      <a href="/music/" class="lesson-nav__link lesson-nav__link--all">
+        <span class="lesson-nav__label">All</span>
+        <span class="lesson-nav__name">Boz Beat</span>
+      </a>
+      <a href={`/music/lessons/${next.data.order}/`} class="lesson-nav__link lesson-nav__link--next">
+        <span class="lesson-nav__label">Next</span>
+        <span class="lesson-nav__name">Lesson {next.data.order} · {next.data.title}</span>
+      </a>
+    </div>
+  </nav>
+</Base>
+
+<style>
+  .lesson-hero { padding-block: clamp(var(--space-6), 4vw, var(--space-8)); position: relative; overflow: hidden; }
+  .lesson-hero__inner { position: relative; z-index: 1; }
+  .lesson-hero__back {
+    display: block;
+    width: fit-content;
+    font-family: var(--font-ui);
+    font-weight: 500;
+    font-size: var(--step--1);
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+    color: var(--yellow-soft);
+    border: 0;
+    margin-bottom: var(--space-5);
+  }
+  .lesson-hero__back:hover { color: #F5DE8C; }
+  .lesson-hero__eyebrow { color: var(--yellow-soft); }
+  .lesson-hero__title {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(var(--step-5), 5.5vw, var(--step-7));
+    line-height: 1;
+    letter-spacing: var(--track-tight);
+    color: #F5EAD1;
+    margin-top: var(--space-2);
+    max-width: 24ch;
+  }
+  .lesson-hero__summary {
+    margin-top: var(--space-4);
+    font-family: var(--font-body);
+    font-size: clamp(var(--step-1), 1.4vw + 0.3rem, var(--step-2));
+    line-height: var(--leading-normal);
+    color: rgba(245, 234, 209, 0.9);
+    max-width: 56ch;
+  }
+
+  /* Audio player module */
+  .lesson-player {
+    border: 1px solid var(--paper-hairline);
+    padding: clamp(var(--space-5), 2.4vw, var(--space-6));
+    background: color-mix(in oklab, var(--paper) 96%, var(--purple) 4%);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  .lesson-player__label { display: flex; align-items: center; gap: var(--space-4); color: var(--purple); }
+  .lesson-player__label-kicker { display: block; font-family: var(--font-ui); font-weight: 500; font-size: var(--step--2); letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--text-on-paper-muted); }
+  .lesson-player__label-title { display: block; font-family: var(--font-display); font-size: var(--step-3); color: var(--ink); line-height: 1.15; margin-top: var(--space-1); }
+  .lesson-player__audio {
+    width: 100%;
+    accent-color: var(--purple);
+  }
+  .lesson-player__download {
+    align-self: flex-start;
+    font-family: var(--font-ui);
+    font-weight: 500;
+    font-size: var(--step--1);
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+    color: var(--purple);
+    border-bottom: 1px solid rgba(74, 46, 90, 0.35);
+    padding-bottom: 2px;
+  }
+  .lesson-player__download:hover { color: var(--oxblood); border-color: var(--oxblood); }
+
+  .lesson-notes { margin-top: var(--space-6); }
+  .prose { font-family: var(--font-body); font-size: var(--step-1); line-height: var(--leading-loose); color: var(--text-on-paper); }
+  .prose :global(p) { max-width: 62ch; }
+  .prose :global(em), .prose :global(i) { font-family: var(--font-ui); font-style: italic; color: var(--purple); }
+
+  /* Prev / All / Next */
+  .lesson-nav { border-top: 1px solid var(--paper-hairline); }
+  .lesson-nav__inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: var(--space-5);
+    align-items: center;
+  }
+  .lesson-nav__link {
+    display: inline-flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    border: 0;
+    padding-block: var(--space-3);
+    max-width: 22rem;
+  }
+  .lesson-nav__link--prev { text-align: left; }
+  .lesson-nav__link--all { text-align: center; }
+  .lesson-nav__link--next { text-align: right; justify-self: end; }
+  .lesson-nav__label { font-family: var(--font-ui); font-weight: 500; font-size: var(--step--2); letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--text-on-paper-muted); }
+  .lesson-nav__name { font-family: var(--font-display); font-size: var(--step-1); color: var(--ink); line-height: 1.15; }
+  @media (max-width: 640px) {
+    .lesson-nav__inner { grid-template-columns: 1fr; text-align: center; }
+    .lesson-nav__link { text-align: center; justify-self: center; max-width: none; }
+  }
+</style>

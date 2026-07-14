@@ -1,0 +1,55 @@
+---
+import Base from '../../layouts/Base.astro';
+import MusicBackdrop from '../../components/MusicBackdrop.astro';
+import { getEntry, render } from 'astro:content';
+
+const page = await getEntry('pages', 'reviews');
+if (!page) throw new Error('Missing src/content/pages/reviews.md');
+const { Content: PageContent } = await render(page);
+---
+<Base title={page.data.title as string} description={page.data.subtitle as string | undefined}>
+  <section class="page-hero ground-purple">
+    <MusicBackdrop variant="staves" opacity={0.07} color="var(--yellow-soft)" />
+    <div class="container-narrow page-hero__inner">
+      <a href="/music/" class="page-hero__back">← Music</a>
+      {page.data.eyebrow && <span class="eyebrow page-hero__eyebrow">{page.data.eyebrow}</span>}
+      <h1 class="page-hero__title">{page.data.title}</h1>
+      {page.data.subtitle && <p class="page-hero__subtitle">{page.data.subtitle}</p>}
+    </div>
+  </section>
+
+  <section class="section ground-paper">
+    <div class="container-narrow prose reviews-body">
+      <PageContent />
+    </div>
+  </section>
+</Base>
+
+<style>
+  .page-hero { padding-block: clamp(var(--space-6), 4vw, var(--space-8)); position: relative; overflow: hidden; }
+  .page-hero__inner { position: relative; z-index: 1; }
+  .page-hero__back { display: block; width: fit-content; font-family: var(--font-ui); font-weight: 500; font-size: var(--step--1); letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--yellow-soft); border: 0; margin-bottom: var(--space-5); }
+  .page-hero__back:hover { color: #F5DE8C; }
+  .page-hero__eyebrow { color: var(--yellow-soft); }
+  .page-hero__title { font-family: var(--font-display); font-weight: 300; font-size: clamp(var(--step-5), 6vw, var(--step-7)); line-height: 1; letter-spacing: var(--track-tight); color: #F5EAD1; margin-top: var(--space-2); }
+  .page-hero__subtitle { margin-top: var(--space-4); font-family: var(--font-body); font-size: clamp(var(--step-1), 1.4vw + 0.3rem, var(--step-2)); color: rgba(245, 234, 209, 0.9); max-width: 52ch; }
+
+  /* Reviews prose — each H3 becomes a review card */
+  .prose { font-family: var(--font-body); font-size: var(--step-1); line-height: var(--leading-loose); color: var(--text-on-paper); }
+  .prose :global(h2) { font-family: var(--font-display); font-size: var(--step-4); font-weight: 300; letter-spacing: var(--track-tight); margin-bottom: var(--space-5); }
+  .prose :global(h3) {
+    font-family: var(--font-display);
+    font-size: clamp(var(--step-3), 2vw + 0.3rem, var(--step-4));
+    font-weight: 400;
+    letter-spacing: var(--track-tight);
+    color: var(--ink);
+    margin-top: var(--space-7);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--paper-hairline);
+    position: relative;
+  }
+  .prose :global(h3):first-of-type { border-top: 0; padding-top: 0; margin-top: var(--space-5); }
+  .prose :global(h3)::before { content: ''; position: absolute; left: 0; top: var(--space-6); width: 32px; height: 2px; background: var(--purple); }
+  .prose :global(h3):first-of-type::before { top: -8px; }
+  .prose :global(h3) + :global(p) { margin-top: var(--space-3); max-width: 60ch; font-size: var(--step-1); color: var(--text-on-paper-muted); font-style: italic; font-family: var(--font-ui); }
+</style>
