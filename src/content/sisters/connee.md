@@ -4,25 +4,9 @@ name: "Connee Boswell"
 nickname: CBoz
 order: 2
 originalUrl: "http://bozzies.org/boz-bios-cboz/"
+pullQuote: "We had loads of fun with our swinging trio. We were billed one time as musicians and in small print it said, \"They also sing\"."
+pullQuoteAttribution: "Connee Boswell"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-We had loads of fun with our swinging trio. We were billed one time as musicians and in small print it said, "They also sing".
-![](/uploads/quote2.gif)
-
-- Connee Boswell
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Boz Bios – CBoz
-
 ## Connie Boswell aka Connee Boswell aka CBOZ
 
 **The Boz whose voice could make us lie on the levy, turn black as coal, and our hearts won’t be heavy ’cause we got CBoz in our soul – Oh Lord!**
@@ -67,11 +51,3 @@ Her sister Vet described her as “silly.” She loved to play pranks and the tr
 Songwriter Jack Lawrence described CBoz as “Always smiling.” Kay Starr recalled her compassion and her willingness to give her time to help those whose handicaps had left them despondent.
 
 She loved to exercise, ride her bike and became very physically fit. She could party with the best of them and could hold her own with Mae West or Dean Martin. She was also a dedicated Democrat and loved to talk politics.
-
-* [BozBios Home](http://bozzies.org/bozbios/)
-* [Boswell Sisters Timeline](http://bozzies.org/boswell-sisters-timeline/)
-* [CBoz](http://bozzies.org/boz-bios-cboz/)
-* [MBoz](http://bozzies.org/boz-bios-mboz/)
-* [VBoz](http://bozzies.org/boz-bios-vboz/)
-* [Connee Boswell Timeline](http://bozzies.org/connee-boswell-timeline/)
-* [Boz Biography](http://bozzies.org/boz-bio-links/)

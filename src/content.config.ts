@@ -66,6 +66,8 @@ const timelines = defineCollection({
     title: z.string(),
     subject: z.enum(['trio', 'connee', 'martha', 'vet']),
     intro: z.string().optional(),
+    pullQuote: z.string().optional(),
+    pullQuoteAttribution: z.string().optional(),
     entries: z.array(
       z.object({
         year: z.string(),
@@ -74,6 +76,7 @@ const timelines = defineCollection({
         imageAlt: z.string().optional(),
       })
     ).optional(),
+    originalUrl: z.string().optional(),
   }),
 });
 

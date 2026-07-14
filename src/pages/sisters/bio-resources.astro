@@ -1,0 +1,106 @@
+---
+import Base from '../../layouts/Base.astro';
+import PullQuote from '../../components/PullQuote.astro';
+import SectionDivider from '../../components/SectionDivider.astro';
+import MusicBackdrop from '../../components/MusicBackdrop.astro';
+import { getEntry, render } from 'astro:content';
+
+const page = await getEntry('pages', 'bio-resources');
+if (!page) throw new Error('Missing src/content/pages/bio-resources.md');
+const { Content: PageContent } = await render(page);
+---
+<Base title={page.data.title as string} description={page.data.subtitle as string | undefined}>
+  <section class="page-hero ground-gold">
+    <div class="container-narrow page-hero__inner">
+      <a href="/sisters/" class="page-hero__back">← The Sisters</a>
+      {page.data.eyebrow && <span class="eyebrow eyebrow--purple">{page.data.eyebrow}</span>}
+      <h1 class="page-hero__title">{page.data.title}</h1>
+      {page.data.subtitle && <p class="page-hero__subtitle">{page.data.subtitle}</p>}
+    </div>
+  </section>
+
+  {page.data.quote && (
+    <section class="section ground-purple">
+      <MusicBackdrop variant="staves" opacity={0.07} color="var(--yellow-soft)" />
+      <div class="container">
+        <PullQuote attribution={page.data.quoteAttribution}>
+          {page.data.quote}
+        </PullQuote>
+      </div>
+    </section>
+  )}
+
+  <SectionDivider variant="jazz" color="purple" />
+
+  <section class="section ground-paper">
+    <div class="container-narrow prose">
+      <PageContent />
+    </div>
+  </section>
+
+  <SectionDivider variant="second-line" color="yellow" />
+
+  <section class="section ground-paper">
+    <div class="container-narrow bio-back">
+      <a href="http://www.babybeebooks.com/Boswell.htm" target="_blank" rel="noopener noreferrer" class="btn btn--purple">Get the Book at Baby Bee Books</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .page-hero { padding-block: clamp(var(--space-6), 4vw, var(--space-8)); position: relative; overflow: hidden; }
+  .page-hero__inner { position: relative; z-index: 1; }
+  .page-hero__back {
+    display: block;
+    font-family: var(--font-ui);
+    font-weight: 500;
+    font-size: var(--step--1);
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+    color: var(--purple);
+    border: 0;
+    margin-bottom: var(--space-5);
+    width: fit-content;
+  }
+  .page-hero__back:hover { color: var(--oxblood); }
+  .page-hero__title {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(var(--step-5), 6vw, var(--step-7));
+    line-height: 1;
+    letter-spacing: var(--track-tight);
+    color: var(--ink);
+    margin-top: var(--space-2);
+  }
+  .page-hero__subtitle {
+    margin-top: var(--space-4);
+    font-family: var(--font-body);
+    font-size: clamp(var(--step-1), 1.4vw + 0.4rem, var(--step-2));
+    color: var(--ink);
+    max-width: 46ch;
+  }
+
+  .prose { font-family: var(--font-body); font-size: var(--step-1); line-height: var(--leading-loose); color: var(--text-on-paper); }
+  .prose :global(p) { max-width: 62ch; }
+  .prose :global(p) + :global(p) { margin-top: var(--space-4); }
+  .prose :global(img) { max-width: 240px; height: auto; float: right; margin: 0 0 var(--space-4) var(--space-5); }
+  .prose :global(em), .prose :global(i) { color: var(--purple); font-style: italic; }
+  .prose :global(a) { color: var(--purple); border-color: rgba(74, 46, 90, 0.3); }
+  .prose :global(a:hover) { color: var(--oxblood); border-color: var(--oxblood); }
+
+  .bio-back { text-align: center; }
+  .btn {
+    display: inline-block;
+    padding: var(--space-3) var(--space-6);
+    font-family: var(--font-ui);
+    font-weight: 500;
+    font-size: var(--step--1);
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+    background: transparent;
+    text-decoration: none;
+    transition: background var(--dur) var(--ease-out-quart), color var(--dur) var(--ease-out-quart);
+  }
+  .btn--purple { color: var(--purple); border: 1px solid var(--purple); }
+  .btn--purple:hover, .btn--purple:focus-visible { background: var(--purple); color: var(--paper); }
+</style>

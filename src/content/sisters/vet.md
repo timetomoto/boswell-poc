@@ -4,25 +4,9 @@ name: "Vet Boswell"
 nickname: VBoz
 order: 3
 originalUrl: "http://bozzies.org/boz-bios-vboz/"
+pullQuote: "Vet apparently is the domesticated one. She packs the trunks with uncanny skill, arranges the flowers with unerring artistic rights and so on..."
+pullQuoteAttribution: "Melody Maker, 1933"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-Vet apparently is the domesticated one. She packs the trunks with uncanny skill, arranges the flowers with unerring artistic rights and so on...
-![](/uploads/quote2.gif)
-
-- Melody Maker, 1933
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Boz Bios – VBoz
-
 ## Helvetia (Vet) Boswell aka VBoz
 
 |  |  |
@@ -76,11 +60,3 @@ In her later years she flirted with the idea of making a professional comeback w
 She collaborated with Stuart Ross and Mark Hampton in staging a review of the Boswell Sisters music in the 80s called Heebie Jeebies. This wasn’t the only Boswell revival she helped inspire. Her return trip to New Orleans, nearly 40 years after her family had left town, renewed interest in the Boswell legacy. During that trip she joined the Bozzie inspired Pfister Sisters onstage. She still remembered all the parts and as Yvette Voelker recalled “She didn’t have any problem correcting us!”
 
 Family remained important to Vet and after her husband’s retirement she moved from Canada to New York to be nearer her sisters. She got to enjoy her grandchildren and great grandchildren before she passed away in 1988.
-
-* [BozBios Home](http://bozzies.org/bozbios/)
-* [Boswell Sisters Timeline](http://bozzies.org/boswell-sisters-timeline/)
-* [CBoz](http://bozzies.org/boz-bios-cboz/)
-* [MBoz](http://bozzies.org/boz-bios-mboz/)
-* [VBoz](http://bozzies.org/boz-bios-vboz/)
-* [Connee Boswell Timeline](http://bozzies.org/connee-boswell-timeline/)
-* [Boz Biography](http://bozzies.org/boz-bio-links/)

@@ -4,25 +4,9 @@ name: "Martha Boswell"
 nickname: MBoz
 order: 1
 originalUrl: "http://bozzies.org/boz-bios-mboz/"
+pullQuote: "If we sang according to orthodox musical traditions, Vet would be the high voice or soprano, I would be the middle or alto, and Connie would be the low or contralto."
+pullQuoteAttribution: "Martha Boswell"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-If we sang according to orthodox musical traditions, Vet would be the high voice or soprano, I would be the middle or alto, and Connie would be the low or contralto.
-![](/uploads/quote2.gif)
-
-- Martha Boswell
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Boz Bios – MBoz
-
 ## Martha Boswell aka MBoz
 
 |  |  |
@@ -65,11 +49,3 @@ MBoz has been described as “wonderfully alive” with sparkling bright eyes th
 A love for New Orleans ran deep in Martha and she returned often until her father died.
 
 There was a melancholy side to MBoz as well. She felt things deeply and passionately and it shows in her artistry.
-
-* [BozBios Home](http://bozzies.org/bozbios/)
-* [Boswell Sisters Timeline](http://bozzies.org/boswell-sisters-timeline/)
-* [CBoz](http://bozzies.org/boz-bios-cboz/)
-* [MBoz](http://bozzies.org/boz-bios-mboz/)
-* [VBoz](http://bozzies.org/boz-bios-vboz/)
-* [Connee Boswell Timeline](http://bozzies.org/connee-boswell-timeline/)
-* [Boz Biography](http://bozzies.org/boz-bio-links/)

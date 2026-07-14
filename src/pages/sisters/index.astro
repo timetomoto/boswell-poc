@@ -1,0 +1,233 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import PullQuote from '../../components/PullQuote.astro';
+import SectionDivider from '../../components/SectionDivider.astro';
+import MusicBackdrop from '../../components/MusicBackdrop.astro';
+import { getEntry, getCollection, render } from 'astro:content';
+
+const page = await getEntry('pages', 'sisters');
+if (!page) throw new Error('Missing src/content/pages/sisters.md');
+const { Content: PageContent } = await render(page);
+
+const bioLinks = await getEntry('pages', 'bio-resources');
+
+const sisters = (await getCollection('sisters')).sort(
+  (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0)
+);
+const trio = await getEntry('timelines', 'trio');
+---
+<Base title={page.data.title as string} description={page.data.subtitle as string | undefined}>
+  <Hero
+    eyebrow={page.data.eyebrow as string | undefined}
+    title={page.data.title as string}
+    subtitle={page.data.subtitle as string | undefined}
+    image={page.data.heroImage as string | undefined}
+    imageAlt={page.data.heroImageAlt as string | undefined}
+    height="medium"
+    layout="full-bleed"
+    align="center"
+  />
+
+  <section class="section ground-paper section-intro">
+    <MusicBackdrop variant="jazz-club" opacity={0.06} color="var(--purple)" />
+    <div class="container-narrow">
+      <div class="prose">
+        <PageContent />
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider variant="jazz" color="purple" />
+
+  <section class="section ground-paper sisters-grid">
+    <div class="container">
+      <header class="sisters-grid__head">
+        <span class="eyebrow eyebrow--purple">Meet the Sisters</span>
+        <h2 class="sisters-grid__title">Martha, Connie and Vet</h2>
+      </header>
+      <ul class="sisters-cards" role="list">
+        {sisters.map(s => (
+          <li class="sister-card">
+            <a href={`/sisters/${s.id}/`} class="sister-card__link">
+              <div class="sister-card__meta">
+                <span class="sister-card__order">0{s.data.order}</span>
+                <span class="sister-card__nickname">{s.data.nickname}</span>
+              </div>
+              <h3 class="sister-card__name">{s.data.name}</h3>
+              {s.data.pullQuote && (
+                <blockquote class="sister-card__quote">
+                  <span aria-hidden="true">"</span>{s.data.pullQuote}<span aria-hidden="true">"</span>
+                </blockquote>
+              )}
+              <span class="sister-card__cta">
+                Read the bio
+                <svg width="20" height="10" viewBox="0 0 20 10" aria-hidden="true">
+                  <path d="M0 5 H17 M13 1 L17 5 L13 9" stroke="currentColor" stroke-width="1" fill="none"/>
+                </svg>
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  {trio?.data.pullQuote && (
+    <section class="section ground-purple">
+      <MusicBackdrop variant="notes" opacity={0.10} color="var(--yellow-soft)" />
+      <div class="container">
+        <PullQuote attribution={trio.data.pullQuoteAttribution}>
+          {trio.data.pullQuote}
+        </PullQuote>
+      </div>
+    </section>
+  )}
+
+  <SectionDivider variant="second-line" color="yellow" />
+
+  {bioLinks && (
+    <section class="section ground-gold">
+      <div class="container-narrow bio-links-teaser">
+        <span class="eyebrow eyebrow--purple">Further Reading</span>
+        <h2 class="bio-links-teaser__title">{bioLinks.data.title}</h2>
+        {bioLinks.data.subtitle && <p class="bio-links-teaser__subtitle">{bioLinks.data.subtitle}</p>}
+        <a href="/sisters/bio-resources/" class="btn btn--purple">Explore the Boz Biography</a>
+      </div>
+    </section>
+  )}
+</Base>
+
+<style>
+  .section-intro { position: relative; overflow: hidden; }
+
+  /* Prose block — long-form reading style shared across section landings and bios */
+  .prose { font-family: var(--font-body); font-size: var(--step-1); line-height: var(--leading-loose); color: var(--text-on-paper); position: relative; z-index: 1; }
+  .prose :global(p) { max-width: 60ch; }
+  .prose :global(p) + :global(p) { margin-top: var(--space-4); }
+  .prose :global(a) { color: var(--purple); border-color: rgba(74, 46, 90, 0.3); }
+  .prose :global(a:hover) { color: var(--oxblood); border-color: var(--oxblood); }
+
+  /* Sisters cards grid */
+  .sisters-grid { position: relative; overflow: hidden; }
+  .sisters-grid__head { max-width: var(--measure); margin-bottom: var(--space-5); }
+  .sisters-grid__title {
+    margin-top: var(--space-2);
+    font-family: var(--font-display);
+    font-size: clamp(var(--step-4), 3.5vw + 0.3rem, var(--step-6));
+    font-weight: 300;
+    letter-spacing: var(--track-tight);
+  }
+  .sisters-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--paper-hairline);
+    border-left: 1px solid var(--paper-hairline);
+  }
+  @media (max-width: 900px) { .sisters-cards { grid-template-columns: 1fr; } }
+  .sister-card {
+    border-right: 1px solid var(--paper-hairline);
+    border-bottom: 1px solid var(--paper-hairline);
+    position: relative;
+  }
+  .sister-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: var(--purple);
+    opacity: 0.85;
+  }
+  .sister-card__link {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: clamp(var(--space-5), 2.4vw, var(--space-7));
+    padding-left: calc(clamp(var(--space-5), 2.4vw, var(--space-7)) + 6px);
+    height: 100%;
+    border: 0;
+    transition: background var(--dur) var(--ease-out-quart);
+  }
+  .sister-card__link:hover, .sister-card__link:focus-visible {
+    background: color-mix(in oklab, var(--purple) 6%, transparent);
+  }
+  .sister-card__meta { display: flex; align-items: baseline; gap: var(--space-3); }
+  .sister-card__order {
+    font-family: var(--font-display);
+    font-size: var(--step-3);
+    color: var(--purple);
+    line-height: 1;
+    font-feature-settings: 'tnum';
+  }
+  .sister-card__nickname {
+    font-family: var(--font-ui);
+    font-weight: 500;
+    font-size: var(--step--1);
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+    color: var(--text-on-paper-muted);
+  }
+  .sister-card__name {
+    font-family: var(--font-display);
+    font-size: clamp(var(--step-3), 2vw, var(--step-4));
+    font-weight: 400;
+    letter-spacing: var(--track-tight);
+    line-height: 1;
+    color: var(--ink);
+  }
+  .sister-card__quote {
+    font-family: var(--font-accent, var(--font-display));
+    font-style: italic;
+    font-size: var(--step-1);
+    line-height: var(--leading-snug);
+    color: var(--oxblood);
+    max-width: 34ch;
+    margin: 0;
+  }
+  .sister-card__cta {
+    margin-top: auto;
+    display: inline-flex; align-items: center; gap: var(--space-2);
+    font-family: var(--font-ui);
+    font-weight: 500;
+    font-size: var(--step--1);
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+    color: var(--purple);
+    padding-top: var(--space-3);
+  }
+  .sister-card__link:hover .sister-card__cta svg { transform: translateX(4px); }
+  .sister-card__cta svg { transition: transform var(--dur) var(--ease-out-quart); }
+
+  /* Bio Resources teaser */
+  .bio-links-teaser { text-align: center; }
+  .bio-links-teaser__title {
+    font-family: var(--font-display);
+    font-size: clamp(var(--step-4), 3vw + 0.4rem, var(--step-6));
+    font-weight: 300;
+    margin-top: var(--space-3);
+    letter-spacing: var(--track-tight);
+    color: var(--ink);
+  }
+  .bio-links-teaser__subtitle {
+    max-width: 46ch;
+    margin: var(--space-3) auto 0;
+    font-family: var(--font-body);
+    color: var(--ink);
+  }
+  .btn {
+    display: inline-block;
+    margin-top: var(--space-5);
+    padding: var(--space-3) var(--space-6);
+    font-family: var(--font-ui);
+    font-weight: 500;
+    font-size: var(--step--1);
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+    background: transparent;
+    text-decoration: none;
+    transition: background var(--dur) var(--ease-out-quart), color var(--dur) var(--ease-out-quart);
+  }
+  .btn--purple { color: var(--purple); border: 1px solid var(--purple); }
+  .btn--purple:hover, .btn--purple:focus-visible { background: var(--purple); color: var(--paper); }
+</style>

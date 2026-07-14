@@ -2,40 +2,9 @@
 title: "Connee Boswell — Solo Career Timeline"
 subject: connee
 originalUrl: "http://bozzies.org/connee-boswell-timeline/"
+pullQuote: "There was only one singer who influenced me. I tried to sing like her all the time because everything she did made sense musically, and that singer was Connie Boswell."
+pullQuoteAttribution: "Ella Fitzgerald"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-There was only one singer who influenced me. I tried to sing like her all the time because everything she did made sense musically, and that singer was Connie Boswell.
-![](/uploads/quote2.gif)
-
-- Ella Fitzgerald
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Connee Boswell Timeline
-
-## Connee After the Boswell Sisters
-
-![feb121936](/uploads/feb121936.jpg) February 12, 1936 – The Boswell Sisters make their final recording together. The Irving Berlin lyrics seem prophetic. The first number features Connee, who hereafter will be on her own, carrying the lead in “Let Yourself Go.” On the second number the Sisters harmonize throughout the song, a fitting way to declare their new lives with “I’m Putting All My Eggs in One Basket.” Vet is pregnant at the time of the recording.
-
-### We follow Connee’s career and life events from here on out below…
-
-* [BozBios Home](http://bozzies.org/bozbios/)
-* [Boswell Sisters Timeline](http://bozzies.org/boswell-sisters-timeline/)
-* [CBoz](http://bozzies.org/boz-bios-cboz/)
-* [MBoz](http://bozzies.org/boz-bios-mboz/)
-* [VBoz](http://bozzies.org/boz-bios-vboz/)
-* [Connee Boswell Timeline](http://bozzies.org/connee-boswell-timeline/)
-* [Boz Biography](http://bozzies.org/boz-bio-links/)
-
-Connee Boswell Timeline Navigator           1930’s – [1940’s](http://bozzies.org/connee-boswell-timeline-2/) – [1950’s](http://bozzies.org/connee-boswell-timeline-3/) – [1960’s – 1970’s](http://bozzies.org/connee-boswell-timeline-4/)
 
 |  |  |
 | --- | --- |
