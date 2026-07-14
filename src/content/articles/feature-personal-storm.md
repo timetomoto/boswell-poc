@@ -1,27 +1,11 @@
 ---
-title: "Boz Buz – An Article by Cort Vitty"
+title: "Personal Storm of Connee Boswell"
 subhub: feature
 author: "Cort Vitty"
 originalUrl: "http://bozzies.org/boz-buz-an-article-by-cort-vitty/"
+pullQuote: "Connie, you’ll never walk or dance. But these things are unimportant. What IS important is to use your brain. Develop your own talents and you’ll have just as much pleasure out of life as anyone else."
+pullQuoteAttribution: "Meldania Foore Boswell"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-Connie, you’ll never walk or dance. But these things are unimportant. What IS important is to use your brain. Develop your own talents and you’ll have just as much pleasure out of life as anyone else.
-![](/uploads/quote2.gif)
-
-- Meldania Foore Boswell
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Boz Buz – An Article by Cort Vitty
-
 ## The Personal Storm of Connee Boswell
 
 ### By: Cort Vitty
@@ -97,11 +81,3 @@ www.bozzies.org*
 10  (Ibid).  
 11 Ida Jean Kain, *The Washington Post*, December, 1, 1938.  
 13 Werner Bamberger, “Connee Boswell is Dead at 68”, *The New York Times*, October 12, 1976.
-
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [Boz Video Buz](http://bozzies.org/boz-video-buz/)
-* [The Press Room](http://bozzies.org/boz-buz-the-press-room/)
-* [Vintage Boz Articles](http://bozzies.org/boz-buz-vintage-articles/)
-* [In Their Own Words](http://bozzies.org/boz-buz/)
-* [What is “Getting Bozzed?”](http://bozzies.org/boz-buz-what-is-getting-bozzed/)
-* [Why Bozzies.com?](http://bozzies.org/boz-buz-why-bozzies-com/)

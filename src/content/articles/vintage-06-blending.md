@@ -1,27 +1,11 @@
 ---
-title: "Boz Buz – Vintage Article"
+title: "Blending Termed Secret of Boswell Trio's Success"
 subhub: vintage
 order: 6
 originalUrl: "http://bozzies.org/boz-buz-vintage-article-6/"
+pullQuote: "But we don't sing in the orthodox musical way. Instead, when we sing as a trio we achieve an unusual and unorthodox effect by deserting our own particular tone and singing in another tone. We call that blending."
+pullQuoteAttribution: "Martha Boswell"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-But we don't sing in the orthodox musical way. Instead, when we sing as a trio we achieve an unusual and unorthodox effect by deserting our own particular tone and singing in another tone. We call that blending.
-![](/uploads/quote2.gif)
-
-- Martha Boswell
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Boz Buz – Vintage Article
-
 *Times-Picayune, Jan 6, 1935*
 
 ## “’Blending’ Termed Secret of Boswell Trio’s Success”
@@ -55,11 +39,3 @@ Asked if there was a romance in the life of any member of the trio which might b
 “All three of us are leading very conservative lives and saving our money. Some day we will retire from the radio entertainment business and our occasional vaudeville engagements. While something may happen to interfere with out plans, when that time comes we intend to return to New Orleans to spend the rest of our lives.”
 
 [Articles Written About the Sisters](http://bozzies.org/boz-buz-vintage-articles/)
-
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [Boz Video Buz](http://bozzies.org/boz-video-buz/)
-* [The Press Room](http://bozzies.org/boz-buz-the-press-room/)
-* [Vintage Boz Articles](http://bozzies.org/boz-buz-vintage-articles/)
-* [In Their Own Words](http://bozzies.org/boz-buz/)
-* [What is “Getting Bozzed?”](http://bozzies.org/boz-buz-what-is-getting-bozzed/)
-* [Why Bozzies.com?](http://bozzies.org/boz-buz-why-bozzies-com/)

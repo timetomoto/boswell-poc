@@ -123,7 +123,10 @@ const articles = defineCollection({
     heroImageAlt: z.string().optional(),
     videoEmbed: z.string().optional(),
     externalLink: z.string().url().optional(),
+    pullQuote: z.string().optional(),
+    pullQuoteAttribution: z.string().optional(),
     order: z.number().optional(),
+    originalUrl: z.string().optional(),
   }),
 });
 

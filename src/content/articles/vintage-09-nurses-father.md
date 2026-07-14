@@ -1,27 +1,11 @@
 ---
-title: "Boz Buz – Vintage Article"
+title: "Boswell Sister Nurses Father Back to Health On Visit Here"
 subhub: vintage
 order: 9
 originalUrl: "http://bozzies.org/boz-buz-vintage-article-9/"
+pullQuote: "It was Martha's coming home again that made him get well again. That girl can do anything with her father. Now he is getting over the effects of a slight stroke and he is going back to the farm with her."
+pullQuoteAttribution: "Meladina Boswell"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-It was Martha's coming home again that made him get well again. That girl can do anything with her father. Now he is getting over the effects of a slight stroke and he is going back to the farm with her.
-![](/uploads/quote2.gif)
-
-- Meladina Boswell
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Boz Buz – Vintage Article
-
 *New Orleans Item – August 2, 1937*
 
 ## Boswell Sister Nurses Father Back to Health On Visit Here
@@ -51,11 +35,3 @@ He hopes that the three will get together soon at his farm and go on the air aga
 Martha’s young son Jules, 10, (by a former marriage) calls the major father. They expect to leave Friday for the farm.
 
 [Articles Written About the Sisters](http://bozzies.org/boz-buz-vintage-articles/)
-
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [Boz Video Buz](http://bozzies.org/boz-video-buz/)
-* [The Press Room](http://bozzies.org/boz-buz-the-press-room/)
-* [Vintage Boz Articles](http://bozzies.org/boz-buz-vintage-articles/)
-* [In Their Own Words](http://bozzies.org/boz-buz/)
-* [What is “Getting Bozzed?”](http://bozzies.org/boz-buz-what-is-getting-bozzed/)
-* [Why Bozzies.com?](http://bozzies.org/boz-buz-why-bozzies-com/)

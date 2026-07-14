@@ -1,27 +1,11 @@
 ---
-title: "Boz Buz – Vintage Article"
+title: "Another Boswell Chronicle"
 subhub: vintage
 order: 4
 originalUrl: "http://bozzies.org/boz-buz-vintage-article-4/"
+pullQuote: "Unless I print or type today, I write my name the same as I did then, hardly ever dot the i. I liked the way it looked in print, so when I left the Crosby show and started making public appearances, I decided to go with the two e’s"
+pullQuoteAttribution: "Connee Boswell"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-Unless I print or type today, I write my name the same as I did then, hardly ever dot the i. I liked the way it looked in print, so when I left the Crosby show and started making public appearances, I decided to go with the two e’s
-![](/uploads/quote2.gif)
-
-- Connee Boswell
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Boz Buz – Vintage Article
-
 *Jazz Journal, 1977*
 
 ## “Another Boswell Chronicle”
@@ -61,11 +45,3 @@ Taking her cue from Ella in Haydn-Mozart reciprocity, Connee next and last recor
 Her handling of *I Didn’t Know What Time It Was,* from the Rodgers-Hart show ‘Too Many Girls’ of 1939, is exactly the reverse and still more revolutionary. The breakneck tempo employed throughout is justified by that feeling of complete jubilation, affirmed by tune and words alike, which taking it up with no sweat whatever imparts. And when she comes back swinging after an orchestral interlude, Connee husks the lyrics to the heart or pares them to the core, dropping superfluous verbiago and thereby emphasizing the important words – even altering dramatic masterpiece in the closing chorus, where she abstracts and distills the song’s very essence and her own. Not at all that she cannot hack it at this speed: she did that easily enough the first time through. But like Louis and the other great jazzmen, Connee has come toward career’s end to rely more and more on silence. Yet she also uses her gifts of old, modulation, variation of every sort – combining word and voice-sounds in a single shout, sister, shout until the fade-out.
 
 [Articles Written About the Sisters](http://bozzies.org/boz-buz-vintage-articles/)
-
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [Boz Video Buz](http://bozzies.org/boz-video-buz/)
-* [The Press Room](http://bozzies.org/boz-buz-the-press-room/)
-* [Vintage Boz Articles](http://bozzies.org/boz-buz-vintage-articles/)
-* [In Their Own Words](http://bozzies.org/boz-buz/)
-* [What is “Getting Bozzed?”](http://bozzies.org/boz-buz-what-is-getting-bozzed/)
-* [Why Bozzies.com?](http://bozzies.org/boz-buz-why-bozzies-com/)

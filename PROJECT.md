@@ -5,7 +5,7 @@ returning developer (or Claude session) can pick up cold without re-reading the
 entire chat history. Nothing sensitive belongs in this file — no tokens, no
 secrets, no private URLs. Kept in the repo, not served by the site.
 
-**Last updated:** 2026-07-14, Music section commit.
+**Last updated:** 2026-07-14, Press section commit.
 
 ---
 
@@ -53,7 +53,7 @@ Five-item primary nav, each a real section:
   grid with fleur-de-lis anchor, Bette Midler pull quote on purple, donate CTA)
 - `/sisters/` — The Sisters (bios + timelines) *[built]*
 - `/music/` — Music (Boz Beat lessons, discography, reviews) *[built]*
-- `/press/` — Press (vintage articles, press room, interviews, video) *[not yet built]*
+- `/press/` — Press (vintage articles, press room, interviews, video) *[built]*
 - `/legacy/` — Legacy (tribute performers, Bozcasts, ASCAP, Boz of the Month) *[not yet built]*
 - `/about/` — About / donate / contact *[not yet built]*
 
@@ -271,8 +271,25 @@ All copy CMS-editable via `src/content/pages/home.md`.
 - `/music/charts/`: two chart-position tables (Boswell Sisters 1931–1938
   and Connee 1932–1954) rendered as editorial ledgers — purple caps
   header, alternating row tints, brass display serif for peak positions
-- `/music/reviews/`: album review cards, each with a purple accent bar,
-  display serif title, italic-sans description
+- `/music/reviews/`: album review cards — display-serif title, italic-sans
+  description, hairline divider between reviews
+
+**Press section** —
+- `/press/` landing: full-bleed hero, imported intro copy, five subhub
+  sections stacked vertically (Vintage Articles / In Their Own Words /
+  Video Features / Features / About the Site), each with an article-row
+  list. Below: press-releases grid on purple with vinyl backdrop — each
+  release opens the PDF in a new tab.
+- `/press/{subhub}/{slug}/`: dynamic article route, one per article.
+  Compact purple hero (back link, title, publication meta if set, pull
+  quote), body content as prose with tables/blockquotes/em-italic-sans,
+  optional video embed at the top for video-subhub entries, optional
+  external link at the bottom. Prev/Next cycle within the same subhub.
+- Post-import cleanup: script stripped WordPress chrome from all 26
+  article files; a follow-up script rewrote generic WP titles ("Boz Buz
+  - Vintage Article") with meaningful ones ("Bothering the Boswells",
+  "Personal Storm of Connee Boswell", etc.). Pull quotes extracted to
+  frontmatter as `pullQuote` / `pullQuoteAttribution`.
 
 **Design system, components, and CMS schema** all in place and validated.
 
@@ -280,8 +297,8 @@ All copy CMS-editable via `src/content/pages/home.md`.
 
 ## 11. Not yet built
 
-Section landings and entry templates for **Press**, **Legacy**, **About**.
-Content is imported and waiting in `src/content/*` — routes need to be added.
+Section landings and entry templates for **Legacy** and **About**. Content
+is imported and waiting in `src/content/*` — routes need to be added.
 
 **Also outstanding:**
 - The 12th vintage article (`/boz-buz-vintage-article/`, no suffix) failed

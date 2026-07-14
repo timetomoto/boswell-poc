@@ -1,26 +1,10 @@
 ---
-title: "Boz Buz – “What is Getting Bozzed?”"
+title: "What is Getting Bozzed?"
 subhub: essay
 originalUrl: "http://bozzies.org/boz-buz-what-is-getting-bozzed/"
+pullQuote: "Who were these girls and how did they start singing like this?"
+pullQuoteAttribution: "Stinceria"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-Who were these girls and how did they start singing like this?
-![](/uploads/quote2.gif)
-
-- Stinceria
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Boz Buz – “What is Getting Bozzed?”
-
 ## OK, let’s start with the startling truth.
 
 ![boswell_sisters_whatis](/uploads/boswell_sisters_whatis.jpg)Most people have never heard of the Boswell Sisters, even though they were arguably the most talented, most innovative and best of the swing and jazz vocal ensembles.
@@ -64,11 +48,3 @@ Getting Bozzed may be habit forming. But who cares!
 * You use “come and share thy boon with me” as a pick up line.
 
 **[Tell us how you know you’ve been Bozzed](mailto:Stinceria@Bozzies.com) and we’ll add them to our list!**
-
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [Boz Video Buz](http://bozzies.org/boz-video-buz/)
-* [The Press Room](http://bozzies.org/boz-buz-the-press-room/)
-* [Vintage Boz Articles](http://bozzies.org/boz-buz-vintage-articles/)
-* [In Their Own Words](http://bozzies.org/boz-buz/)
-* [What is “Getting Bozzed?”](http://bozzies.org/boz-buz-what-is-getting-bozzed/)
-* [Why Bozzies.com?](http://bozzies.org/boz-buz-why-bozzies-com/)

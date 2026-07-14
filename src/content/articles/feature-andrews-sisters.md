@@ -1,27 +1,11 @@
 ---
-title: "Boz Buz – An Article by David McCain"
+title: "We Copied the Boswell Sisters"
 subhub: feature
 author: "David McCain"
 originalUrl: "http://bozzies.org/boz-buz-an-article-by-david-mccain-3/"
+pullQuote: "The Andrews gals were singing totally in the Boswell style at this early date, with nary a hint of their eventual style apparent."
+pullQuoteAttribution: "David Weiner, President RRA"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-The Andrews gals were singing totally in the Boswell style at this early date, with nary a hint of their eventual style apparent.
-![](/uploads/quote2.gif)
-
-- David Weiner, President RRA
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Boz Buz – An Article by David McCain
-
 ## “WE COPIED THE BOSWELL SISTERS…” AND HERE’S THE PROOF!
 
 ### By David W. McCain
@@ -215,11 +199,3 @@ Patty, we Boswell fans have a way of sticking together through the generations, 
 ### **Very Special Thanks to Jack Barnes for granting permission to include the audio excerpt of Sentimental Gentleman From Georgia from the 1932 disk.**
 
 For further reading on the history of the Andrews Sisters, I HIGHLY recommend T. Arlo (Harry) Nimmo’s excellent biography entitled The Andrews Sisters, published by MacFarland & Company, Inc. in 2004. His book includes rare photos and a thoroughness of research made possible by the cooperation of longtime Andrews Sisters fans Robert Boyer, Everett Searcy, Merle Smith and John Tyler (to whom Nimmo most appropriately dedicates his finished work).
-
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [Boz Video Buz](http://bozzies.org/boz-video-buz/)
-* [The Press Room](http://bozzies.org/boz-buz-the-press-room/)
-* [Vintage Boz Articles](http://bozzies.org/boz-buz-vintage-articles/)
-* [In Their Own Words](http://bozzies.org/boz-buz/)
-* [What is “Getting Bozzed?”](http://bozzies.org/boz-buz-what-is-getting-bozzed/)
-* [Why Bozzies.com?](http://bozzies.org/boz-buz-why-bozzies-com/)

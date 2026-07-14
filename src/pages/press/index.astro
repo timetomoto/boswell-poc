@@ -1,0 +1,187 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import SectionDivider from '../../components/SectionDivider.astro';
+import MusicBackdrop from '../../components/MusicBackdrop.astro';
+import { getEntry, getCollection, render } from 'astro:content';
+
+const page = await getEntry('pages', 'press');
+if (!page) throw new Error('Missing src/content/pages/press.md');
+const { Content: PageContent } = await render(page);
+
+const articles = await getCollection('articles');
+const releases = await getCollection('pressReleases');
+
+/* Group articles by subhub, in display order */
+const subhubOrder: Array<{key: string; label: string; kicker: string; blurb: string}> = [
+  { key: 'vintage',            label: 'Vintage Articles',   kicker: 'From the 1930s',    blurb: 'Newspaper and magazine pieces published while the trio was in full swing.' },
+  { key: 'in-their-own-words', label: 'In Their Own Words', kicker: 'Interviews',        blurb: 'Firsthand accounts and interview transcripts.' },
+  { key: 'video',              label: 'Video Features',     kicker: 'On Screen',         blurb: 'Documentaries and video essays about the Boswell sound.' },
+  { key: 'feature',            label: 'Features',           kicker: 'Modern Writing',    blurb: 'Contemporary essays and long-form pieces on the trio and Connee.' },
+  { key: 'essay',              label: 'About the Site',     kicker: 'Bozzies.com',       blurb: 'What Getting Bozzed means, and why the site exists.' },
+];
+
+const grouped = subhubOrder.map(sh => ({
+  ...sh,
+  entries: articles
+    .filter(a => a.data.subhub === sh.key)
+    .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999))
+    .map(a => ({
+      id: a.id,
+      slug: a.id.replace(new RegExp(`^${sh.key}[-_]?`), '') || a.id,
+      title: a.data.title,
+      publication: a.data.publication,
+      author: a.data.author,
+      publicationDate: a.data.publicationDate,
+    })),
+})).filter(g => g.entries.length > 0);
+
+const sortedReleases = releases.sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+<Base title={page.data.title as string} description={page.data.subtitle as string | undefined}>
+  <Hero
+    eyebrow={page.data.eyebrow as string | undefined}
+    title={page.data.title as string}
+    subtitle={page.data.subtitle as string | undefined}
+    image={page.data.heroImage as string | undefined}
+    imageAlt={page.data.heroImageAlt as string | undefined}
+    height="medium"
+    layout="full-bleed"
+    align="center"
+  />
+
+  <section class="section ground-paper section-intro">
+    <MusicBackdrop variant="notes" opacity={0.06} color="var(--purple)" />
+    <div class="container-narrow prose">
+      <PageContent />
+    </div>
+  </section>
+
+  <SectionDivider variant="jazz" color="purple" />
+
+  {grouped.map((group, gi) => (
+    <section class="section ground-paper subhub-section">
+      <div class="container">
+        <header class="subhub-head">
+          <span class="eyebrow eyebrow--purple">{group.kicker}</span>
+          <h2 class="subhub-title">{group.label}</h2>
+          <p class="subhub-blurb">{group.blurb}</p>
+        </header>
+        <ol class="article-list" role="list">
+          {group.entries.map((entry, i) => (
+            <li class="article-row">
+              <a href={`/press/${group.key}/${entry.slug}/`} class="article-row__link">
+                <span class="article-row__num">{String(i + 1).padStart(2, '0')}</span>
+                <div class="article-row__body">
+                  <h3 class="article-row__title">{entry.title}</h3>
+                  {(entry.author || entry.publication || entry.publicationDate) && (
+                    <p class="article-row__meta">
+                      {[entry.author, entry.publication, entry.publicationDate].filter(Boolean).join(' · ')}
+                    </p>
+                  )}
+                </div>
+                <span class="article-row__arrow" aria-hidden="true">
+                  <svg width="24" height="10" viewBox="0 0 24 10" fill="none">
+                    <path d="M0 5 H21 M17 1 L21 5 L17 9" stroke="currentColor" stroke-width="1" fill="none"/>
+                  </svg>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  ))}
+
+  {sortedReleases.length > 0 && (
+    <section class="section ground-purple press-releases">
+      <MusicBackdrop variant="staves" opacity={0.07} color="var(--yellow-soft)" />
+      <div class="container">
+        <header class="releases-head">
+          <span class="eyebrow releases-head__eyebrow">The Press Room</span>
+          <h2 class="releases-head__title">Press releases &amp; media</h2>
+          <p class="releases-head__blurb">Original press releases, event announcements, and archival documents. Each opens as a PDF.</p>
+        </header>
+        <ul class="releases-grid" role="list">
+          {sortedReleases.map(r => (
+            <li class="release-card">
+              <a href={r.data.document} target="_blank" rel="noopener noreferrer" class="release-card__link">
+                <span class="release-card__type">{r.data.documentType?.toUpperCase() ?? 'DOC'}</span>
+                <h3 class="release-card__title">{r.data.title}</h3>
+                {r.data.releaseDate && <p class="release-card__date">{r.data.releaseDate}</p>}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+</Base>
+
+<style>
+  .section-intro, .subhub-section, .press-releases { position: relative; overflow: hidden; }
+
+  .prose { font-family: var(--font-body); font-size: var(--step-1); line-height: var(--leading-loose); color: var(--text-on-paper); position: relative; z-index: 1; }
+  .prose :global(p) { max-width: 62ch; }
+  .prose :global(p) + :global(p) { margin-top: var(--space-4); }
+
+  .subhub-section { padding-block: clamp(var(--space-5), 2.6vw, var(--space-7)); border-bottom: 1px solid var(--paper-hairline); }
+  .subhub-section:last-of-type { border-bottom: 0; }
+  .subhub-head { max-width: var(--measure); margin-bottom: var(--space-5); }
+  .subhub-title { margin-top: var(--space-2); font-family: var(--font-display); font-size: clamp(var(--step-4), 3vw + 0.3rem, var(--step-5)); font-weight: 300; letter-spacing: var(--track-tight); }
+  .subhub-blurb { margin-top: var(--space-2); font-family: var(--font-body); font-size: var(--step-0); color: var(--text-on-paper); max-width: 56ch; line-height: var(--leading-normal); }
+
+  .article-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--paper-hairline); }
+  .article-row { border-bottom: 1px solid var(--paper-hairline); }
+  .article-row__link {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: clamp(var(--space-4), 2.5vw, var(--space-6));
+    align-items: center;
+    padding: var(--space-4) 0;
+    border: 0;
+    color: inherit;
+    transition: color var(--dur) var(--ease-out-quart), padding var(--dur) var(--ease-out-quart);
+  }
+  .article-row__link:hover, .article-row__link:focus-visible { padding-left: var(--space-3); background: color-mix(in oklab, var(--purple) 4%, transparent); }
+  .article-row__num { font-family: var(--font-display); font-size: var(--step-3); color: var(--purple); line-height: 1; font-feature-settings: 'tnum'; min-width: 3ch; }
+  .article-row__body { min-width: 0; }
+  .article-row__title { margin: 0; font-family: var(--font-display); font-size: clamp(var(--step-2), 1.6vw + 0.2rem, var(--step-3)); font-weight: 400; letter-spacing: var(--track-tight); color: var(--ink); }
+  .article-row__meta { margin-top: var(--space-1); font-family: var(--font-ui); font-weight: 500; font-size: var(--step--1); letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--text-on-paper-muted); }
+  .article-row__arrow { color: var(--purple); transition: transform var(--dur) var(--ease-out-quart); }
+  .article-row__link:hover .article-row__arrow { transform: translateX(6px); }
+
+  /* Press releases grid on purple */
+  .releases-head { max-width: var(--measure-wide); margin-bottom: var(--space-5); }
+  .releases-head__eyebrow { color: var(--yellow-soft); }
+  .releases-head__title { margin-top: var(--space-2); font-family: var(--font-display); font-size: clamp(var(--step-4), 3vw + 0.3rem, var(--step-5)); font-weight: 300; color: #F5EAD1; }
+  .releases-head__blurb { margin-top: var(--space-2); font-family: var(--font-body); font-size: var(--step-0); color: rgba(245, 234, 209, 0.85); max-width: 56ch; }
+
+  .releases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: var(--space-4);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .release-card { }
+  .release-card__link {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-5);
+    background: color-mix(in oklab, var(--purple) 90%, black);
+    border: 1px solid rgba(225, 194, 99, 0.3);
+    color: #F5EAD1;
+    text-decoration: none;
+    transition: transform var(--dur) var(--ease-out-quart), background var(--dur) var(--ease-out-quart);
+    height: 100%;
+  }
+  .release-card__link:hover { transform: translateY(-3px); background: color-mix(in oklab, var(--purple) 85%, black); }
+  .release-card__type { font-family: var(--font-ui); font-weight: 600; font-size: var(--step--2); letter-spacing: var(--track-caps); color: var(--yellow-soft); }
+  .release-card__title { margin: 0; font-family: var(--font-display); font-size: var(--step-2); font-weight: 400; line-height: var(--leading-snug); color: #F5EAD1; }
+  .release-card__date { margin: 0; font-family: var(--font-ui); font-size: var(--step--1); color: rgba(245, 234, 209, 0.7); }
+</style>

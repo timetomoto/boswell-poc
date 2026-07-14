@@ -1,27 +1,11 @@
 ---
-title: "Boz Buz – An Article by David McCain"
+title: "The King Sisters"
 subhub: feature
 author: "David McCain"
 originalUrl: "http://bozzies.org/boz-buz-an-article-by-david-mccain-2/"
+pullQuote: "Well, the Boswell Sisters are really our idols. That’s how we got started. We used to hock every penny we had and buy their records..."
+pullQuoteAttribution: "Luise King"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-Well, the Boswell Sisters are really our idols. That’s how we got started. We used to hock every penny we had and buy their records...
-![](/uploads/quote2.gif)
-
-- Luise King
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Boz Buz – An Article by David McCain
-
 ## THE KING SISTERS: A CHAPTER FROM THE HISTORY OF HARMONY
 
 ### By David W. McCain
@@ -193,11 +177,3 @@ Luise King Rey wrote two memoirs: *The Singing Kings* (with Ora Pate Stewart, De
 ### And last but certainly not least…. Thank you Donna, Yvonne and Maxine for being so friendly and gracious to your admirers. The harmony lingers on!
 
 To view this article by David McCain in original PDF format, [Click Here](http://bozzies.org/wp-content/uploads/2016/06/Kingepistle1.pdf).
-
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [Boz Video Buz](http://bozzies.org/boz-video-buz/)
-* [The Press Room](http://bozzies.org/boz-buz-the-press-room/)
-* [Vintage Boz Articles](http://bozzies.org/boz-buz-vintage-articles/)
-* [In Their Own Words](http://bozzies.org/boz-buz/)
-* [What is “Getting Bozzed?”](http://bozzies.org/boz-buz-what-is-getting-bozzed/)
-* [Why Bozzies.com?](http://bozzies.org/boz-buz-why-bozzies-com/)

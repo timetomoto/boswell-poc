@@ -1,27 +1,11 @@
 ---
-title: "Boz Buz – Vintage Article"
+title: "Time for the Boswells"
 subhub: vintage
 order: 10
 originalUrl: "http://bozzies.org/boz-buz-vintage-article-10/"
+pullQuote: "The time the Boswells kept with their musical sound was, metaphysically, joyous, exciting, inspiring, exhilarating, and, stylistically, flawless."
+pullQuoteAttribution: "Dennis Yancey"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-The time the Boswells kept with their musical sound was, metaphysically, joyous, exciting, inspiring, exhilarating, and, stylistically, flawless.
-![](/uploads/quote2.gif)
-
-- Dennis Yancey
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Boz Buz – Vintage Article
-
 *Originally published in The Second Line,*  
 *Summer, 1980*
 
@@ -62,11 +46,3 @@ How ironic that the Boswell Sisters rose to prominence when the grit and grime o
 The time the Boswells kept with their musical sound was, metaphysically, joyous, exciting, inspiring, exhilarating, and, stylistically, flawless. They will never be duplicated again, but with their recordings they leave a rich legacy for our enjoyment and evaluation. And because of their happy blend, they helped the world keep better time, too.
 
 [Articles Written About the Sisters](http://bozzies.org/boz-buz-vintage-articles/)
-
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [Boz Video Buz](http://bozzies.org/boz-video-buz/)
-* [The Press Room](http://bozzies.org/boz-buz-the-press-room/)
-* [Vintage Boz Articles](http://bozzies.org/boz-buz-vintage-articles/)
-* [In Their Own Words](http://bozzies.org/boz-buz/)
-* [What is “Getting Bozzed?”](http://bozzies.org/boz-buz-what-is-getting-bozzed/)
-* [Why Bozzies.com?](http://bozzies.org/boz-buz-why-bozzies-com/)

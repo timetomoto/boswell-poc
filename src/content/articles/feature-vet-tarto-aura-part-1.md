@@ -1,26 +1,10 @@
 ---
-title: "Boz Buz – Vet, Tarto, Aura – Part 1"
+title: "A Conversation with Vet Boswell"
 subhub: feature
 originalUrl: "http://bozzies.org/boz-buz-vet-tarto-aura-part-1/"
+pullQuote: "I had to find out more about them and, if possible, track down an actual Boswell Sister to talk to."
+pullQuoteAttribution: "Aura Lee Reoch , 1977"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-I had to find out more about them and, if possible, track down an actual Boswell Sister to talk to.
-![](/uploads/quote2.gif)
-
-- Aura Lee Reoch , 1977
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Boz Buz – Vet, Tarto, Aura – Part 1
-
 ## Vet Boswell, Joe Tarto and Aura Lee: a family recording.
 
 ### By Cynthia Lucas
@@ -54,11 +38,3 @@ But, joyously, the conversation remains preserved, as does the answer to eleven 
 Vet would be proud of you, Aura.
 
 [Listen to the Recording and Read a Letter from Joe Tarto >>](http://bozzies.org/boz-buz-vet-tarto-aura-part-2/)
-
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [Boz Video Buz](http://bozzies.org/boz-video-buz/)
-* [The Press Room](http://bozzies.org/boz-buz-the-press-room/)
-* [Vintage Boz Articles](http://bozzies.org/boz-buz-vintage-articles/)
-* [In Their Own Words](http://bozzies.org/boz-buz/)
-* [What is “Getting Bozzed?”](http://bozzies.org/boz-buz-what-is-getting-bozzed/)
-* [Why Bozzies.com?](http://bozzies.org/boz-buz-why-bozzies-com/)

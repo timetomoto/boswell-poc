@@ -1,26 +1,10 @@
 ---
-title: "Boz Buz"
+title: "Steely Bozzies"
 subhub: feature
 originalUrl: "http://bozzies.org/boz-buz-3/"
+pullQuote: "Imagine my surprise when I found this book by the Steely frontman Donald Fagen, and read the first piece. One of my favourites writing about another of my favourites."
+pullQuoteAttribution: "Laurence Marks"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-Imagine my surprise when I found this book by the Steely frontman Donald Fagen, and read the first piece. One of my favourites writing about another of my favourites.
-![](/uploads/quote2.gif)
-
-- Laurence Marks
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Boz Buz
-
 ## Steely Bozzies
 
 ### By: Laurence Marks
@@ -36,11 +20,3 @@ This book is a collection of new and previously published pieces. They’re amus
 In sum, a good read, two thumbs up, five stars, this one will run and run.
 
 (*We’ve added a link to the book on [Boz Buys](http://bozzies.org/bozbuys/) for anyone who would like to check it out.*)
-
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [Boz Video Buz](http://bozzies.org/boz-video-buz/)
-* [The Press Room](http://bozzies.org/boz-buz-the-press-room/)
-* [Vintage Boz Articles](http://bozzies.org/boz-buz-vintage-articles/)
-* [In Their Own Words](http://bozzies.org/boz-buz/)
-* [What is “Getting Bozzed?”](http://bozzies.org/boz-buz-what-is-getting-bozzed/)
-* [Why Bozzies.com?](http://bozzies.org/boz-buz-why-bozzies-com/)

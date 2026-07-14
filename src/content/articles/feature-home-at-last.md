@@ -1,26 +1,10 @@
 ---
-title: "Boz Buz – Home at Last"
+title: "Home at Last"
 subhub: feature
 originalUrl: "http://bozzies.org/boz-buz-home-at-last/"
+pullQuote: "I promised her (Chica) that I would make sure the collection went to New Orleans, and that I would continue to work to honor the Boswell Sisters."
+pullQuoteAttribution: "Cynthia Lucas"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-I promised her (Chica) that I would make sure the collection went to New Orleans, and that I would continue to work to honor the Boswell Sisters.
-![](/uploads/quote2.gif)
-
-- Cynthia Lucas
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Boz Buz – Home at Last
-
 ## The Boswell Collection in New Orleans
 
 ### By Cynthia Lucas
@@ -74,11 +58,3 @@ More pictures from the HNOC exhibit:
 ![bozzie-hnoc-cast](http://bozzies.org/wp-content/uploads/2016/05/bozzie-hnoc-cast.jpg)
 
 *Cynthia Lucas is a marketer, writer and adventurer who lives near Austin, Texas.*
-
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [Boz Video Buz](http://bozzies.org/boz-video-buz/)
-* [The Press Room](http://bozzies.org/boz-buz-the-press-room/)
-* [Vintage Boz Articles](http://bozzies.org/boz-buz-vintage-articles/)
-* [In Their Own Words](http://bozzies.org/boz-buz/)
-* [What is “Getting Bozzed?”](http://bozzies.org/boz-buz-what-is-getting-bozzed/)
-* [Why Bozzies.com?](http://bozzies.org/boz-buz-why-bozzies-com/)

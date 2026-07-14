@@ -1,27 +1,11 @@
 ---
-title: "Boz Buz – Vintage Article"
+title: "Those Boswell Sisters Talk"
 subhub: vintage
 order: 8
 originalUrl: "http://bozzies.org/boz-buz-vintage-article-8/"
+pullQuote: "In fact we were an instrumental trio before we were a vocal trio, playing in concerts and benefits. We started singing as part of our stage performance."
+pullQuoteAttribution: "Quoted from Radioland, c1933"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-In fact we were an instrumental trio before we were a vocal trio, playing in concerts and benefits. We started singing as part of our stage performance.
-![](/uploads/quote2.gif)
-
-- Quoted from Radioland, c1933
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Boz Buz – Vintage Article
-
 *Excerpted from*
 
 ## Those Boswell Sisters Talk
@@ -105,11 +89,3 @@ Radioland – Date Unknown c1933
 > Connie and Vet like to paint. Martha prefers to cook…
 
 [Articles Written About the Sisters](http://bozzies.org/boz-buz-vintage-articles/)
-
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [Boz Video Buz](http://bozzies.org/boz-video-buz/)
-* [The Press Room](http://bozzies.org/boz-buz-the-press-room/)
-* [Vintage Boz Articles](http://bozzies.org/boz-buz-vintage-articles/)
-* [In Their Own Words](http://bozzies.org/boz-buz/)
-* [What is “Getting Bozzed?”](http://bozzies.org/boz-buz-what-is-getting-bozzed/)
-* [Why Bozzies.com?](http://bozzies.org/boz-buz-why-bozzies-com/)

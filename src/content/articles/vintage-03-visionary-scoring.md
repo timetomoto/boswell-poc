@@ -1,27 +1,11 @@
 ---
-title: "Boz Buz – Vintage Article"
+title: "Part 2: Visionary Scoring Put Boswell's Over"
 subhub: vintage
 order: 3
 originalUrl: "http://bozzies.org/boz-buz-vintage-article-3/"
+pullQuote: "Connee is a great singer, and that is all I need to know! The Boswell Sisters were also great as a team. They have had a significant influence on much of our music."
+pullQuoteAttribution: "John Lucas"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-Connee is a great singer, and that is all I need to know! The Boswell Sisters were also great as a team. They have had a significant influence on much of our music.
-![](/uploads/quote2.gif)
-
-- John Lucas
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Boz Buz – Vintage Article
-
 *Down Beat, November 1, 1944*
 
 ## “Visionary Scoring Put Boswells Over”
@@ -49,11 +33,3 @@ I have forgotten to discuss the handicap under which Connee has always worked. I
 Both Decca, in the Brunswick Series, and Columbia have excellent albums of the Boswell Sisters.
 
 [Articles Written About the Sisters](http://bozzies.org/boz-buz-vintage-articles/)
-
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [Boz Video Buz](http://bozzies.org/boz-video-buz/)
-* [The Press Room](http://bozzies.org/boz-buz-the-press-room/)
-* [Vintage Boz Articles](http://bozzies.org/boz-buz-vintage-articles/)
-* [In Their Own Words](http://bozzies.org/boz-buz/)
-* [What is “Getting Bozzed?”](http://bozzies.org/boz-buz-what-is-getting-bozzed/)
-* [Why Bozzies.com?](http://bozzies.org/boz-buz-why-bozzies-com/)

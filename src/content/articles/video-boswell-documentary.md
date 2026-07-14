@@ -1,26 +1,10 @@
 ---
-title: "Boz Video Buz – Special Feature!"
+title: "The Boswell Sisters — A Documentary Feature"
 subhub: video
 originalUrl: "http://bozzies.org/boz-video-buz-special-feature-2/"
+pullQuote: "No big broadcast would be quite complete without those three little girls from New Orleans. Permit me to present, the Boswells Sisters, Connee, Vet, and Martha"
+pullQuoteAttribution: "Norman Brokenshire"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-No big broadcast would be quite complete without those three little girls from New Orleans. Permit me to present, the Boswells Sisters, Connee, Vet, and Martha
-![](/uploads/quote2.gif)
-
-- Norman Brokenshire
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Boz Video Buz – Special Feature!
-
 ## “The Boswell Sisters: Close Harmony”
 
 ### Documentary Trailer
@@ -32,11 +16,3 @@ When will this Bozumentary be completed? Stay tuned to Bozzies.org and we will k
 [Post your thoughts on the new Boz Buds Board!](http://www.bozzies.org/buds.php)
 
 [See More Boz Video Buz](http://www.bozzies.org/buz-video.php)
-
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [Boz Video Buz](http://bozzies.org/boz-video-buz/)
-* [The Press Room](http://bozzies.org/boz-buz-the-press-room/)
-* [Vintage Boz Articles](http://bozzies.org/boz-buz-vintage-articles/)
-* [In Their Own Words](http://bozzies.org/boz-buz/)
-* [What is “Getting Bozzed?”](http://bozzies.org/boz-buz-what-is-getting-bozzed/)
-* [Why Bozzies.com?](http://bozzies.org/boz-buz-why-bozzies-com/)

@@ -1,27 +1,11 @@
 ---
-title: "Boz Buz – An Article by David McCain"
+title: "In Perfect Harmony"
 subhub: feature
 author: "David McCain"
 originalUrl: "http://bozzies.org/boz-buz-an-article-by-david-mccain/"
+pullQuote: "It was an entertaining evening from start to finish, and the joyous and spirited performances will stay with me for a long time."
+pullQuoteAttribution: "David W. McCain"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-It was an entertaining evening from start to finish, and the joyous and spirited performances will stay with me for a long time.
-![](/uploads/quote2.gif)
-
-- David W. McCain
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Boz Buz – An Article by David McCain
-
 ## IN PERFECT HARMONY: CELEBRATING THE VOCAL GROUP
 
 ### By David W. McCain
@@ -41,11 +25,3 @@ Rob Fisher’s introduction of *Sentimental Gentleman From Georgia* (which the D
 I especially enjoyed the DiGiallonardo Sisters’ performance of *Teach Your Children* and *Neutron Dance* (the last recorded by the Pointer Sisters and which vied with *Bohemian Rhapsody* as the evening’s second-most adventurous offering) and their Beach Boys medley which included *Surfer Girl* and *In My Room*. They were joined by the New York Voices for a version of *I Get Around* that made it seem like it was 1964 all over again. Kim and Lauren of the New York Voices teamed with the sisters in a tribute to the 1960s girl groups: *Good, Good Lovin’*, *It’s In His Kiss (The Shoop Shoop Song)* and *One Fine Day*.
 
 It was an entertaining evening from start to finish, and the joyous and spirited performances will stay with me for a long time. I felt I got double my money’s worth—an evening of nostalgic songs so familiar via well-known recordings, coupled with the feeling that I was hearing these tunes for the first time. Great job everyone!
-
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [Boz Video Buz](http://bozzies.org/boz-video-buz/)
-* [The Press Room](http://bozzies.org/boz-buz-the-press-room/)
-* [Vintage Boz Articles](http://bozzies.org/boz-buz-vintage-articles/)
-* [In Their Own Words](http://bozzies.org/boz-buz/)
-* [What is “Getting Bozzed?”](http://bozzies.org/boz-buz-what-is-getting-bozzed/)
-* [Why Bozzies.com?](http://bozzies.org/boz-buz-why-bozzies-com/)

@@ -1,27 +1,11 @@
 ---
-title: "Boz Buz – Vintage Article"
+title: "Bothering the Boswells"
 subhub: vintage
 order: 5
 originalUrl: "http://bozzies.org/boz-buz-vintage-article-5/"
+pullQuote: "So extraordinary is the telepathic understanding between the three that quite likely they will unanimously sing, in harmony, the same break without any previous hint as to what form it is going to take!"
+pullQuoteAttribution: "The Melody Maker"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-So extraordinary is the telepathic understanding between the three that quite likely they will unanimously sing, in harmony, the same break without any previous hint as to what form it is going to take!
-![](/uploads/quote2.gif)
-
-- The Melody Maker
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Boz Buz – Vintage Article
-
 *The Melody Maker, July 8, 1933*
 
 ## “Bothering the Boswells”
@@ -141,11 +125,3 @@ After the Café de Paris they tore off to a private party given by Mrs. Somerset
 It is not yet known whether they will play the second week at the Palladium. There is still some hitch in the negotiations. We hope, for everyone’s sake, that they will.
 
 [Articles Written About the Sisters](http://bozzies.org/boz-buz-vintage-articles/)
-
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [Boz Video Buz](http://bozzies.org/boz-video-buz/)
-* [The Press Room](http://bozzies.org/boz-buz-the-press-room/)
-* [Vintage Boz Articles](http://bozzies.org/boz-buz-vintage-articles/)
-* [In Their Own Words](http://bozzies.org/boz-buz/)
-* [What is “Getting Bozzed?”](http://bozzies.org/boz-buz-what-is-getting-bozzed/)
-* [Why Bozzies.com?](http://bozzies.org/boz-buz-why-bozzies-com/)

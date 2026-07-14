@@ -1,26 +1,10 @@
 ---
-title: "Boz Buz"
+title: "Lamparski Talks with Connee and Vet"
 subhub: feature
 originalUrl: "http://bozzies.org/boz-buz-2/"
+pullQuote: "It's kind of a comparison to the waltz and the twist. We were the twist."
+pullQuoteAttribution: "Vet Boswell"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-It's kind of a comparison to the waltz and the twist. We were the twist.
-![](/uploads/quote2.gif)
-
-- Vet Boswell
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Boz Buz
-
 ## Richard Lamparski Interview with Connee and Vet
 
 ![connie-lamparski](/uploads/connie-lamparski.jpg)Bozzies.com is proud to feature Richard Lamparski’s 1965 interview with Connee and Vet Boswell. The famed author of the “Whatever Became Of…” series and the great new “Hollywood Diary” and “Manhattan Diary” editions has graciously allowed us to share his WBAI interview with the Boswell Sisters. Hear them tell their story in their own words…and Get Bozzed.
@@ -40,11 +24,3 @@ Some quotes from the Interview:
 – Vet
 
 ### Listen to the complete interview on the Boz Pod, or you can download the MP3 directly [here](/uploads/audio/Lamparski-Connee-Vet.mp3).
-
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [Boz Video Buz](http://bozzies.org/boz-video-buz/)
-* [The Press Room](http://bozzies.org/boz-buz-the-press-room/)
-* [Vintage Boz Articles](http://bozzies.org/boz-buz-vintage-articles/)
-* [In Their Own Words](http://bozzies.org/boz-buz/)
-* [What is “Getting Bozzed?”](http://bozzies.org/boz-buz-what-is-getting-bozzed/)
-* [Why Bozzies.com?](http://bozzies.org/boz-buz-why-bozzies-com/)

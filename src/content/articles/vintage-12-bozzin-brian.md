@@ -1,27 +1,11 @@
 ---
-title: "Boz Buz"
+title: "Bozzin' With the Brian Sisters"
 subhub: vintage
 order: 12
 originalUrl: "http://bozzies.org/boz-buz-6/"
+pullQuote: "We sang for her. She was (Connee Boswell), in her words, \"knocked out\" by what she heard, and offered to \"mentor\" us when she was in town."
+pullQuoteAttribution: "Doris Brian"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-We sang for her. She was (Connee Boswell), in her words, "knocked out" by what she heard, and offered to "mentor" us when she was in town.
-![](/uploads/quote2.gif)
-
-- Doris Brian
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Boz Buz
-
 ## Bozzin’ With the Brian Sisters
 
 ### Foreword
@@ -167,11 +151,3 @@ But the Brian Sisters were touched professionally and personally by Connie. Dori
 “They were absolutely terrific, ahead of their time, and way, way better than any other trio who ever performed anywhere.”
 
 Amen, Sister Doris. Amen.
-
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [Boz Video Buz](http://bozzies.org/boz-video-buz/)
-* [The Press Room](http://bozzies.org/boz-buz-the-press-room/)
-* [Vintage Boz Articles](http://bozzies.org/boz-buz-vintage-articles/)
-* [In Their Own Words](http://bozzies.org/boz-buz/)
-* [What is “Getting Bozzed?”](http://bozzies.org/boz-buz-what-is-getting-bozzed/)
-* [Why Bozzies.com?](http://bozzies.org/boz-buz-why-bozzies-com/)

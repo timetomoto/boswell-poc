@@ -34,22 +34,33 @@ const { Content: PageContent } = await render(page);
   .page-hero__title { font-family: var(--font-display); font-weight: 300; font-size: clamp(var(--step-5), 6vw, var(--step-7)); line-height: 1; letter-spacing: var(--track-tight); color: #F5EAD1; margin-top: var(--space-2); }
   .page-hero__subtitle { margin-top: var(--space-4); font-family: var(--font-body); font-size: clamp(var(--step-1), 1.4vw + 0.3rem, var(--step-2)); color: rgba(245, 234, 209, 0.9); max-width: 52ch; }
 
-  /* Reviews prose — each H3 becomes a review card */
+  /* Reviews prose — each H3 becomes a review row separated by a hairline */
   .prose { font-family: var(--font-body); font-size: var(--step-1); line-height: var(--leading-loose); color: var(--text-on-paper); }
-  .prose :global(h2) { font-family: var(--font-display); font-size: var(--step-4); font-weight: 300; letter-spacing: var(--track-tight); margin-bottom: var(--space-5); }
+  .prose :global(h2) {
+    font-family: var(--font-display);
+    font-size: var(--step-4);
+    font-weight: 300;
+    letter-spacing: var(--track-tight);
+    margin-bottom: var(--space-6);
+  }
   .prose :global(h3) {
     font-family: var(--font-display);
     font-size: clamp(var(--step-3), 2vw + 0.3rem, var(--step-4));
     font-weight: 400;
     letter-spacing: var(--track-tight);
     color: var(--ink);
+    text-decoration: none;
     margin-top: var(--space-7);
     padding-top: var(--space-6);
     border-top: 1px solid var(--paper-hairline);
-    position: relative;
   }
-  .prose :global(h3):first-of-type { border-top: 0; padding-top: 0; margin-top: var(--space-5); }
-  .prose :global(h3)::before { content: ''; position: absolute; left: 0; top: var(--space-6); width: 32px; height: 2px; background: var(--purple); }
-  .prose :global(h3):first-of-type::before { top: -8px; }
-  .prose :global(h3) + :global(p) { margin-top: var(--space-3); max-width: 60ch; font-size: var(--step-1); color: var(--text-on-paper-muted); font-style: italic; font-family: var(--font-ui); }
+  .prose :global(h3):first-of-type { border-top: 0; padding-top: 0; margin-top: 0; }
+  .prose :global(h3) + :global(p) {
+    margin-top: var(--space-3);
+    max-width: 60ch;
+    font-family: var(--font-ui);
+    font-style: italic;
+    font-size: var(--step-1);
+    color: var(--text-on-paper-muted);
+  }
 </style>

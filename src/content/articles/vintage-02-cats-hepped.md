@@ -1,27 +1,11 @@
 ---
-title: "Boz Buz – Vintage Article"
+title: "Part 1: Cats Hepped by Connee's Chirping"
 subhub: vintage
 order: 2
 originalUrl: "http://bozzies.org/boz-buz-vintage-article-2/"
+pullQuote: "They were absolutely new. Their tremendous success, both here and abroad, precipitated a whole movement toward girl trios."
+pullQuoteAttribution: "John Lucas"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-They were absolutely new. Their tremendous success, both here and abroad, precipitated a whole movement toward girl trios.
-![](/uploads/quote2.gif)
-
-- John Lucas
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Boz Buz – Vintage Article
-
 *Downbeat, October 15, 1944*
 
 ## “Cats Hepped By Connee’s Chirping”
@@ -61,11 +45,3 @@ One of Connee’s prize possessions is a very critical letter in which some irat
 (The second and concluding article on Connee Boswell by John Lucas will appear in the November 1 issue of *Down Beat.)* [Continue to Part 2](http://bozzies.org/boz-buz-vintage-article-3/) >
 
 [Articles Written About the Sisters](http://bozzies.org/boz-buz-vintage-articles/)
-
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [Boz Video Buz](http://bozzies.org/boz-video-buz/)
-* [The Press Room](http://bozzies.org/boz-buz-the-press-room/)
-* [Vintage Boz Articles](http://bozzies.org/boz-buz-vintage-articles/)
-* [In Their Own Words](http://bozzies.org/boz-buz/)
-* [What is “Getting Bozzed?”](http://bozzies.org/boz-buz-what-is-getting-bozzed/)
-* [Why Bozzies.com?](http://bozzies.org/boz-buz-why-bozzies-com/)

@@ -1,5 +1,5 @@
 ---
-title: "Boswell Sisters - Boz Buz"
+title: "Second Line — Post-event Recap"
 subhub: feature
 originalUrl: "http://bozzies.org/buz-secondline.php"
 ---

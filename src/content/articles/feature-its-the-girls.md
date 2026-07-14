@@ -1,26 +1,10 @@
 ---
-title: "Boz Buz – It’s the Girls!"
+title: "It's the Girls (Bette Midler)"
 subhub: feature
 originalUrl: "http://bozzies.org/boz-buz-its-the-girls/"
+pullQuote: "There were so many great girl groups in those days, I still listen as avidly as I ever did. This record is a small attempt to honor them for all the joy they brought to me and the world."
+pullQuoteAttribution: "Bette Midler"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-There were so many great girl groups in those days, I still listen as avidly as I ever did. This record is a small attempt to honor them for all the joy they brought to me and the world.
-![](/uploads/quote2.gif)
-
-- Bette Midler
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Boz Buz – It’s the Girls!
-
 ## Bette Midler Releases New CD – It’s the Girls!
 
 Last year Bette Midler told Bozzies.org that “The world needs more Boswell Sisters.” This year she has confirmed the hints she dropped that she was personally doing something about it.
@@ -84,11 +68,3 @@ Originally performed by The Shirelles
 15 / IT’S THE GIRL  
 Originally performed by The Boswell Sisters  
 All Vocals by Bette Midler
-
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [Boz Video Buz](http://bozzies.org/boz-video-buz/)
-* [The Press Room](http://bozzies.org/boz-buz-the-press-room/)
-* [Vintage Boz Articles](http://bozzies.org/boz-buz-vintage-articles/)
-* [In Their Own Words](http://bozzies.org/boz-buz/)
-* [What is “Getting Bozzed?”](http://bozzies.org/boz-buz-what-is-getting-bozzed/)
-* [Why Bozzies.com?](http://bozzies.org/boz-buz-why-bozzies-com/)

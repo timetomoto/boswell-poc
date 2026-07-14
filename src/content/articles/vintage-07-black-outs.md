@@ -1,27 +1,11 @@
 ---
-title: "Boz Buz – Vintage Article"
+title: "Black Outs"
 subhub: vintage
 order: 7
 originalUrl: "http://bozzies.org/boz-buz-vintage-article-7/"
+pullQuote: "Mr. Meise, I would ask of you a personal favor. Would you please write a story about Connie Boswell and tell the folks in New Orleans that the South should be proud of a daughter like her? Thanking you for paying attention to this letter."
+pullQuoteAttribution: "Charles Probstein, a friend of the Boswells"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-Mr. Meise, I would ask of you a personal favor. Would you please write a story about Connie Boswell and tell the folks in New Orleans that the South should be proud of a daughter like her? Thanking you for paying attention to this letter.
-![](/uploads/quote2.gif)
-
-- Charles Probstein, a friend of the Boswells
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Boz Buz – Vintage Article
-
 *New Orleans States, October 9, 1932*
 
 ## BLACK OUTS
@@ -47,11 +31,3 @@ Whom do we owe all this is the best ever “Little Angel” and if God spares me
 Mr. Meise, I would ask of you a personal favor. Would you please write a story about Connie Boswell and tell the folks in New Orleans that the South should be proud of a daughter like her? Thanking you for paying attention to this letter. I remain very truly yours. Charles Probstein.
 
 [Articles Written About the Sisters](http://bozzies.org/boz-buz-vintage-articles/)
-
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [Boz Video Buz](http://bozzies.org/boz-video-buz/)
-* [The Press Room](http://bozzies.org/boz-buz-the-press-room/)
-* [Vintage Boz Articles](http://bozzies.org/boz-buz-vintage-articles/)
-* [In Their Own Words](http://bozzies.org/boz-buz/)
-* [What is “Getting Bozzed?”](http://bozzies.org/boz-buz-what-is-getting-bozzed/)
-* [Why Bozzies.com?](http://bozzies.org/boz-buz-why-bozzies-com/)

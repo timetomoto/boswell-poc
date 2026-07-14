@@ -1,26 +1,10 @@
 ---
-title: "Boz Buz – In Their Own Words"
+title: "Martha Boswell — The Spotlight"
 subhub: in-their-own-words
 originalUrl: "http://bozzies.org/boz-buz-in-their-own-words/"
+pullQuote: "You didn't say how much you wanted me to write so if its too long just cut off the end and send it back as my wastepaper basket needs using just as much as yours."
+pullQuoteAttribution: "Martha Boswell"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-You didn't say how much you wanted me to write so if its too long just cut off the end and send it back as my wastepaper basket needs using just as much as yours.
-![](/uploads/quote2.gif)
-
-- Martha Boswell
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Boz Buz – In Their Own Words
-
 *The Morning Tribune, Saturday August 3, 1936*
 
 ## The Spotlight by Mel Washburn
@@ -58,11 +42,3 @@ Sorry for the interruption Mel, but I’ve just been listening to Connie singing
 I must have written more than enough by now, so goodbye old bean. We are off to New York and from there the whole family (Pappa and Uncle Charlie – the whoopee boys – Mamma and Aunt Matt, Connie and Harry, George, Jules and myself) will assemble in Toronto where toward the end of this month our dear little Vet will contribute to human happiness another small voice.
 
 [Articles Written by the Sisters](http://bozzies.org/boz-buz/)
-
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [Boz Video Buz](http://bozzies.org/boz-video-buz/)
-* [The Press Room](http://bozzies.org/boz-buz-the-press-room/)
-* [Vintage Boz Articles](http://bozzies.org/boz-buz-vintage-articles/)
-* [In Their Own Words](http://bozzies.org/boz-buz/)
-* [What is “Getting Bozzed?”](http://bozzies.org/boz-buz-what-is-getting-bozzed/)
-* [Why Bozzies.com?](http://bozzies.org/boz-buz-why-bozzies-com/)

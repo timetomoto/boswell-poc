@@ -1,27 +1,11 @@
 ---
-title: "Boz Buz – Vintage Article"
+title: "In Harmony with the Boswell Sisters"
 subhub: vintage
 order: 11
 originalUrl: "http://bozzies.org/boz-buz-vintage-article-11/"
+pullQuote: "They were a one-of-a-kind group and no other has even come close to imitating them"
+pullQuoteAttribution: "David McCain"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
-
-![](/uploads/quote1.gif)
-They were a one-of-a-kind group and no other has even come close to imitating them
-![](/uploads/quote2.gif)
-
-- David McCain
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
-
-# Boz Buz – Vintage Article
-
 *Spring 1977*
 
 ## In Harmony with the Boswell Sisters
@@ -51,11 +35,3 @@ Of course this article means nothing at all unless you’ve heard the Boswells s
 If I had to describe the Boswell Sisters in one word, which would be very difficult, I would have to say “original.” They were a one-of-a-kind group and no other has even come close to imitating them. The Boswell Sisters’ contribution to jazz, and popular music in general was great. Their vocal style is still being copied. They were among the first groups to deviate from the standard, straight way of singing, thus opening the way for more creativity in the music business. Martha, Connee and Vet Boswell, I salute you. Yes, you had it all right. Perfect harmony. And so much more.
 
 [Articles Written About the Sisters](http://bozzies.org/boz-buz-vintage-articles/)
-
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [Boz Video Buz](http://bozzies.org/boz-video-buz/)
-* [The Press Room](http://bozzies.org/boz-buz-the-press-room/)
-* [Vintage Boz Articles](http://bozzies.org/boz-buz-vintage-articles/)
-* [In Their Own Words](http://bozzies.org/boz-buz/)
-* [What is “Getting Bozzed?”](http://bozzies.org/boz-buz-what-is-getting-bozzed/)
-* [Why Bozzies.com?](http://bozzies.org/boz-buz-why-bozzies-com/)
