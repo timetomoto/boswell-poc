@@ -5,7 +5,7 @@ returning developer (or Claude session) can pick up cold without re-reading the
 entire chat history. Nothing sensitive belongs in this file — no tokens, no
 secrets, no private URLs. Kept in the repo, not served by the site.
 
-**Last updated:** with the commit that introduces this document (2026-07-14).
+**Last updated:** 2026-07-14, Music section commit.
 
 ---
 
@@ -52,7 +52,7 @@ Five-item primary nav, each a real section:
 - `/` — Home (hero, welcome intro, featured 3-card promo, 5-section explore
   grid with fleur-de-lis anchor, Bette Midler pull quote on purple, donate CTA)
 - `/sisters/` — The Sisters (bios + timelines) *[built]*
-- `/music/` — Music (Boz Beat lessons, discography, reviews) *[not yet built]*
+- `/music/` — Music (Boz Beat lessons, discography, reviews) *[built]*
 - `/press/` — Press (vintage articles, press room, interviews, video) *[not yet built]*
 - `/legacy/` — Legacy (tribute performers, Bozcasts, ASCAP, Boz of the Month) *[not yet built]*
 - `/about/` — About / donate / contact *[not yet built]*
@@ -255,13 +255,24 @@ All copy CMS-editable via `src/content/pages/home.md`.
 - `/sisters/{connee,martha,vet}/`: compact purple hero, facts strip (born,
   died, hair, eyes, complexion, height, marriage, children), two-column
   bio body with **sticky 300×300 portrait on the left + prose on the right**
-  (portraits sourced from Wikimedia Commons public domain for Connee and
-  Martha; from the Wayback capture for Vet)
+  (Connee 1941 and Martha 1931 from Wikimedia Commons public domain;
+  Vet 1932 cropped from the signed Boswell Sisters 1932 group photo)
 - `/sisters/connee/` additionally embeds her solo-career timeline via
-  the `<Timeline>` component (20 date/event entries extracted from the
-  imported markdown into structured frontmatter)
+  the `<Timeline>` component (20 date/event entries)
 - `/sisters/bio-resources/`: Kyla Titus *The Boswell Legacy* book page
-  with pull quote, description, external CTA to Baby Bee Books
+
+**Music section** —
+- `/music/` landing: full-bleed hero (Boswells + Bing Crosby), imported
+  intro copy on ivory, five lesson cards in a vertical stack, purple
+  section with two teaser cards to Charts and Reviews
+- `/music/lessons/{1..5}/`: compact purple hero, custom audio-player
+  module (native `<audio controls>` + download link), lesson notes as
+  prose, Prev/All/Next cycling through the 5 lessons
+- `/music/charts/`: two chart-position tables (Boswell Sisters 1931–1938
+  and Connee 1932–1954) rendered as editorial ledgers — purple caps
+  header, alternating row tints, brass display serif for peak positions
+- `/music/reviews/`: album review cards, each with a purple accent bar,
+  display serif title, italic-sans description
 
 **Design system, components, and CMS schema** all in place and validated.
 
@@ -269,9 +280,8 @@ All copy CMS-editable via `src/content/pages/home.md`.
 
 ## 11. Not yet built
 
-Section landings and entry templates for **Music**, **Press**, **Legacy**,
-**About**. Content is imported and waiting in `src/content/*` — routes need
-to be added.
+Section landings and entry templates for **Press**, **Legacy**, **About**.
+Content is imported and waiting in `src/content/*` — routes need to be added.
 
 **Also outstanding:**
 - The 12th vintage article (`/boz-buz-vintage-article/`, no suffix) failed
