@@ -4,6 +4,8 @@ name: "Connee Boswell"
 nickname: CBoz
 order: 2
 originalUrl: "http://bozzies.org/boz-bios-cboz/"
+portrait: /uploads/connee-portrait.jpg
+portraitAlt: Portrait of Connee Boswell, 1941.
 pullQuote: "We had loads of fun with our swinging trio. We were billed one time as musicians and in small print it said, \"They also sing\"."
 pullQuoteAttribution: "Connee Boswell"
 facts:

@@ -4,6 +4,8 @@ name: "Martha Boswell"
 nickname: MBoz
 order: 1
 originalUrl: "http://bozzies.org/boz-bios-mboz/"
+portrait: /uploads/martha-portrait.jpg
+portraitAlt: Portrait of Martha Boswell, 1931.
 pullQuote: "If we sang according to orthodox musical traditions, Vet would be the high voice or soprano, I would be the middle or alto, and Connie would be the low or contralto."
 pullQuoteAttribution: "Martha Boswell"
 facts:

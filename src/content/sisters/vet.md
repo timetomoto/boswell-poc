@@ -4,6 +4,8 @@ name: "Vet Boswell"
 nickname: VBoz
 order: 3
 originalUrl: "http://bozzies.org/boz-bios-vboz/"
+portrait: /uploads/vet-portrait.jpg
+portraitAlt: Portrait of Vet Boswell, 1932.
 pullQuote: "Vet apparently is the domesticated one. She packs the trunks with uncanny skill, arranges the flowers with unerring artistic rights and so on..."
 pullQuoteAttribution: "Melody Maker, 1933"
 facts:
