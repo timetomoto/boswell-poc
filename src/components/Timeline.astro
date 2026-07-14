@@ -1,0 +1,152 @@
+---
+// Vertical timeline component. Editable in the CMS via the `entries` list
+// widget on the timelines collection (see api/admin-config.js).
+//
+// Renders as: brass hairline down the left, purple dot marker at each year,
+// year in small caps in the left column, event prose on the right, optional
+// image below the event. Alternates faintly-tinted rows for scan-ability.
+const {
+  entries = [],
+  color = 'purple',
+} = Astro.props as {
+  entries: Array<{
+    year: string;
+    event: string;
+    image?: string;
+    imageAlt?: string;
+  }>;
+  color?: 'purple' | 'brass' | 'yellow' | 'copper';
+};
+
+const accentVar = {
+  purple: 'var(--purple)',
+  brass: 'var(--brass)',
+  yellow: 'var(--yellow)',
+  copper: 'var(--copper)',
+}[color];
+---
+{entries.length === 0 ? (
+  <p class="timeline__empty">No timeline entries yet. Editors can add events via the CMS.</p>
+) : (
+  <ol class="timeline" style={`--tl-accent:${accentVar}`}>
+    {entries.map((e, i) => (
+      <li class:list={['timeline__entry', { 'timeline__entry--alt': i % 2 === 1 }]}>
+        <div class="timeline__marker" aria-hidden="true">
+          <span class="timeline__dot"></span>
+        </div>
+        <div class="timeline__year">{e.year}</div>
+        <div class="timeline__event">
+          <p class="timeline__event-text">{e.event}</p>
+          {e.image && (
+            <img
+              class="timeline__image"
+              src={e.image}
+              alt={e.imageAlt ?? ''}
+              loading="lazy"
+            />
+          )}
+        </div>
+      </li>
+    ))}
+  </ol>
+)}
+
+<style>
+  .timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    max-width: var(--measure-wide);
+    margin-inline: auto;
+  }
+  /* Vertical line running the full height of the timeline, at the marker column */
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: var(--space-3);
+    bottom: var(--space-3);
+    left: 6px;
+    width: 1px;
+    background: var(--tl-accent, var(--brass));
+    opacity: 0.35;
+  }
+
+  .timeline__entry {
+    display: grid;
+    grid-template-columns: 28px 8rem 1fr;
+    gap: var(--space-4);
+    padding-block: var(--space-5);
+    border-bottom: 1px solid var(--paper-hairline);
+    align-items: start;
+  }
+  .timeline__entry:last-child { border-bottom: 0; }
+  .timeline__entry--alt {
+    background: color-mix(in oklab, var(--paper) 96%, var(--tl-accent, var(--brass)) 4%);
+    margin-inline: calc(var(--space-4) * -1);
+    padding-inline: var(--space-4);
+  }
+
+  .timeline__marker {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 6px;
+  }
+  .timeline__dot {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--tl-accent, var(--brass));
+    border: 3px solid var(--paper);
+    box-shadow: 0 0 0 1px var(--tl-accent, var(--brass));
+    z-index: 1;
+  }
+
+  .timeline__year {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: var(--step--1);
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+    color: var(--tl-accent, var(--brass));
+    padding-top: 6px;
+    line-height: 1.35;
+  }
+
+  .timeline__event { min-width: 0; }
+  .timeline__event-text {
+    font-family: var(--font-body);
+    font-size: var(--step-0);
+    line-height: var(--leading-loose);
+    color: var(--text-on-paper);
+    margin: 0;
+    max-width: 64ch;
+  }
+  .timeline__image {
+    margin-top: var(--space-3);
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--paper-hairline);
+  }
+
+  .timeline__empty {
+    font-family: var(--font-ui);
+    font-style: italic;
+    color: var(--text-on-paper-muted);
+    text-align: center;
+    padding-block: var(--space-6);
+  }
+
+  /* Mobile: collapse to a single column with the year above the event */
+  @media (max-width: 640px) {
+    .timeline__entry {
+      grid-template-columns: 28px 1fr;
+      grid-template-rows: auto auto;
+      row-gap: var(--space-2);
+    }
+    .timeline__year { grid-column: 2; padding-top: 4px; }
+    .timeline__event { grid-column: 2; }
+    .timeline__marker { grid-row: 1 / span 2; padding-top: 8px; }
+  }
+</style>

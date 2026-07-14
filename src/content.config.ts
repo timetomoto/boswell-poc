@@ -49,13 +49,23 @@ const sisters = defineCollection({
   schema: z.object({
     name: z.string(),
     nickname: z.string().optional(),
-    born: z.string().optional(),
-    died: z.string().optional(),
     portrait: z.string().optional(),
     portraitAlt: z.string().optional(),
     pullQuote: z.string().optional(),
     pullQuoteAttribution: z.string().optional(),
     order: z.number(),
+    /* Structured biographical facts — replaces the malformed WP table */
+    facts: z.object({
+      born: z.string().optional(),
+      died: z.string().optional(),
+      hairColor: z.string().optional(),
+      eyeColor: z.string().optional(),
+      complexion: z.string().optional(),
+      height: z.string().optional(),
+      marriage: z.string().optional(),
+      children: z.string().optional(),
+    }).optional(),
+    originalUrl: z.string().optional(),
   }),
 });
 

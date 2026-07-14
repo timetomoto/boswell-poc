@@ -114,13 +114,24 @@ collections:
     fields:
       - { name: "name", label: "Name", widget: "string" }
       - { name: "nickname", label: "Nickname (CBoz, MBoz, VBoz)", widget: "string", required: false }
-      - { name: "born", label: "Born", widget: "string", required: false }
-      - { name: "died", label: "Died", widget: "string", required: false }
       - { name: "portrait", label: "Portrait", widget: "image", required: false }
       - { name: "portraitAlt", label: "Portrait — alt text", widget: "string", required: false }
       - { name: "pullQuote", label: "Pull quote", widget: "text", required: false }
       - { name: "pullQuoteAttribution", label: "Pull quote — attribution", widget: "string", required: false }
       - { name: "order", label: "Display order", widget: "number" }
+      - name: "facts"
+        label: "Biographical facts (museum-label style)"
+        widget: "object"
+        required: false
+        fields:
+          - { name: "born", label: "Born", widget: "string", required: false }
+          - { name: "died", label: "Died", widget: "string", required: false }
+          - { name: "hairColor", label: "Hair", widget: "string", required: false }
+          - { name: "eyeColor", label: "Eyes", widget: "string", required: false }
+          - { name: "complexion", label: "Complexion", widget: "string", required: false }
+          - { name: "height", label: "Height", widget: "string", required: false }
+          - { name: "marriage", label: "Marriage", widget: "string", required: false }
+          - { name: "children", label: "Children", widget: "string", required: false }
       - { name: "body", label: "Biography", widget: "markdown" }
 
   - name: "timelines"

@@ -84,7 +84,7 @@ const { Content: PageContent } = await render(page);
   .prose :global(p) { max-width: 62ch; }
   .prose :global(p) + :global(p) { margin-top: var(--space-4); }
   .prose :global(img) { max-width: 240px; height: auto; float: right; margin: 0 0 var(--space-4) var(--space-5); }
-  .prose :global(em), .prose :global(i) { color: var(--purple); font-style: italic; }
+  .prose :global(em), .prose :global(i) { font-family: var(--font-ui); font-style: italic; color: var(--purple); }
   .prose :global(a) { color: var(--purple); border-color: rgba(74, 46, 90, 0.3); }
   .prose :global(a:hover) { color: var(--oxblood); border-color: var(--oxblood); }
 

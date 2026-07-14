@@ -6,21 +6,19 @@ order: 2
 originalUrl: "http://bozzies.org/boz-bios-cboz/"
 pullQuote: "We had loads of fun with our swinging trio. We were billed one time as musicians and in small print it said, \"They also sing\"."
 pullQuoteAttribution: "Connee Boswell"
+facts:
+  born: "Kansas City, MO, December 3, 1907"
+  died: "New York City, October 12, 1976"
+  hairColor: "Black-Brown"
+  eyeColor: "Dark Brown"
+  complexion: "Fair"
+  height: "4′ 11″"
+  marriage: "Harry Leedy 1935"
+  children: "No children but lots of dogs"
 ---
 ## Connie Boswell aka Connee Boswell aka CBOZ
 
 **The Boz whose voice could make us lie on the levy, turn black as coal, and our hearts won’t be heavy ’cause we got CBoz in our soul – Oh Lord!**
-
-|  |  |
-| --- | --- |
-| boswell 015 | **Born:** Kansas City, MO, December 3, 1907 |
-| **Died:** New York City, October 12, 1976 |
-| **Hair Color:** Black-Brown |
-| **Eye Color:** Dark Brown |
-| **Complexion:** Fair |
-| **Height:** 4′ 11″ |
-| **Marriage:** Harry Leedy 1935 |
-| **Children:** No children but lots of dogs |
 
 #### Music
 

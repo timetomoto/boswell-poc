@@ -6,19 +6,16 @@ order: 1
 originalUrl: "http://bozzies.org/boz-bios-mboz/"
 pullQuote: "If we sang according to orthodox musical traditions, Vet would be the high voice or soprano, I would be the middle or alto, and Connie would be the low or contralto."
 pullQuoteAttribution: "Martha Boswell"
+facts:
+  born: "Kansas City, MO, July 9, 1905"
+  died: "Peekskill, NY, July 2, 1958"
+  hairColor: "Black-Brown"
+  eyeColor: "Dark Brown"
+  complexion: "Fair"
+  height: "5´-2”"
+  children: "Jules Boswell Lloyd (born Jules L. Picard.) 1926 – 2004"
 ---
 ## Martha Boswell aka MBoz
-
-|  |  |
-| --- | --- |
-| martha | **Born:** Kansas City, MO, July 9, 1905 |
-| **Died:** Peekskill, NY, July 2, 1958 |
-| **Hair Color:** Black-Brown |
-| **Eye Color:** Dark Brown |
-| **Complexion:** Fair |
-| **Height:** 5´-2” |
-| **Marriage(s):** Jules Picard, 1925, George Lloyd 1936 |
-| **Children:** Jules Boswell Lloyd (born Jules L. Picard.) 1926 – 2004 |
 
 **The Boz we´d most like to party with!**
 

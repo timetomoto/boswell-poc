@@ -6,19 +6,16 @@ order: 3
 originalUrl: "http://bozzies.org/boz-bios-vboz/"
 pullQuote: "Vet apparently is the domesticated one. She packs the trunks with uncanny skill, arranges the flowers with unerring artistic rights and so on..."
 pullQuoteAttribution: "Melody Maker, 1933"
+facts:
+  born: "Birmingham, AL, May 20, 1911"
+  died: "Peekskill, NY November 12, 1988"
+  hairColor: "Black-Brown"
+  eyeColor: "Dark Brown"
+  complexion: "Fair"
+  height: "5´-4”"
+  children: "Vet Boswell Jones, August 22, 1936 – October 26, 2010"
 ---
 ## Helvetia (Vet) Boswell aka VBoz
-
-|  |  |
-| --- | --- |
-| vet | **Born:** Birmingham, AL, May 20, 1911 |
-| **Died:** Peekskill, NY November 12, 1988 |
-| **Hair Color:** Black-Brown |
-| **Eye Color:** Dark Brown |
-| **Complexion:** Fair |
-| **Height:** 5´-4” |
-| **Marriage(s):** John Paul Jones |
-| **Children:** Vet Boswell Jones, August 22, 1936 – October 26, 2010 |
 
 **The Boz who we’d most like to be caught with on a slow boat to China**
 
