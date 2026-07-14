@@ -22,6 +22,22 @@ const pages = defineCollection({
     donateEyebrow: z.string().optional(),
     donateTitle: z.string().optional(),
     donateBody: z.string().optional(),
+    // Hero tagline (short playful line below the title)
+    tagline: z.string().optional(),
+    // Featured promo section — up to 3 cards
+    promoEyebrow: z.string().optional(),
+    promoTitle: z.string().optional(),
+    promoCards: z.array(z.object({
+      kicker: z.string().optional(),
+      title: z.string(),
+      subtitle: z.string().optional(),
+      description: z.string().optional(),
+      image: z.string().optional(),
+      imageAlt: z.string().optional(),
+      link: z.string(),
+      external: z.boolean().optional(),
+      linkLabel: z.string().optional(),
+    })).optional(),
     order: z.number().optional(),
     originalUrl: z.string().optional(),
   }),

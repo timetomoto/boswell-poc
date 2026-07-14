@@ -7,21 +7,24 @@
   --paper: #F4F0E8;            /* warm ivory — light sections */
   --paper-shadow: #E8E1D3;     /* one tick darker than paper — subtle depth */
 
-  /* Metallics (accents) */
-  --brass: #B08D57;            /* primary accent — dividers, small type, hovers */
-  --champagne: #C8A96A;        /* secondary highlight */
+  /* Metallics — darkened to meet WCAG AA on ivory (4.5:1 text / 3:1 large & UI) */
+  --brass: #7A5F32;            /* text-safe brass on ivory (~4.96:1). Was #B08D57. */
+  --brass-bright: #B08D57;     /* decorative-only bright brass (for dark grounds) */
+  --champagne: #C8A96A;        /* secondary highlight, dark-ground use only */
 
-  /* Palette color reserves — used sparingly, per-section */
-  --oxblood: #5A2E2E;          /* pull quotes on ivory */
-  --emerald: #23453A;          /* archival green — used lightly */
-  --navy: #22344B;             /* deep blue — used lightly */
-  --copper: #9C6844;           /* Press section accent */
+  /* Palette color reserves */
+  --oxblood: #5A2E2E;          /* passes ~8.9:1 on ivory */
+  --emerald: #23453A;          /* used lightly on ivory */
+  --navy: #22344B;             /* used lightly on ivory */
+  --copper: #7C4E30;           /* text-safe copper on ivory (~5:1). Bright variant below. */
+  --copper-bright: #9C6844;    /* decorative bright copper */
 
   /* New Orleans accents — Mardi Gras purple + bourbon gold */
-  --purple: #4A2E5A;           /* deep aubergine — Music section */
-  --purple-soft: #6C4E7F;      /* lifted purple — hover / secondary */
-  --yellow: #C99A2A;           /* burnished bourbon gold — Legacy section */
-  --yellow-soft: #E1C263;      /* lifted yellow — small accents on ink */
+  --purple: #4A2E5A;           /* passes ~10.4:1 on ivory */
+  --purple-soft: #6C4E7F;      /* hover / secondary */
+  --yellow: #8F6C1D;           /* text-safe yellow on ivory (~5.0:1). Was #C99A2A. */
+  --yellow-bright: #C99A2A;    /* decorative bright yellow */
+  --yellow-soft: #E1C263;      /* used only on purple / ink grounds (passes there) */
 
   /* Ink derivatives */
   --ink-soft: #2A2724;         /* one-step-up-from-ink, for cards on ink */
@@ -32,7 +35,7 @@
   --text-on-ink: #EDE6D6;
   --text-on-ink-muted: rgba(237, 230, 214, 0.62);
   --text-on-paper: #1E1B18;
-  --text-on-paper-muted: rgba(30, 27, 24, 0.62);
+  --text-on-paper-muted: rgba(30, 27, 24, 0.78);   /* bumped from 0.62 for AA (~6.7:1) */
 
   /* Type stacks */
   --font-display: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;

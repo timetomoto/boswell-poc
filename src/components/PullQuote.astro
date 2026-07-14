@@ -5,7 +5,7 @@ const { attribution } = Astro.props as { attribution?: string };
   <blockquote class="pull-quote__quote">
     <slot />
   </blockquote>
-  {attribution && <figcaption class="pull-quote__attr">{attribution}</figcaption>}
+  {attribution && <figcaption class="pull-quote__attr">— {attribution}</figcaption>}
 </figure>
 
 <style>

@@ -31,7 +31,7 @@ img, picture, svg, video { display: block; max-width: 100%; }
 input, button, textarea, select { font: inherit; color: inherit; }
 
 /* --- Base typography --- */
-html { font-size: 100%; }
+html { font-size: 112.5%; }   /* 18px base — bumps body and smaller sizes ~12.5% */
 body {
   font-family: var(--font-body);
   font-size: var(--step-0);
@@ -94,6 +94,17 @@ a:focus-visible { outline: 2px solid var(--brass); outline-offset: 4px; border-r
 }
 .ground-purple .pull-quote__attr { color: var(--yellow-soft) !important; }
 
+/* Bourbon gold ground — Featured section */
+.ground-gold {
+  background: var(--yellow-bright);      /* #C99A2A */
+  color: var(--ink);
+  position: relative;
+  isolation: isolate;
+}
+.ground-gold a { color: var(--purple); border-color: rgba(74, 46, 90, 0.4); }
+.ground-gold a:hover { color: var(--oxblood); border-color: var(--oxblood); }
+.ground-gold .eyebrow { color: var(--purple); }
+
 .ground-paper {
   background: var(--paper);
   color: var(--text-on-paper);
@@ -124,8 +135,10 @@ a:focus-visible { outline: 2px solid var(--brass); outline-offset: 4px; border-r
 .container-narrow { max-width: var(--measure); margin-inline: auto; padding-inline: clamp(var(--space-5), 4vw, var(--space-8)); }
 .container-wide { max-width: var(--measure-wide); margin-inline: auto; padding-inline: clamp(var(--space-5), 4vw, var(--space-8)); }
 
-.section { padding-block: clamp(var(--space-8), 8vw, var(--space-11)); }
-.section-tight { padding-block: clamp(var(--space-7), 5vw, var(--space-9)); }
+/* Section rhythm — tightened significantly. Section-to-section vertical gap on a 1440px
+   viewport lands at roughly 60-70px (was ~100), or 90-110px with a divider between (was 150+). */
+.section { padding-block: clamp(var(--space-4), 2vw, var(--space-6)); }
+.section-tight { padding-block: clamp(var(--space-3), 1.4vw, var(--space-5)); }
 
 /* --- Brass hairline (deco-inspired divider) --- */
 .hairline {

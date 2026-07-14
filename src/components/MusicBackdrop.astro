@@ -9,7 +9,9 @@ const {
   color = 'currentColor',
 } = Astro.props as {
   variant?: 'sunburst' | 'chevrons' | 'arcs' | 'rays' | 'diamond-grid'
-          | 'staves' | 'notes' | 'fleur' | 'ironwork';
+          | 'staves' | 'notes' | 'fleur' | 'ironwork'
+          | 'piano-keys' | 'vinyl' | 'sheet-music'
+          | 'saxophone' | 'jazz-club';
   opacity?: number;
   color?: string;
 };
@@ -88,6 +90,247 @@ const {
         </pattern>
       </defs>
       <rect width="100%" height="100%" fill="url(#dg)"/>
+    </svg>
+  )}
+
+  {/* --- Piano keyboard pattern — a jazz signature, evokes Martha at the piano --- */}
+  {variant === 'piano-keys' && (
+    <svg viewBox="0 0 480 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+      <defs>
+        <pattern id="pianoKeys" width="252" height="120" patternUnits="userSpaceOnUse">
+          {/* 12 white keys: each 21 wide × 120 tall */}
+          <g fill="none" stroke="var(--mb-color)" stroke-width="1">
+            <rect x="0" y="0" width="252" height="120"/>
+            <line x1="21"  y1="0" x2="21"  y2="120"/>
+            <line x1="42"  y1="0" x2="42"  y2="120"/>
+            <line x1="63"  y1="0" x2="63"  y2="120"/>
+            <line x1="84"  y1="0" x2="84"  y2="120"/>
+            <line x1="105" y1="0" x2="105" y2="120"/>
+            <line x1="126" y1="0" x2="126" y2="120"/>
+            <line x1="147" y1="0" x2="147" y2="120"/>
+            <line x1="168" y1="0" x2="168" y2="120"/>
+            <line x1="189" y1="0" x2="189" y2="120"/>
+            <line x1="210" y1="0" x2="210" y2="120"/>
+            <line x1="231" y1="0" x2="231" y2="120"/>
+          </g>
+          {/* Black keys: filled bars sitting on the top ~55% of the keyboard */}
+          <g fill="var(--mb-color)" fill-opacity="0.9">
+            {/* Pattern of black keys: 2 then 3 then 2 then 3... following real piano layout */}
+            <rect x="14" y="0"  width="14" height="70"/>
+            <rect x="35" y="0"  width="14" height="70"/>
+            <rect x="77" y="0"  width="14" height="70"/>
+            <rect x="98" y="0"  width="14" height="70"/>
+            <rect x="119" y="0" width="14" height="70"/>
+            <rect x="161" y="0" width="14" height="70"/>
+            <rect x="182" y="0" width="14" height="70"/>
+            <rect x="224" y="0" width="14" height="70"/>
+            <rect x="245" y="0" width="14" height="70"/>
+          </g>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#pianoKeys)"/>
+    </svg>
+  )}
+
+  {/* --- Vinyl grooves — concentric circles like a spinning record --- */}
+  {variant === 'vinyl' && (
+    <svg viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+      <defs>
+        <pattern id="vinyl" width="440" height="440" patternUnits="userSpaceOnUse">
+          <g fill="none" stroke="var(--mb-color)" stroke-width="0.9" transform="translate(220 220)">
+            {/* Outer disc grooves — many concentric circles */}
+            <circle r="210"/>
+            <circle r="196" stroke-width="0.6"/>
+            <circle r="182" stroke-width="0.6"/>
+            <circle r="168" stroke-width="0.6"/>
+            <circle r="154" stroke-width="0.6"/>
+            <circle r="140" stroke-width="0.6"/>
+            <circle r="126" stroke-width="0.6"/>
+            <circle r="112" stroke-width="0.6"/>
+            <circle r="98" stroke-width="0.6"/>
+            <circle r="84" stroke-width="0.6"/>
+            <circle r="70" stroke-width="0.7"/>
+            {/* Label ring */}
+            <circle r="56" stroke-width="1.4"/>
+            <circle r="40" stroke-width="0.7"/>
+            {/* Spindle hole */}
+            <circle r="4" fill="var(--mb-color)" stroke="none"/>
+          </g>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#vinyl)"/>
+    </svg>
+  )}
+
+  {/* --- Saxophone silhouettes — jazz's signature instrument --- */}
+  {variant === 'saxophone' && (
+    <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+      <defs>
+        <symbol id="sax" viewBox="0 0 120 200">
+          <g fill="var(--mb-color)">
+            {/* Mouthpiece */}
+            <path d="M 42 6 L 54 6 L 54 18 L 46 18 Z"/>
+            {/* Neck (curved) */}
+            <path d="M 48 18 C 50 30, 58 34, 62 40 L 68 40 C 65 32, 60 26, 58 18 Z"/>
+            {/* Upper body */}
+            <path d="M 62 40 L 74 40 L 74 108 C 74 118, 72 128, 66 134 L 60 134 C 66 128, 68 118, 68 108 L 68 40 Z"/>
+            {/* Bell curve — lower body flaring to the horn */}
+            <path d="M 60 134 C 50 148, 42 158, 40 172 L 88 172 C 92 158, 92 148, 80 134 Z"/>
+            {/* Bell opening */}
+            <path d="M 26 172 L 102 172 C 104 178, 100 186, 94 190 L 34 190 C 28 186, 24 178, 26 172 Z"/>
+            {/* Keys along body — small circles */}
+            <circle cx="80" cy="60" r="2.4"/>
+            <circle cx="80" cy="72" r="2.4"/>
+            <circle cx="80" cy="84" r="2.4"/>
+            <circle cx="80" cy="96" r="2.4"/>
+            <circle cx="80" cy="108" r="2.4"/>
+            <circle cx="82" cy="120" r="2.4"/>
+            {/* Octave key */}
+            <path d="M 66 42 L 72 42 L 72 46 L 66 46 Z"/>
+          </g>
+        </symbol>
+      </defs>
+      <g>
+        <use href="#sax" x="60"  y="90"   width="80"  height="130"/>
+        <use href="#sax" x="240" y="30"   width="72"  height="120" transform="rotate(-15 276 90)"/>
+        <use href="#sax" x="410" y="120"  width="88"  height="140" transform="rotate(12 454 190)"/>
+        <use href="#sax" x="130" y="240"  width="70"  height="118" transform="rotate(-8 165 300)"/>
+        <use href="#sax" x="320" y="270"  width="76"  height="126" transform="rotate(18 358 335)"/>
+      </g>
+    </svg>
+  )}
+
+  {/* --- Jazz Club — saxophone + notes + staff fragment layered --- */}
+  {variant === 'jazz-club' && (
+    <svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+      <g fill="var(--mb-color)" stroke="var(--mb-color)" stroke-width="0.8">
+        {/* Staff line fragment sweeping across */}
+        <g fill="none" opacity="0.5">
+          <line x1="0" y1="80" x2="800" y2="120"/>
+          <line x1="0" y1="94" x2="800" y2="134"/>
+          <line x1="0" y1="108" x2="800" y2="148"/>
+          <line x1="0" y1="122" x2="800" y2="162"/>
+          <line x1="0" y1="136" x2="800" y2="176"/>
+        </g>
+        {/* Notes flying across */}
+        <g>
+          <ellipse cx="120" cy="130" rx="5" ry="3.6" transform="rotate(-18 120 130)"/>
+          <line x1="124" y1="128" x2="124" y2="98" stroke-width="1" fill="none"/>
+          <ellipse cx="220" cy="115" rx="5" ry="3.6" transform="rotate(-18 220 115)"/>
+          <line x1="224" y1="113" x2="224" y2="83" stroke-width="1" fill="none"/>
+          <line x1="123" y1="98" x2="225" y2="83" stroke-width="2.2" fill="none"/>
+          <ellipse cx="360" cy="152" rx="5" ry="3.6" transform="rotate(-18 360 152)"/>
+          <line x1="364" y1="150" x2="364" y2="120" stroke-width="1" fill="none"/>
+          <ellipse cx="480" cy="155" rx="5" ry="3.6" transform="rotate(-18 480 155)" fill="none" stroke-width="1.2"/>
+          <line x1="484" y1="153" x2="484" y2="123" stroke-width="1" fill="none"/>
+          <ellipse cx="620" cy="170" rx="5" ry="3.6" transform="rotate(-18 620 170)"/>
+          <line x1="624" y1="168" x2="624" y2="138" stroke-width="1" fill="none"/>
+        </g>
+        {/* Large saxophone silhouette on the left */}
+        <g transform="translate(80 240) scale(0.7)" opacity="0.9">
+          <path d="M 42 6 L 54 6 L 54 18 L 46 18 Z"/>
+          <path d="M 48 18 C 50 30, 58 34, 62 40 L 68 40 C 65 32, 60 26, 58 18 Z"/>
+          <path d="M 62 40 L 74 40 L 74 108 C 74 118, 72 128, 66 134 L 60 134 C 66 128, 68 118, 68 108 L 68 40 Z"/>
+          <path d="M 60 134 C 50 148, 42 158, 40 172 L 88 172 C 92 158, 92 148, 80 134 Z"/>
+          <path d="M 26 172 L 102 172 C 104 178, 100 186, 94 190 L 34 190 C 28 186, 24 178, 26 172 Z"/>
+        </g>
+        {/* Second saxophone on the right */}
+        <g transform="translate(600 200) rotate(15) scale(0.55)" opacity="0.85">
+          <path d="M 42 6 L 54 6 L 54 18 L 46 18 Z"/>
+          <path d="M 48 18 C 50 30, 58 34, 62 40 L 68 40 C 65 32, 60 26, 58 18 Z"/>
+          <path d="M 62 40 L 74 40 L 74 108 C 74 118, 72 128, 66 134 L 60 134 C 66 128, 68 118, 68 108 L 68 40 Z"/>
+          <path d="M 60 134 C 50 148, 42 158, 40 172 L 88 172 C 92 158, 92 148, 80 134 Z"/>
+          <path d="M 26 172 L 102 172 C 104 178, 100 186, 94 190 L 34 190 C 28 186, 24 178, 26 172 Z"/>
+        </g>
+        {/* Scattered smaller notes */}
+        <ellipse cx="440" cy="380" rx="4" ry="3" transform="rotate(-18 440 380)"/>
+        <line x1="443" y1="379" x2="443" y2="355" stroke-width="0.8" fill="none"/>
+        <ellipse cx="720" cy="420" rx="4" ry="3" transform="rotate(-18 720 420)" fill="none" stroke-width="1"/>
+        <line x1="723" y1="419" x2="723" y2="395" stroke-width="0.8" fill="none"/>
+      </g>
+    </svg>
+  )}
+
+  {/* --- Denser sheet-music: 4 staves with a treble clef and beamed runs --- */}
+  {variant === 'sheet-music' && (
+    <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+      <defs>
+        <pattern id="sheet" width="600" height="200" patternUnits="userSpaceOnUse">
+          <g fill="none" stroke="var(--mb-color)" stroke-width="0.6">
+            {/* Top staff */}
+            <g transform="translate(0 30)">
+              <line x1="10" y1="0" x2="590" y2="0"/>
+              <line x1="10" y1="6" x2="590" y2="6"/>
+              <line x1="10" y1="12" x2="590" y2="12"/>
+              <line x1="10" y1="18" x2="590" y2="18"/>
+              <line x1="10" y1="24" x2="590" y2="24"/>
+              <line x1="10" y1="-2" x2="10" y2="26"/>
+              <line x1="590" y1="-2" x2="590" y2="26" stroke-width="0.9"/>
+              {/* Treble clef abstract */}
+              <g transform="translate(28 12)" stroke-width="0.9">
+                <path d="M4 -14 C -4 -8, -6 4, 6 8 C 14 10, 14 -2, 6 -6 C -2 -10, -4 12, 4 16 C 12 20, 14 12, 12 8"/>
+              </g>
+              {/* Notes: alternating stems, some beamed */}
+              <g fill="var(--mb-color)" stroke="var(--mb-color)" stroke-width="0.5">
+                <ellipse cx="72" cy="18" rx="3.6" ry="2.4" transform="rotate(-18 72 18)"/>
+                <line x1="75" y1="17" x2="75" y2="-4" stroke-width="0.8" fill="none"/>
+                <ellipse cx="94" cy="12" rx="3.6" ry="2.4" transform="rotate(-18 94 12)"/>
+                <line x1="97" y1="11" x2="97" y2="-8" stroke-width="0.8" fill="none"/>
+                <line x1="74" y1="-4" x2="98" y2="-8" stroke-width="1.6" fill="none"/>
+                <ellipse cx="130" cy="18" rx="3.6" ry="2.4" transform="rotate(-18 130 18)"/>
+                <line x1="133" y1="17" x2="133" y2="-4" stroke-width="0.8" fill="none"/>
+                <ellipse cx="160" cy="6" rx="3.6" ry="2.4" transform="rotate(-18 160 6)" fill="none" stroke-width="0.9"/>
+                <line x1="163" y1="4" x2="163" y2="-16" stroke-width="0.8" fill="none"/>
+                <ellipse cx="200" cy="12" rx="3.6" ry="2.4" transform="rotate(-18 200 12)"/>
+                <line x1="203" y1="11" x2="203" y2="-8" stroke-width="0.8" fill="none"/>
+                <ellipse cx="230" cy="18" rx="3.6" ry="2.4" transform="rotate(-18 230 18)"/>
+                <line x1="233" y1="17" x2="233" y2="-4" stroke-width="0.8" fill="none"/>
+                <ellipse cx="266" cy="12" rx="3.6" ry="2.4" transform="rotate(-18 266 12)"/>
+                <line x1="269" y1="11" x2="269" y2="-8" stroke-width="0.8" fill="none"/>
+                <ellipse cx="286" cy="6" rx="3.6" ry="2.4" transform="rotate(-18 286 6)"/>
+                <line x1="289" y1="5" x2="289" y2="-14" stroke-width="0.8" fill="none"/>
+                <line x1="268" y1="-8" x2="290" y2="-14" stroke-width="1.6" fill="none"/>
+                <line x1="320" y1="0" x2="320" y2="24" stroke-width="0.7" fill="none"/>
+                <ellipse cx="358" cy="12" rx="3.6" ry="2.4" transform="rotate(-18 358 12)"/>
+                <line x1="361" y1="11" x2="361" y2="-8" stroke-width="0.8" fill="none"/>
+                <ellipse cx="400" cy="18" rx="3.6" ry="2.4" transform="rotate(-18 400 18)"/>
+                <line x1="403" y1="17" x2="403" y2="-4" stroke-width="0.8" fill="none"/>
+                <ellipse cx="440" cy="6" rx="3.6" ry="2.4" transform="rotate(-18 440 6)" fill="none" stroke-width="0.9"/>
+                <line x1="443" y1="4" x2="443" y2="-16" stroke-width="0.8" fill="none"/>
+              </g>
+            </g>
+            {/* Second staff */}
+            <g transform="translate(0 130)">
+              <line x1="10" y1="0" x2="590" y2="0"/>
+              <line x1="10" y1="6" x2="590" y2="6"/>
+              <line x1="10" y1="12" x2="590" y2="12"/>
+              <line x1="10" y1="18" x2="590" y2="18"/>
+              <line x1="10" y1="24" x2="590" y2="24"/>
+              <line x1="10" y1="-2" x2="10" y2="26"/>
+              <line x1="590" y1="-2" x2="590" y2="26" stroke-width="0.9"/>
+              <g fill="var(--mb-color)" stroke="var(--mb-color)" stroke-width="0.5">
+                <ellipse cx="60" cy="18" rx="3.6" ry="2.4" transform="rotate(-18 60 18)"/>
+                <line x1="63" y1="17" x2="63" y2="-4" stroke-width="0.8" fill="none"/>
+                <ellipse cx="120" cy="12" rx="3.6" ry="2.4" transform="rotate(-18 120 12)"/>
+                <line x1="123" y1="11" x2="123" y2="-8" stroke-width="0.8" fill="none"/>
+                <ellipse cx="180" cy="18" rx="3.6" ry="2.4" transform="rotate(-18 180 18)"/>
+                <line x1="183" y1="17" x2="183" y2="-4" stroke-width="0.8" fill="none"/>
+                <ellipse cx="240" cy="6" rx="3.6" ry="2.4" transform="rotate(-18 240 6)" fill="none" stroke-width="0.9"/>
+                <line x1="243" y1="4" x2="243" y2="-16" stroke-width="0.8" fill="none"/>
+                <ellipse cx="300" cy="12" rx="3.6" ry="2.4" transform="rotate(-18 300 12)"/>
+                <line x1="303" y1="11" x2="303" y2="-8" stroke-width="0.8" fill="none"/>
+                <ellipse cx="360" cy="18" rx="3.6" ry="2.4" transform="rotate(-18 360 18)"/>
+                <line x1="363" y1="17" x2="363" y2="-4" stroke-width="0.8" fill="none"/>
+                <ellipse cx="420" cy="6" rx="3.6" ry="2.4" transform="rotate(-18 420 6)"/>
+                <line x1="423" y1="5" x2="423" y2="-14" stroke-width="0.8" fill="none"/>
+                <ellipse cx="480" cy="12" rx="3.6" ry="2.4" transform="rotate(-18 480 12)"/>
+                <line x1="483" y1="11" x2="483" y2="-8" stroke-width="0.8" fill="none"/>
+              </g>
+            </g>
+          </g>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#sheet)"/>
     </svg>
   )}
 
