@@ -1,0 +1,108 @@
+---
+// Nav — sticky, minimal, thin-line. Five sections + wordmark.
+const { path = '/' } = Astro.props;
+
+const items = [
+  { label: 'The Sisters', href: '/sisters/' },
+  { label: 'Music',       href: '/music/' },
+  { label: 'Press',       href: '/press/' },
+  { label: 'Legacy',      href: '/legacy/' },
+  { label: 'About',       href: '/about/' },
+];
+---
+<header class="site-nav">
+  <div class="site-nav__inner container">
+    <a class="site-nav__mark" href="/" aria-label="The Boswell Sisters, home">
+      <span class="site-nav__mark-line-1">The Boswell Sisters</span>
+      <span class="site-nav__mark-line-2">1925 to 1936</span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="site-nav__list" role="list">
+        {items.map(item => (
+          <li>
+            <a
+              href={item.href}
+              class:list={[ 'site-nav__link', { 'is-active': path.startsWith(item.href) && item.href !== '/' } ]}
+            >{item.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: color-mix(in oklab, var(--paper) 92%, transparent);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--paper-hairline);
+  }
+  .site-nav__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+    padding-block: var(--space-4);
+  }
+  .site-nav__mark {
+    display: inline-flex;
+    flex-direction: column;
+    text-decoration: none;
+    border: 0;
+    line-height: 1;
+  }
+  .site-nav__mark-line-1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--step-2);
+    letter-spacing: var(--track-tight);
+    color: var(--ink);
+  }
+  .site-nav__mark-line-2 {
+    font-family: var(--font-ui);
+    font-weight: 500;
+    font-size: var(--step--2);
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-top: 0.15em;
+  }
+  .site-nav__list {
+    display: flex;
+    gap: clamp(var(--space-4), 2.5vw, var(--space-7));
+  }
+  .site-nav__link {
+    font-family: var(--font-ui);
+    font-weight: 500;
+    font-size: var(--step--1);
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+    color: var(--text-on-paper);
+    border: 0;
+    padding-block: var(--space-2);
+    position: relative;
+    transition: color var(--dur) var(--ease-out-quart);
+  }
+  .site-nav__link::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: 2px;
+    height: 1px;
+    background: var(--brass);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--dur) var(--ease-out-quart);
+  }
+  .site-nav__link:hover, .site-nav__link:focus-visible { color: var(--brass); }
+  .site-nav__link:hover::after, .site-nav__link.is-active::after { transform: scaleX(1); }
+
+  @media (max-width: 720px) {
+    .site-nav__inner { flex-direction: column; gap: var(--space-3); align-items: flex-start; }
+    .site-nav__list { flex-wrap: wrap; gap: var(--space-4) var(--space-5); }
+    .site-nav__link { font-size: var(--step--2); }
+  }
+</style>

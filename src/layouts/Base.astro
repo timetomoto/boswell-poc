@@ -1,36 +1,32 @@
 ---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
 interface Props {
   title: string;
-  heroImage?: string;
+  description?: string;
+  bodyClass?: string;
 }
-const { title, heroImage } = Astro.props;
+const { title, description, bodyClass } = Astro.props;
+const pathname = Astro.url?.pathname ?? '/';
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title} — Boswell POC</title>
-    <style>
-      body { font-family: system-ui, sans-serif; max-width: 42rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; color: #222; }
-      nav a { margin-right: 1rem; }
-      img.hero { width: 100%; max-height: 240px; object-fit: cover; border: 1px solid #ccc; margin: 1rem 0; }
-      footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #ddd; font-size: 0.85rem; color: #666; }
-      code { background: #f2f2f2; padding: 0.1rem 0.3rem; border-radius: 3px; }
-    </style>
+    <title>{title} — The Boswell Sisters</title>
+    {description && <meta name="description" content={description} />}
+    <meta name="theme-color" content="#181615" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
-  <body>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/articles/hello-boz">Article</a>
-      <a href="/admin/index.html">Admin</a>
-    </nav>
-    <h1>{title}</h1>
-    {heroImage && <img class="hero" src={heroImage} alt="" />}
-    <slot />
-    <footer>
-      POC repo — throwaway. Content edited via <code>/admin/</code> (Tina).
-    </footer>
+  <body class={bodyClass}>
+    <a class="visually-hidden" href="#main">Skip to content</a>
+    <Nav path={pathname} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>

@@ -1,0 +1,210 @@
+---
+// Backdrop — subtle background pattern behind content sections.
+// Two families:
+//   Art Deco (content backgrounds): sunburst, chevrons, arcs, rays, diamond-grid
+//   New Orleans (accents):          staves, notes, fleur, ironwork
+const {
+  variant = 'sunburst',
+  opacity = 0.055,
+  color = 'currentColor',
+} = Astro.props as {
+  variant?: 'sunburst' | 'chevrons' | 'arcs' | 'rays' | 'diamond-grid'
+          | 'staves' | 'notes' | 'fleur' | 'ironwork';
+  opacity?: number;
+  color?: string;
+};
+---
+<div class="music-backdrop" style={`--mb-opacity:${opacity}; --mb-color:${color}`} aria-hidden="true">
+  {/* --- ART DECO backgrounds --- */}
+  {variant === 'sunburst' && (
+    <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+      <defs>
+        <radialGradient id="sunburst-fade" cx="50%" cy="100%" r="90%">
+          <stop offset="0%" stop-color="var(--mb-color)" stop-opacity="0.9"/>
+          <stop offset="100%" stop-color="var(--mb-color)" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <g fill="none" stroke="var(--mb-color)" stroke-width="0.6" transform="translate(400 600)">
+        {Array.from({ length: 36 }).map((_, i) => {
+          const a = ((i - 17.5) / 36) * Math.PI;
+          return <line x1="0" y1="0" x2={Math.cos(a) * 700} y2={-Math.abs(Math.sin(a)) * 700}/>;
+        })}
+        <circle cx="0" cy="0" r="40" opacity="0.55"/>
+        <circle cx="0" cy="0" r="80" opacity="0.35"/>
+        <circle cx="0" cy="0" r="120" opacity="0.2"/>
+      </g>
+    </svg>
+  )}
+
+  {variant === 'chevrons' && (
+    <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+      <defs>
+        <pattern id="chev" width="80" height="40" patternUnits="userSpaceOnUse">
+          <g fill="none" stroke="var(--mb-color)" stroke-width="0.7">
+            <path d="M0 20 L20 4 L40 20 L60 4 L80 20"/>
+            <path d="M0 36 L20 20 L40 36 L60 20 L80 36" opacity="0.6"/>
+          </g>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#chev)"/>
+    </svg>
+  )}
+
+  {variant === 'arcs' && (
+    <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+      <defs>
+        <pattern id="arcs" width="120" height="120" patternUnits="userSpaceOnUse">
+          <g fill="none" stroke="var(--mb-color)" stroke-width="0.6">
+            <path d="M0 60 A 60 60 0 0 1 120 60"/>
+            <path d="M0 60 A 44 44 0 0 1 120 60" opacity="0.7"/>
+            <path d="M0 60 A 28 28 0 0 1 120 60" opacity="0.5"/>
+            <path d="M0 60 A 12 12 0 0 1 120 60" opacity="0.35"/>
+          </g>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#arcs)"/>
+    </svg>
+  )}
+
+  {variant === 'rays' && (
+    <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+      <g fill="none" stroke="var(--mb-color)" stroke-width="0.55">
+        {Array.from({ length: 22 }).map((_, i) => (
+          <line x1={i * 30} y1="0" x2={i * 30} y2="400"/>
+        ))}
+      </g>
+    </svg>
+  )}
+
+  {variant === 'diamond-grid' && (
+    <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+      <defs>
+        <pattern id="dg" width="60" height="60" patternUnits="userSpaceOnUse">
+          <g fill="none" stroke="var(--mb-color)" stroke-width="0.6">
+            <path d="M30 0 L60 30 L30 60 L0 30 Z"/>
+            <path d="M30 20 L40 30 L30 40 L20 30 Z" opacity="0.55"/>
+            <circle cx="30" cy="30" r="1.4" fill="var(--mb-color)" stroke="none"/>
+          </g>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#dg)"/>
+    </svg>
+  )}
+
+  {/* --- NEW ORLEANS / JAZZ backdrops (kept from earlier) --- */}
+  {variant === 'staves' && (
+    <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+      <defs>
+        <pattern id="staves" width="400" height="120" patternUnits="userSpaceOnUse">
+          <g fill="none" stroke="var(--mb-color)" stroke-width="0.5">
+            <line x1="0" y1="10" x2="400" y2="10"/>
+            <line x1="0" y1="24" x2="400" y2="24"/>
+            <line x1="0" y1="38" x2="400" y2="38"/>
+            <line x1="0" y1="52" x2="400" y2="52"/>
+            <line x1="0" y1="66" x2="400" y2="66"/>
+          </g>
+          <g fill="var(--mb-color)" stroke="var(--mb-color)" stroke-width="0.4">
+            <ellipse cx="60"  cy="45" rx="5" ry="3.6" transform="rotate(-18 60 45)"/>
+            <line x1="64" y1="43" x2="64" y2="10" fill="none"/>
+            <ellipse cx="140" cy="31" rx="5" ry="3.6" transform="rotate(-18 140 31)"/>
+            <line x1="144" y1="29" x2="144" y2="0" fill="none"/>
+            <ellipse cx="220" cy="52" rx="5" ry="3.6" transform="rotate(-18 220 52)"/>
+            <line x1="224" y1="50" x2="224" y2="18" fill="none"/>
+            <ellipse cx="290" cy="38" rx="5" ry="3.6" transform="rotate(-18 290 38)"/>
+            <line x1="294" y1="36" x2="294" y2="4" fill="none"/>
+            <ellipse cx="350" cy="59" rx="5" ry="3.6" transform="rotate(-18 350 59)"/>
+            <line x1="354" y1="57" x2="354" y2="24" fill="none"/>
+          </g>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#staves)"/>
+    </svg>
+  )}
+
+  {variant === 'notes' && (
+    <svg viewBox="0 0 240 240" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+      <defs>
+        <pattern id="notes" width="240" height="240" patternUnits="userSpaceOnUse">
+          <g fill="var(--mb-color)" stroke="var(--mb-color)" stroke-width="0.5">
+            <!-- Eighth note (single flag) -->
+            <g transform="translate(40 60)">
+              <ellipse cx="0" cy="26" rx="6" ry="4.4" transform="rotate(-20 0 26)"/>
+              <line x1="5" y1="24" x2="5" y2="-8" stroke-width="1" fill="none"/>
+              <path d="M5 -8 C 14 -4, 16 2, 13 12" stroke-width="1" fill="none"/>
+            </g>
+            <!-- Beamed eighths -->
+            <g transform="translate(140 40)">
+              <ellipse cx="0" cy="30" rx="6" ry="4.4" transform="rotate(-20 0 30)"/>
+              <ellipse cx="26" cy="26" rx="6" ry="4.4" transform="rotate(-20 26 26)"/>
+              <line x1="5" y1="28" x2="5" y2="-4" stroke-width="1"/>
+              <line x1="31" y1="24" x2="31" y2="-8" stroke-width="1"/>
+              <line x1="4" y1="-4" x2="32" y2="-8" stroke-width="2.2"/>
+            </g>
+            <!-- Quarter note -->
+            <g transform="translate(60 150)">
+              <ellipse cx="0" cy="24" rx="6" ry="4.4" transform="rotate(-20 0 24)"/>
+              <line x1="5" y1="22" x2="5" y2="-10" stroke-width="1.2"/>
+            </g>
+            <!-- Treble clef silhouette (abstract) -->
+            <g transform="translate(180 130)" opacity="0.9">
+              <path d="M0 40 C -8 30, -8 18, 0 12 C 8 6, 14 14, 10 22 C 6 30, -4 30, -4 22 C -4 12, 6 -6, 6 -14 C 6 -20, -2 -22, -6 -18"
+                    fill="none" stroke="var(--mb-color)" stroke-width="1.2"/>
+            </g>
+          </g>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#notes)"/>
+    </svg>
+  )}
+
+  {variant === 'fleur' && (
+    <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+      <defs>
+        <pattern id="fleur" width="200" height="200" patternUnits="userSpaceOnUse">
+          <g fill="none" stroke="var(--mb-color)" stroke-width="0.7" transform="translate(100 100)">
+            <!-- Fleur-de-lis, simplified/geometric -->
+            <path d="M0 -40 C 6 -30, 4 -16, 0 -10 C -4 -16, -6 -30, 0 -40 Z"/>
+            <path d="M0 -10 C 14 -22, 22 -8, 16 4 C 10 -2, 4 -4, 0 -6"/>
+            <path d="M0 -10 C -14 -22, -22 -8, -16 4 C -10 -2, -4 -4, 0 -6"/>
+            <line x1="-18" y1="8" x2="18" y2="8"/>
+            <path d="M0 8 L 0 28"/>
+            <path d="M-8 20 L 8 20"/>
+          </g>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#fleur)"/>
+    </svg>
+  )}
+
+  {variant === 'ironwork' && (
+    <svg viewBox="0 0 160 160" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+      <defs>
+        <pattern id="iron" width="160" height="160" patternUnits="userSpaceOnUse">
+          <g fill="none" stroke="var(--mb-color)" stroke-width="0.6">
+            <!-- French Quarter wrought-iron: interlocking scrolls -->
+            <circle cx="40" cy="40" r="24"/>
+            <circle cx="120" cy="40" r="24"/>
+            <circle cx="40" cy="120" r="24"/>
+            <circle cx="120" cy="120" r="24"/>
+            <circle cx="80" cy="80" r="20" opacity="0.7"/>
+            <path d="M40 16 C 60 24, 60 56, 40 64 M120 16 C 100 24, 100 56, 120 64" opacity="0.5"/>
+          </g>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#iron)"/>
+    </svg>
+  )}
+</div>
+
+<style>
+  .music-backdrop {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: var(--mb-opacity);
+    overflow: hidden;
+    color: var(--mb-color);
+  }
+  .music-backdrop svg { width: 100%; height: 100%; display: block; }
+</style>

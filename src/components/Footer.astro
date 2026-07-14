@@ -1,0 +1,71 @@
+---
+import { getEntry } from 'astro:content';
+const settings = await getEntry('siteSettings', 'settings');
+const site = (settings?.data ?? {}) as any;
+const year = new Date().getFullYear();
+const tagline = (site.tagline as string | undefined) ||
+  'A tribute archive to Martha, Connee, and Vet Boswell, pioneers of American vocal harmony.';
+const footerCredits = (site.footerCredits as string | undefined) ||
+  'Bozzies.com and Bozzies.org are non-profit organizations dedicated to keeping alive the memory of the Boswell Sisters and their wonderful contributions to the history of music and performance.';
+---
+<footer class="site-footer ground-purple">
+  <div class="container site-footer__inner">
+    <div class="site-footer__mark">
+      <p class="site-footer__wordmark">The Boswell Sisters</p>
+      <p class="site-footer__tagline">{tagline}</p>
+    </div>
+    <nav aria-label="Footer" class="site-footer__nav">
+      <ul role="list">
+        <li><a href="/sisters/">The Sisters</a></li>
+        <li><a href="/music/">Music</a></li>
+        <li><a href="/press/">Press</a></li>
+        <li><a href="/legacy/">Legacy</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </nav>
+    <div class="site-footer__meta">
+      <p>{footerCredits}</p>
+      <p>&copy; {year}</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer { padding-block: clamp(var(--space-8), 6vw, var(--space-10)); }
+  .site-footer__inner {
+    display: grid;
+    gap: var(--space-6);
+    grid-template-columns: 1.4fr 1fr 1.4fr;
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .site-footer__inner { grid-template-columns: 1fr; }
+  }
+  .site-footer__wordmark {
+    font-family: var(--font-display);
+    font-size: var(--step-3);
+    color: #F5EAD1;
+    max-width: none;
+  }
+  .site-footer__tagline {
+    font-family: var(--font-body);
+    color: rgba(245, 234, 209, 0.8);
+    font-size: var(--step-0);
+    line-height: var(--leading-normal);
+    max-width: 34ch;
+    margin-top: var(--space-3);
+  }
+  .site-footer__nav ul { display: flex; flex-direction: column; gap: var(--space-2); }
+  .site-footer__nav a {
+    font-family: var(--font-ui);
+    font-weight: 500;
+    font-size: var(--step--1);
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+    color: #F5EAD1;
+    border: 0;
+  }
+  .site-footer__nav a:hover { color: var(--yellow-soft); }
+  .site-footer__meta { color: rgba(245, 234, 209, 0.75); font-size: var(--step--1); }
+  .site-footer__meta p + p { margin-top: var(--space-3); }
+</style>

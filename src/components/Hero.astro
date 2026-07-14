@@ -1,0 +1,269 @@
+---
+// Cinematic hero — two layouts:
+//   'full-bleed': image behind, text overlaid centered (section landings)
+//   'split':      image left / text right on desktop, stacked on mobile (home page)
+const {
+  eyebrow,
+  title,
+  subtitle,
+  image,
+  imageAlt = '',
+  imageCredit,
+  height = 'tall',
+  align = 'center',
+  layout = 'full-bleed',
+} = Astro.props as {
+  eyebrow?: string; title: string; subtitle?: string;
+  image?: string; imageAlt?: string; imageCredit?: string;
+  height?: 'tall' | 'medium' | 'short';
+  align?: 'center' | 'left';
+  layout?: 'full-bleed' | 'split';
+};
+---
+<section class:list={['hero', `hero--${layout}`, `hero--${height}`, `hero--${align}`]}
+         data-has-image={image ? 'true' : 'false'}>
+
+  {/* --- SPLIT: image left, text right --- */}
+  {layout === 'split' && image && (
+    <div class="hero__split">
+      <div class="hero__image-panel">
+        <img class="hero__image hero__image--split" src={image} alt={imageAlt} loading="eager" fetchpriority="high" />
+        <div class="hero__tint"></div>
+        {/* Museum-style corner brackets around the image panel */}
+        <div class="hero__frame" aria-hidden="true">
+          <svg class="hero__frame-corner hero__frame-corner--tl" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M0 22 L0 0 L22 0"/><path d="M6 6 L6 16 M6 6 L16 6" opacity="0.55"/></g></svg>
+          <svg class="hero__frame-corner hero__frame-corner--tr" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M38 0 L60 0 L60 22"/><path d="M54 6 L54 16 M54 6 L44 6" opacity="0.55"/></g></svg>
+          <svg class="hero__frame-corner hero__frame-corner--bl" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M0 38 L0 60 L22 60"/><path d="M6 54 L6 44 M6 54 L16 54" opacity="0.55"/></g></svg>
+          <svg class="hero__frame-corner hero__frame-corner--br" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M38 60 L60 60 L60 38"/><path d="M54 54 L54 44 M54 54 L44 54" opacity="0.55"/></g></svg>
+        </div>
+        {imageCredit && <p class="hero__credit hero__credit--split"><span>{imageCredit}</span></p>}
+      </div>
+
+      <div class="hero__text-panel">
+        <div class="hero__text-inner">
+          {eyebrow && <span class="eyebrow hero__eyebrow">{eyebrow}</span>}
+          <h1 class="hero__title hero__title--split">{title}</h1>
+          {subtitle && <p class="hero__subtitle hero__subtitle--split">{subtitle}</p>}
+          <div class="hero__glyph" aria-hidden="true">
+            <svg viewBox="0 0 80 20"><g fill="none" stroke="currentColor" stroke-width="0.7">
+              <path d="M0 10 L28 10"/>
+              <path d="M52 10 L80 10"/>
+              <g transform="translate(40 10)">
+                <path d="M-6 0 L-2 -4 L2 0 L-2 4 Z"/>
+                <path d="M-10 0 L-6 -4 M6 4 L10 0" opacity="0.7"/>
+                <circle cx="0" cy="0" r="1.4" fill="currentColor" stroke="none"/>
+              </g>
+            </g></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {/* --- FULL-BLEED: image behind text --- */}
+  {layout === 'full-bleed' && (
+    <>
+      {image && (
+        <div class="hero__image-wrap" aria-hidden={imageAlt ? undefined : 'true'}>
+          <img class="hero__image" src={image} alt={imageAlt} loading="eager" fetchpriority="high" />
+          <div class="hero__tint"></div>
+          <div class="hero__scrim"></div>
+        </div>
+      )}
+      <div class="hero__frame" aria-hidden="true">
+        <svg class="hero__frame-corner hero__frame-corner--tl" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M0 22 L0 0 L22 0"/><path d="M6 6 L6 16 M6 6 L16 6" opacity="0.55"/></g></svg>
+        <svg class="hero__frame-corner hero__frame-corner--tr" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M38 0 L60 0 L60 22"/><path d="M54 6 L54 16 M54 6 L44 6" opacity="0.55"/></g></svg>
+        <svg class="hero__frame-corner hero__frame-corner--bl" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M0 38 L0 60 L22 60"/><path d="M6 54 L6 44 M6 54 L16 54" opacity="0.55"/></g></svg>
+        <svg class="hero__frame-corner hero__frame-corner--br" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M38 60 L60 60 L60 38"/><path d="M54 54 L54 44 M54 54 L44 54" opacity="0.55"/></g></svg>
+      </div>
+      <div class="hero__content container">
+        {eyebrow && <span class="eyebrow hero__eyebrow">{eyebrow}</span>}
+        <h1 class="hero__title">{title}</h1>
+        {subtitle && <p class="hero__subtitle">{subtitle}</p>}
+        <div class="hero__glyph" aria-hidden="true">
+          <svg viewBox="0 0 80 20"><g fill="none" stroke="currentColor" stroke-width="0.7">
+            <path d="M0 10 L28 10"/>
+            <path d="M52 10 L80 10"/>
+            <g transform="translate(40 10)">
+              <path d="M-6 0 L-2 -4 L2 0 L-2 4 Z"/>
+              <path d="M-10 0 L-6 -4 M6 4 L10 0" opacity="0.7"/>
+              <circle cx="0" cy="0" r="1.4" fill="currentColor" stroke="none"/>
+            </g>
+          </g></svg>
+        </div>
+      </div>
+      {imageCredit && <p class="hero__credit"><span>{imageCredit}</span></p>}
+    </>
+  )}
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    background: var(--ink);
+    color: var(--text-on-ink);
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .hero--tall   { min-height: 92vh; display: grid; align-items: end; }
+  .hero--medium { min-height: 62vh; display: grid; align-items: end; }
+  .hero--short  { min-height: 42vh; display: grid; align-items: end; }
+  /* Split layout wants full-height alignment, not end-alignment */
+  .hero--split.hero--tall,
+  .hero--split.hero--medium,
+  .hero--split.hero--short { align-items: stretch; }
+
+  /* --- SPLIT layout --- */
+  .hero__split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    min-height: inherit;
+  }
+  .hero__image-panel {
+    position: relative;
+    overflow: hidden;
+    min-width: 0;
+    background: #0f0d0c;
+    isolation: isolate;
+  }
+  .hero__text-panel-fix { min-width: 0; }
+  .hero__image--split {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 25%;    /* bias toward top — faces usually up there */
+    filter: grayscale(0.55) contrast(1.05) brightness(0.94);
+    animation: heroKen 40s var(--ease-out-quart) both;
+  }
+  .hero__text-panel {
+    display: grid;
+    align-items: center;
+    padding: clamp(var(--space-7), 6vw, var(--space-10)) clamp(var(--space-6), 5vw, var(--space-9));
+    background: var(--ink);
+    position: relative;
+    min-width: 0;
+  }
+  /* Vertical brass hairline separating the two panels */
+  .hero__text-panel::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 12%; bottom: 12%;
+    width: 1px;
+    background: var(--yellow-soft);
+    opacity: 0.35;
+  }
+  .hero__text-inner { max-width: 34rem; }
+  .hero__title--split {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(var(--step-5), 5vw + 0.3rem, var(--step-7));
+    line-height: 1;
+    letter-spacing: var(--track-tight);
+    color: var(--text-on-ink);
+    margin-top: var(--space-4);
+    max-width: 12ch;
+  }
+  .hero__subtitle--split {
+    margin-top: var(--space-5);
+    font-family: var(--font-body);
+    font-size: clamp(var(--step-1), 1.2vw + 0.4rem, var(--step-2));
+    color: var(--text-on-ink);
+    max-width: 34ch;
+    line-height: var(--leading-normal);
+  }
+  .hero__credit--split {
+    position: absolute; bottom: var(--space-3); right: var(--space-4);
+    font-family: var(--font-ui); font-size: var(--step--2);
+    color: rgba(237, 230, 214, 0.75);
+    letter-spacing: var(--track-caps); text-transform: uppercase;
+    z-index: 2;
+    max-width: none;
+  }
+
+  /* Mobile: stack image on top, text below */
+  @media (max-width: 900px) {
+    .hero__split { grid-template-columns: 1fr; }
+    .hero__image-panel { min-height: 58vh; }
+    .hero__text-panel { padding-block: clamp(var(--space-7), 8vw, var(--space-9)); }
+    .hero__text-panel::before { display: none; }
+  }
+
+  /* --- FULL-BLEED layout (existing) --- */
+  .hero__image-wrap { position: absolute; inset: 0; z-index: 0; }
+  .hero__image {
+    width: 100%; height: 100%; object-fit: cover; object-position: center;
+    filter: grayscale(0.6) contrast(1.05) brightness(0.9);
+    animation: heroKen 40s var(--ease-out-quart) both;
+  }
+  .hero__tint {
+    position: absolute; inset: 0;
+    background: var(--purple);
+    mix-blend-mode: multiply;
+    opacity: 0.6;
+  }
+  .hero__scrim {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, rgba(24,22,21,0.10) 0%, rgba(24,22,21,0.45) 55%, rgba(24,22,21,0.88) 100%),
+      radial-gradient(60% 80% at 30% 40%, rgba(24,22,21,0) 0%, rgba(24,22,21,0.3) 100%);
+  }
+  .hero__content {
+    position: relative; z-index: 1;
+    padding-block: var(--space-8);
+    max-width: var(--measure-max);
+    text-align: center;
+  }
+  .hero--left .hero__content { text-align: left; }
+  .hero__eyebrow { color: var(--yellow-soft); margin-bottom: var(--space-4); }
+  .hero__title {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(var(--step-6), 8vw, var(--step-8));
+    line-height: 0.98;
+    letter-spacing: var(--track-tight);
+    max-width: 14ch;
+    margin-inline: auto;
+    color: var(--text-on-ink);
+  }
+  .hero--left .hero__title { margin-inline: 0; }
+  .hero__subtitle {
+    margin-top: var(--space-5);
+    font-family: var(--font-body);
+    font-size: clamp(var(--step-1), 1.5vw + 0.4rem, var(--step-2));
+    color: var(--text-on-ink-muted);
+    max-width: 44ch;
+    margin-inline: auto;
+    line-height: var(--leading-snug);
+  }
+  .hero--left .hero__subtitle { margin-inline: 0; }
+  .hero__credit {
+    position: absolute; bottom: var(--space-3); right: var(--space-4);
+    font-family: var(--font-ui); font-size: var(--step--2);
+    color: var(--text-on-ink-muted); z-index: 2;
+    letter-spacing: var(--track-caps); text-transform: uppercase;
+    max-width: none;
+  }
+
+  /* Corner frames — sit inside the image panel (split) or the whole hero (full-bleed) */
+  .hero__frame { position: absolute; inset: clamp(var(--space-3), 2vw, var(--space-6)); z-index: 3; pointer-events: none; color: var(--yellow-soft); }
+  .hero__frame-corner { position: absolute; width: 44px; height: 44px; opacity: 0.75; }
+  .hero__frame-corner--tl { top: 0; left: 0; }
+  .hero__frame-corner--tr { top: 0; right: 0; }
+  .hero__frame-corner--bl { bottom: 0; left: 0; }
+  .hero__frame-corner--br { bottom: 0; right: 0; }
+
+  /* Deco glyph under the subtitle */
+  .hero__glyph { margin-top: var(--space-6); display: flex; color: var(--yellow-soft); opacity: 0.85; }
+  .hero__glyph svg { width: min(140px, 30vw); height: auto; }
+  .hero--split .hero__glyph { justify-content: flex-start; }
+  .hero--full-bleed .hero__glyph { justify-content: center; }
+  .hero--left .hero__glyph { justify-content: flex-start; }
+
+  @keyframes heroKen {
+    from { transform: scale(1.06); }
+    to   { transform: scale(1.0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero__image, .hero__image--split { animation: none; }
+  }
+</style>

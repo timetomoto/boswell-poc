@@ -1,0 +1,108 @@
+/* Design tokens — the Boswell Sisters redesign
+   Modern museum editorial, Art Deco inspiration, restraint over ornament. */
+
+:root {
+  /* Grounds */
+  --ink: #181615;              /* warm near-black — dark sections */
+  --paper: #F4F0E8;            /* warm ivory — light sections */
+  --paper-shadow: #E8E1D3;     /* one tick darker than paper — subtle depth */
+
+  /* Metallics (accents) */
+  --brass: #B08D57;            /* primary accent — dividers, small type, hovers */
+  --champagne: #C8A96A;        /* secondary highlight */
+
+  /* Palette color reserves — used sparingly, per-section */
+  --oxblood: #5A2E2E;          /* pull quotes on ivory */
+  --emerald: #23453A;          /* archival green — used lightly */
+  --navy: #22344B;             /* deep blue — used lightly */
+  --copper: #9C6844;           /* Press section accent */
+
+  /* New Orleans accents — Mardi Gras purple + bourbon gold */
+  --purple: #4A2E5A;           /* deep aubergine — Music section */
+  --purple-soft: #6C4E7F;      /* lifted purple — hover / secondary */
+  --yellow: #C99A2A;           /* burnished bourbon gold — Legacy section */
+  --yellow-soft: #E1C263;      /* lifted yellow — small accents on ink */
+
+  /* Ink derivatives */
+  --ink-soft: #2A2724;         /* one-step-up-from-ink, for cards on ink */
+  --ink-hairline: rgba(176, 141, 87, 0.28);   /* brass at low opacity */
+  --paper-hairline: rgba(24, 22, 21, 0.14);    /* ink at low opacity */
+
+  /* Text colors on each ground */
+  --text-on-ink: #EDE6D6;
+  --text-on-ink-muted: rgba(237, 230, 214, 0.62);
+  --text-on-paper: #1E1B18;
+  --text-on-paper-muted: rgba(30, 27, 24, 0.62);
+
+  /* Type stacks */
+  --font-display: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+  --font-body: 'Source Serif 4', 'Charter', 'Georgia', serif;
+  --font-accent: 'Instrument Serif', 'Georgia', serif;   /* reserved for pull-quotes / small display flourishes */
+  --font-ui: 'Inter', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+
+  /* Type scale — editorial, generous, based on a 1.25 (major third) ratio */
+  --step--2: 0.694rem;    /* 11.1px */
+  --step--1: 0.833rem;    /* 13.3px */
+  --step-0:  1rem;        /* 16px — body baseline */
+  --step-1:  1.25rem;     /* 20px */
+  --step-2:  1.563rem;    /* 25px */
+  --step-3:  1.953rem;    /* 31.3px */
+  --step-4:  2.441rem;    /* 39.1px */
+  --step-5:  3.052rem;    /* 48.8px */
+  --step-6:  3.815rem;    /* 61px */
+  --step-7:  4.768rem;    /* 76.3px */
+  --step-8:  5.96rem;     /* 95.4px — hero display */
+
+  /* Leading */
+  --leading-tight: 1.08;   /* display */
+  --leading-snug: 1.24;    /* subheads */
+  --leading-normal: 1.55;  /* body */
+  --leading-loose: 1.7;    /* long-form articles */
+
+  /* Letter-spacing */
+  --track-tight: -0.02em;   /* display */
+  --track-normal: 0;
+  --track-caps: 0.14em;      /* nav labels, small caps */
+
+  /* Spacing — 4-based, generous museum rhythm */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+  --space-11: 12rem;
+
+  /* Layout */
+  --measure-narrow: 34rem;   /* long-form body */
+  --measure: 42rem;          /* standard prose */
+  --measure-wide: 60rem;     /* editorial spreads */
+  --measure-max: 84rem;      /* hero/gallery */
+
+  /* Motion — elegant, never bouncy */
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  --dur-fast: 180ms;
+  --dur: 320ms;
+  --dur-slow: 640ms;
+  --dur-cinematic: 1200ms;
+
+  /* Hairline widths */
+  --hairline: 1px;
+  --line-medium: 2px;
+
+  color-scheme: light dark;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 1ms;
+    --dur: 1ms;
+    --dur-slow: 1ms;
+    --dur-cinematic: 1ms;
+  }
+}

@@ -1,0 +1,61 @@
+---
+title: "Boz Buz – Vintage Article"
+subhub: vintage
+order: 11
+originalUrl: "http://bozzies.org/boz-buz-vintage-article-11/"
+---
+[![](/uploads/logo.png)](http://bozzies.org)
+
+![](/uploads/quote1.gif)
+They were a one-of-a-kind group and no other has even come close to imitating them
+![](/uploads/quote2.gif)
+
+- David McCain
+
+* [BozBios](http://bozzies.org/bozbios/)
+* [BozBuz](http://bozzies.org/bozbuz/)
+* [BozBufs](http://bozzies.org/bozbufs/)
+* [Boz Beat](http://bozzies.org/bozbeat/)
+* [BozBuys](http://bozzies.org/bozbuys/)
+* [BozBiz](http://bozzies.org/bozbiz/)
+* [BozBlog](http://bozzies.org/blog/)
+
+# Boz Buz – Vintage Article
+
+*Spring 1977*
+
+## In Harmony with the Boswell Sisters
+
+### The Second Line
+
+### David W. McCain
+
+![mccain](http://bozzies.org/wp-content/uploads/2016/05/mccain.png)How did a 23-year old become interested in the Boswell Sisters, a 1930s vocal trio who broke up 18 years before he was born? Well, one day while thumbing through one book of Richard Lamparski’s multi-volume *Whatever Became Of*…”?, a series dealing with the whereabouts of yesterday’s celebrities, I came across a feature on the Andrews Sisters and read this phrase: “Although they (Andrews Sisters) never matched their idols, the Boswells, for perfect harmony and rhythm”… Having always been a fan of harmony singing, be it church hymns or barbershop quartet, I did a double take when I saw the words “perfect harmony.” So these Boswell Sisters were idolized by THE most famous harmony team of the century? Why had I never heard of them? Who were the Boswell Sisters and what were their roles in the history of music? I immediately made up my mind, right then and there, to find some recordings and judge this “perfect harmony” for myself. Perfect is a pretty strong word.
+
+Finding records was easier said than done. After searching for many months, I finally found an album under the Biograph label which had their hits of 1932-34. Their names were Martha, Connee and Vet, and the liner notes said they grew up in New Orleans. I put the record on and listened carefully. Before the two sides were done, I had become a Boswell fan for life. I was knocked out by the pep, time-rightness, power, versatility, and jazz instinct of the girls’ voices. They used their voices just like musical instruments and blended in with the band so well that at times you had trouble separating the two! Tempo change was a Boswell specialty — they could start a song off slow and moody, and end up swinging it to death. Their sound was new and different to me. I had never heard anything like it before. I can imagine the impact their sound had on first-time listeners in the 1930s during their heyday.
+
+Since they were such definite originals, I HAD to research them biographically and find out what their musical training was and what made them tick. But if records were hard to find, news copy was even harder. I managed to find tiny bits and pieces, but not the in-depth stuff I wanted. After more and still more research, I came to the conclusion that, strange as it may seem, the Boswell Sisters had been overlooked by music and jazz historians! After hearing them perform it seemed impossible. But it was, nevertheless, true.
+
+Try looking in music history books that deal with jazz and swing. If you’re lucky you may run across one sentence that mentions their name. Michael Brooks suggested in his liner notes on the Biograph album, that maybe they were overlooked because they were white, but you can’t think of jazz in just one color. On one hand you have Louis Armstrong and Bessie Smith, both black jazz immortals, and on the other hand you have Bix Beiderbecke and Mildred Bailey, who were white and certainly earned their fame in jazz, too. There’s no denying the black roots of jazz, but what I’m saying is that for jazz talent, or for any talent for that matter, there should be no distinction between black and white.
+
+So using that theory, I don’t know what happened in the case of the Boswells. They were too talented to pass them up! The girls sang, I could immediately tell, with a decided black influence. This is because they were taught singing from the black servants employed at their home in New Orleans. Martha was the eldest and played the piano, she later backed her sisters on many of their records. Connee started out on the cello at a very early age and also played the saxophone. Vet played the violin and banjo. Their parents were both musical and 3937 Camp Street became known throughout the neighborhood for its jam sessions. (The house is still there.)
+
+The girls became the child prodigies of the New Orleans Philharmonic, and their father wanted them to play only the classics. But whenever he was away they could cut loose into the jazz numbers of the day and sang in harmony. Emmett Hardy, the legendary cornetist from Gretna, (La.), heard them and urged them to leave New Orleans and strike out on their own. They did, and the rest is history. Making New York City their home base in 1931, the Boswell Sisters became known from coast to coast via radio, and became the first singing sweethearts of America. “The Boswell Sound” and”Boswell Rhythm” became new terms in the music industry. You could almost forget there was such a thing as the Depression after you head them sing “We’ve Got to Put that Sun Back in the Sky.” Hollywood beckoned and the girls appeared in three motion pictures, their first being “The Big Broadcast” (1932) in which they sang “Crazy People.” They went on two European tours in 1933 and 1925, and toured the United States with Paul Whiteman’s band. In 1936, at the peak of their fame, Martha and Vet retired in favor of marriage, leaving Connee to climb on to still greater fame as a single. Of the trio, Vet is the only survivor. Martha died July 2, 1958, and Connee passed away October 11, 1976.
+
+After much more research and perseverance, I made two important contacts. Through an ad in a magazine I came in contact with Dennis Yancey, a jazz pianist at Harrah’s in Lake Tahoe, Ca., who was also a Boswell enthusiast. We shared information that we had, and it was through him that I was able to find more Boswell records. My second contact was made while being home in New Orleans last November. I got in touch with Myra Menville of the New Orleans Jazz Museum and found in her a shared interest in New Orleans own Boswell Sisters. Between us, we are hopeful that we will be able to find out more on the Boswells. After all the researching I have done, there are still lots of pieces missing to the puzzle.
+
+I have started a scrapbook on the Boswells, but it is only half full at the moment. I want to try to make as comprehensive a display of their career as possible, for it seems no one else has tried to delve into the Boswell history. When I feel I have completed my research (I am determined) I will donate the scrapbook to the Jazz Museum. For jazz buffs who hear the Boswells for the first time in 2076, and want to know more about them, then the New Orleans Jazz Museum could supply the answers. The Boswell Sound is never stale, it sounds as fresh and bubbly in 1977 as it did in 1932.
+
+Of course this article means nothing at all unless you’ve heard the Boswells sing. All I can say is — find yourself some records and judge them for yourself. For a first-time Boswell session I recommend then Biograph album. “The Boswell Sisters, 1932 — 34.” The album is still in print, and if your record dealer doesn’t have it, it can be ordered. For those of you who do remember hearing the Boswell Sisters, the album would be a great recapturing of memories.
+
+If I had to describe the Boswell Sisters in one word, which would be very difficult, I would have to say “original.” They were a one-of-a-kind group and no other has even come close to imitating them. The Boswell Sisters’ contribution to jazz, and popular music in general was great. Their vocal style is still being copied. They were among the first groups to deviate from the standard, straight way of singing, thus opening the way for more creativity in the music business. Martha, Connee and Vet Boswell, I salute you. Yes, you had it all right. Perfect harmony. And so much more.
+
+[Articles Written About the Sisters](http://bozzies.org/boz-buz-vintage-articles/)
+
+* [BozBuz](http://bozzies.org/bozbuz/)
+* [Boz Video Buz](http://bozzies.org/boz-video-buz/)
+* [The Press Room](http://bozzies.org/boz-buz-the-press-room/)
+* [Vintage Boz Articles](http://bozzies.org/boz-buz-vintage-articles/)
+* [In Their Own Words](http://bozzies.org/boz-buz/)
+* [What is “Getting Bozzed?”](http://bozzies.org/boz-buz-what-is-getting-bozzed/)
+* [Why Bozzies.com?](http://bozzies.org/boz-buz-why-bozzies-com/)
