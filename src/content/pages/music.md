@@ -1,6 +1,6 @@
 ---
 title: Music
-eyebrow: Boz Beat
+
 subtitle: The Boswell sound — lessons, discography, and the reviews that recognized them.
 heroImage: /uploads/Boswell_Sisters_Bing_Crosby.jpg
 heroImageAlt: The Boswell Sisters recording with Bing Crosby.

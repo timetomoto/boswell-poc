@@ -1,5 +1,5 @@
 ---
-title: "Boz Bufs"
+title: "Pure Vocal Harmony: The Bovril Sisters"
 subhub: "feature"
 originalUrl: "http://bozzies.org/boz-bufs-4/"
 pullQuote: "If it hadn't been for the Boswell Sisters, there would be no Andrews Sisters"
@@ -15,7 +15,7 @@ Bozzies.com contacted the Bovril Sisters, Cathy Evans, Rachel Foster and Trina F
 
 I have loved vocal harmony since singing hymns around the piano with my welsh family. This passion stayed with me throughout my career in music and ranged from simple folk bands through to more sophisticated alternative comedy cabaret acts. It was in the 80’s that I first began working alongside two other woman (known as Proper Little Madams) and we began performing a couple of the Andrews Sisters songs. Not long afterwards I heard the sweet, soulful harmonies of the Boswell Sisters…there was no looking back from there!
 
-![Bovril](http://bozzies.org/wp-content/uploads/2016/05/Bovril.jpg)My next quest was to find two singers who could tackle this project. It would need to be two women who had a very high standard of musicality and I knew just who! I approached both Rachel and Trina thinking I may have to use some pretty heavy-duty persuasion techniques… oh no… they heard a recording of the Boswell Sisters and said “Ok, when do we start?” Within weeks we knew we were on to a good thing with this. Some of the music drove us to tears, some of it made Trina’s pet dog howl with joy! Before long, the audiences were requesting our presence and our homage to the Boswell Sisters was proving to be very popular.
+My next quest was to find two singers who could tackle this project. It would need to be two women who had a very high standard of musicality and I knew just who! I approached both Rachel and Trina thinking I may have to use some pretty heavy-duty persuasion techniques… oh no… they heard a recording of the Boswell Sisters and said “Ok, when do we start?” Within weeks we knew we were on to a good thing with this. Some of the music drove us to tears, some of it made Trina’s pet dog howl with joy! Before long, the audiences were requesting our presence and our homage to the Boswell Sisters was proving to be very popular.
 
 ### Rachel (Vet)
 
@@ -35,4 +35,4 @@ Even though we all have other musical involvements we always come back together 
 
 ## The Boswell Project
 
-![Boswell Project](http://bozzies.org/wp-content/uploads/2016/05/Boswell-Project-300x209.png)Three talented singers went searching for a project they could work on together and what they found was the life-changing experience of being Bozzed! Since 2012 The Boswell Project has been on a Boz trek that has led to sold out concerts from their native Adelaide, Australia all the way to [New Orleans](https://www.youtube.com/watch?v=6R3NvxQCXeU). Oi, oi, oi is now the Aussie word for Yowzah!
+Three talented singers went searching for a project they could work on together and what they found was the life-changing experience of being Bozzed! Since 2012 The Boswell Project has been on a Boz trek that has led to sold out concerts from their native Adelaide, Australia all the way to [New Orleans](https://www.youtube.com/watch?v=6R3NvxQCXeU). Oi, oi, oi is now the Aussie word for Yowzah!

@@ -11,16 +11,16 @@ pullQuoteAttribution: "Vet Boswell"
 
 Some quotes from the Interview:
 
-*![](/uploads/qtl4.gif) If you would say ‘Who do the Rock and Roll singers sound like of yesterday’…you couldn’t say they sound like Ruth Etting or the Brox Sisters…You’d have to say they’re in the Boswell Sister’s groove. ![](/uploads/qtr4.gif)*  
+*!If you would say ‘Who do the Rock and Roll singers sound like of yesterday’…you couldn’t say they sound like Ruth Etting or the Brox Sisters…You’d have to say they’re in the Boswell Sister’s groove. !*  
 – Connie Boswell
 
-*![](/uploads/qtl4.gif) We revolutionized the whole style of not only singing trios, but my single work as well, and also musicians. ![](/uploads/qtr4.gif)*  
+*!We revolutionized the whole style of not only singing trios, but my single work as well, and also musicians. !*  
 – Connee Boswell
 
-*![](/uploads/qtl4.gif) Martha was Somaphine on Tom’s (Brenneman) show. It was called Tom and His Mule. ![](/uploads/qtr4.gif)*  
+*!Martha was Somaphine on Tom’s (Brenneman) show. It was called Tom and His Mule. !*  
 – Connee
 
-*![](/uploads/qtl4.gif) Martha wasn’t the mule. ![](/uploads/qtr4.gif)*  
+*!Martha wasn’t the mule. !*  
 – Vet
 
 ### Listen to the complete interview on the Boz Pod, or you can download the MP3 directly [here](/uploads/audio/Lamparski-Connee-Vet.mp3).

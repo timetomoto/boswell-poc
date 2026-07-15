@@ -1,5 +1,5 @@
 ---
-title: "Boz Bufs – Boz Casts"
+title: "Bozcasts: The Long-form Audio Series"
 subhub: bozcasts
 originalUrl: "http://bozzies.org/boz-bufs-boz-casts/"
 pullQuote: "If it hadn't been for the Boswell Sisters, there would be no Andrews Sisters"

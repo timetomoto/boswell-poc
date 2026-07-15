@@ -45,7 +45,6 @@ const {
         <div class="hero__text-inner">
           {eyebrow && <span class="eyebrow hero__eyebrow">{eyebrow}</span>}
           <h1 class="hero__title hero__title--split">{title}</h1>
-          {subtitle && <p class="hero__subtitle hero__subtitle--split">{subtitle}</p>}
           <div class="hero__glyph" aria-hidden="true">
             <svg viewBox="0 0 80 20"><g fill="none" stroke="currentColor" stroke-width="0.7">
               <path d="M0 10 L28 10"/>
@@ -57,6 +56,7 @@ const {
               </g>
             </g></svg>
           </div>
+          {subtitle && <p class="hero__subtitle hero__subtitle--split">{subtitle}</p>}
           {tagline && <p class="hero__tagline">{tagline}</p>}
         </div>
       </div>
@@ -149,15 +149,6 @@ const {
     position: relative;
     min-width: 0;
   }
-  /* Vertical yellow hairline separating the two panels */
-  .hero__text-panel::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 12%; bottom: 12%;
-    width: 1px;
-    background: var(--yellow-soft);
-    opacity: 0.45;
-  }
   .hero__text-inner { max-width: 34rem; }
   .hero__title--split {
     font-family: var(--font-display);
@@ -167,7 +158,7 @@ const {
     letter-spacing: var(--track-tight);
     color: var(--text-on-ink);
     margin-top: var(--space-4);
-    max-width: 12ch;
+    max-width: 16ch;
   }
   .hero__subtitle--split {
     margin-top: var(--space-5);

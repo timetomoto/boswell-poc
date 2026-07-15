@@ -2,21 +2,10 @@
 title: "Stompin’ in Joy"
 originalUrl: "http://bozzies.org/stompin-in-joy/"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
+[!](http://bozzies.org)
 
-![](/uploads/quote1.gif)
-But we don’t sing in the orthodox musical way,“ Martha Boswell continued. “Instead, when we sing as a trio we achieve an unusual and unorthodox effect by deserting our own particular tone and singing in another tone. We call that blending.
-![](/uploads/quote2.gif)
-
-- Cynthia Lucas
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
+!But we don’t sing in the orthodox musical way,“ Martha Boswell continued. “Instead, when we sing as a trio we achieve an unusual and unorthodox effect by deserting our own particular tone and singing in another tone. We call that blending.
+!- Cynthia Lucas
 
 # Stompin’ in Joy
 

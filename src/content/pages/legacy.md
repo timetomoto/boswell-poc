@@ -1,6 +1,6 @@
 ---
 title: Legacy
-eyebrow: BozBufs
+
 subtitle: Tribute performers, Bozcasts, scholarship, and community keeping the Boswell sound alive.
 heroImage: /uploads/bosw-3.jpg
 heroImageAlt: Boswell Sisters press photograph.

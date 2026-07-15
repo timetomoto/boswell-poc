@@ -2,21 +2,10 @@
 title: "Donate to the Boz Cause"
 originalUrl: "http://bozzies.org/donate-to-the-boz-cause/"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
+[!](http://bozzies.org)
 
-![](/uploads/quote1.gif)
-Thanks for stopping by and we truly hope you are enjoying your visit. We are working hard to bring you the best Boz content available!
-![](/uploads/quote2.gif)
-
-- Boz Webmaster
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
+!Thanks for stopping by and we truly hope you are enjoying your visit. We are working hard to bring you the best Boz content available!
+!- Boz Webmaster
 
 # Donate to the Boz Cause
 

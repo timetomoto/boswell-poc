@@ -48,7 +48,7 @@ const reviews = await getEntry('pages', 'reviews');
       <ol class="lessons-cards" role="list">
         {lessons.map(l => (
           <li class="lesson-card">
-            <a href={`/music/lessons/${l.data.order}/`} class="lesson-card__link">
+            <a href={`/media/lessons/${l.data.order}/`} class="lesson-card__link">
               <div class="lesson-card__num">
                 <span class="lesson-card__num-label">Lesson</span>
                 <span class="lesson-card__num-value">{String(l.data.order).padStart(2, '0')}</span>
@@ -75,7 +75,7 @@ const reviews = await getEntry('pages', 'reviews');
     <MusicBackdrop variant="vinyl" opacity={0.10} color="var(--yellow-soft)" />
     <div class="container music-teasers__grid">
       {charts && (
-        <a href="/music/charts/" class="music-teaser">
+        <a href="/media/charts/" class="music-teaser">
           <span class="eyebrow music-teaser__eyebrow">Discography</span>
           <h3 class="music-teaser__title">Boz on the Charts</h3>
           <p class="music-teaser__body">Chart positions from Brunswick 6083 in 1931 to Decca in the late 1930s and beyond — how the Boswell Sisters and Connee actually rated with the record-buying public.</p>
@@ -88,7 +88,7 @@ const reviews = await getEntry('pages', 'reviews');
         </a>
       )}
       {reviews && (
-        <a href="/music/reviews/" class="music-teaser">
+        <a href="/media/reviews/" class="music-teaser">
           <span class="eyebrow music-teaser__eyebrow">Reviews</span>
           <h3 class="music-teaser__title">Album reviews from the experts</h3>
           <p class="music-teaser__body">Storyville volumes, Singing the Blues, Shout Sisters Shout, and the lost 1957 RCA classic — hand-picked reviews for anyone starting a Boz collection.</p>

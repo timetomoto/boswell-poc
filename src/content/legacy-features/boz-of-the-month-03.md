@@ -1,15 +1,9 @@
 ---
-title: "Boz of the Month Club"
+title: "Boz of the Month: JeriLynn Karr"
 subhub: "boz-of-the-month"
 originalUrl: "http://bozzies.org/boz-of-the-month-club-3/"
 ---
 ## JeriLynn Karr
-
-|  |  |
-| --- | --- |
-| JLK-3 | **Age:** 37 |
-| **Occupation:** stay at home Mom who, for four months out of the year is a full-time tax processor. |
-| **Favorite Boswell Song:** If you pressed me against the wall with a fiddle stick and demanded that I pick my favorite Boswell Sisters song, I suppose I would sigglity say “Roll On Mississippi, Roll On” and then look you square in the eye and demand you to please ask me again in a minute! |
 
 JeriLynn turned into a lifesaver for the harried director of Bozzies.com during the Boswell Centennial celebration. It seems the same energy she puts into her music, theatrical productions and kids has been directed toward her love of the Boswell Sisters. Much as radio helped spread the Boswells across the world in the 30s, the Internet seems to be doing it again in the 21st Century. We wanted to find out a little about this ball of fire who is everywhere on You Tube and has brought Martha, Connee and Vet’s music to a new generation.
 
@@ -58,5 +52,3 @@ I hope that I personally honor the Boswells Sisters every time I open my mouth a
 It is amazing to me that the Boswell Sisters are not more well known in the music world. I want to bring their spirit, their love, that “sound” to the people that we perform for. I want that so much so that I believe that Connee, Martha and Vet have left a scar upon my heart that will never heal, and why on earth would I want it to??
 
 One last thing I want to add, I am still in contact with most of the Bozzed that I met at the Centennial. “Bozzed” people are instant, longtime friends, kindred spirits, and I wouldn’t have it any other way. We share something a lot of people cannot comprehend. It’s an unexplainable, deep love for all things Boswell, we can’t get away from it, we don’t want to get away from it. It runs in our veins, beats through our hearts, lives in our minds. It is a blessing to me to be picked for “Bozzie of the Month”, I can’t wait to tell my Momma!
-
-[Boz of the Month](http://bozzies.org/boz-of-the-month-club/)

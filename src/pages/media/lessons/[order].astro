@@ -25,8 +25,8 @@ const next = currentIdx < all.length - 1 ? all[currentIdx + 1] : all[0];
   <section class="lesson-hero ground-purple">
     <MusicBackdrop variant="staves" opacity={0.08} color="var(--yellow-soft)" />
     <div class="container-narrow lesson-hero__inner">
-      <a href="/music/" class="lesson-hero__back">← Music</a>
-      <span class="eyebrow lesson-hero__eyebrow">Lesson {String(lesson.data.order).padStart(2, '0')} · Boz Beat</span>
+      <a href="/media/" class="lesson-hero__back">← Media</a>
+      <span class="eyebrow lesson-hero__eyebrow">Lesson {String(lesson.data.order).padStart(2, '0')}</span>
       <h1 class="lesson-hero__title">{lesson.data.title}</h1>
       {lesson.data.summary && (
         <p class="lesson-hero__summary">{lesson.data.summary}</p>
@@ -43,7 +43,7 @@ const next = currentIdx < all.length - 1 ? all[currentIdx + 1] : all[0];
             <path d="M15 12 L28 20 L15 28 Z" fill="currentColor"/>
           </svg>
           <div>
-            <span class="lesson-player__label-kicker">Boz Beat · Lesson {lesson.data.order}</span>
+            <span class="lesson-player__label-kicker">Lesson {lesson.data.order}</span>
             <span class="lesson-player__label-title">{lesson.data.title}</span>
           </div>
         </div>
@@ -69,15 +69,15 @@ const next = currentIdx < all.length - 1 ? all[currentIdx + 1] : all[0];
 
   <nav class="section-tight ground-paper lesson-nav" aria-label="Lessons navigation">
     <div class="container lesson-nav__inner">
-      <a href={`/music/lessons/${prev.data.order}/`} class="lesson-nav__link lesson-nav__link--prev">
+      <a href={`/media/lessons/${prev.data.order}/`} class="lesson-nav__link lesson-nav__link--prev">
         <span class="lesson-nav__label">Previous</span>
         <span class="lesson-nav__name">Lesson {prev.data.order} · {prev.data.title}</span>
       </a>
-      <a href="/music/" class="lesson-nav__link lesson-nav__link--all">
+      <a href="/media/" class="lesson-nav__link lesson-nav__link--all">
         <span class="lesson-nav__label">All</span>
         <span class="lesson-nav__name">Boz Beat</span>
       </a>
-      <a href={`/music/lessons/${next.data.order}/`} class="lesson-nav__link lesson-nav__link--next">
+      <a href={`/media/lessons/${next.data.order}/`} class="lesson-nav__link lesson-nav__link--next">
         <span class="lesson-nav__label">Next</span>
         <span class="lesson-nav__name">Lesson {next.data.order} · {next.data.title}</span>
       </a>

@@ -1,6 +1,6 @@
 ---
 title: The Sisters
-eyebrow: BozBios
+
 subtitle: Get to know the Boswell Sisters — Martha at the piano, Connee out front, Vet in the middle.
 heroImage: /uploads/bozbios.jpg
 heroImageAlt: The Boswell Sisters.

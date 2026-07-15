@@ -1,15 +1,9 @@
 ---
-title: "Boz of the Month Club"
+title: "Boz of the Month: Nancy Stanley"
 subhub: "boz-of-the-month"
 originalUrl: "http://bozzies.org/boz-of-the-month-club-2/"
 ---
 ## Nancy Stanley
-
-|  |  |
-| --- | --- |
-| nancy-bom-article | **Age:** 83 |
-| **Occupation:** Retired |
-| **Favorite Boswell Song:** The Lovliness of You |
 
 ### FORWARD
 
@@ -80,5 +74,3 @@ Nancy stated simply, *“there will never be another Connee Boswell. She was one
 Nancy and I spent only a few hours together but our shared love of record collecting and Boswell music really made me feel I’d know her for a lot longer than a few hours. We record collectors are an unusual lot and when we find each other, the conversations can frequently go on for days. I feel honored that Nancy felt she could entrust her prized collection to me and have assured her that when my time comes, her music and mine will find there way to an appreciative museum so that future generations can enjoy all things Boswell, too. Since our visit, she emailed to let me know: “I’m still working on Belle Baker, but now have the last recording to complete my Grace Johnston collection. It cost me over $30 for that recording made in 1932!”
 
 [Randall Riley](http://www.bozzies.org/bufs-month-RandallRiley.php) is also a tenured member of the Boz of the Month Club, and a great contibutor to the Boz Cause.
-
-[Boz of the Month](http://bozzies.org/boz-of-the-month-club/)

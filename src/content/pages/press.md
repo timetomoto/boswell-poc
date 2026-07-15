@@ -1,6 +1,6 @@
 ---
 title: Press
-eyebrow: BozBuz
+
 subtitle: A century of writing on the Boswells — vintage newspaper pieces, modern press releases, interviews, and video features.
 heroImage: /uploads/bozbuz.jpg
 heroImageAlt: A Boswell Sisters press photograph.

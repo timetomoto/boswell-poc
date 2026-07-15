@@ -1,6 +1,6 @@
 ---
 title: Reviews
-eyebrow: Boz Reviews
+eyebrow: Reviews
 subtitle: Album reviews from the experts.
 quote: "...All these things tended to influence band orchestrations enormously! Glenn Miller even wrote many arrangements from Connee's dictation."
 quoteAttribution: John Lucas

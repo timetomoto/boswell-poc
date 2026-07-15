@@ -2,26 +2,57 @@
 import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
 import SectionDivider from '../components/SectionDivider.astro';
-import PullQuote from '../components/PullQuote.astro';
 import MusicBackdrop from '../components/MusicBackdrop.astro';
+import QuotesCarousel from '../components/QuotesCarousel.astro';
+import PlaylistPlayer from '../components/PlaylistPlayer.astro';
 import { getEntry } from 'astro:content';
 
 const home = await getEntry('pages', 'home');
 const data = (home?.data ?? {}) as any;
 
-const sections = [
-  { label: 'The Sisters', href: '/sisters/', accent: 'brass',  kicker: 'Bios and Timelines', blurb: 'Three sisters from New Orleans. Their lives, in their own rhythm.' },
-  { label: 'Music',       href: '/music/',   accent: 'purple', kicker: 'The Sound',           blurb: 'Boz Beat lessons, chart positions, and the reviews that recognized them.' },
-  { label: 'Press',       href: '/press/',   accent: 'brass',  kicker: 'Vintage and Modern',  blurb: 'A century of writing on the Boswells, from 1930s dailies to modern press.' },
-  { label: 'Legacy',      href: '/legacy/',  accent: 'purple', kicker: 'Influence Carried',   blurb: 'Tribute performers, Bozcasts, and scholarship keeping the sound alive.' },
-  { label: 'About',       href: '/about/',   accent: 'brass',  kicker: 'The Non-Profit',      blurb: 'The organization behind Bozzies.org, and how to support the work.' },
+/* 26 Boswell Sisters recordings streamed from archive.org's public-domain 78rpm collection. */
+const playlist = [
+  { title: 'Cheek to Cheek',                                     artist: 'The Boswell Sisters', year: 1935, duration: '2:56', audio: 'https://archive.org/download/78_cheek-to-cheek-with-orch-accomp-the-boswell-sisters/29061%20Cheek%20to%20cheek.mp3' },
+  { title: 'Rock and Roll',                                      artist: 'The Boswell Sisters', year: 1934, duration: '2:43', audio: 'https://archive.org/download/78_rock-and-roll-with-orchestra-the-boswell-sisters-clare/23515%20Rock%20and%20Roll.mp3' },
+  { title: 'Crazy People',                                       artist: 'The Boswell Sisters', year: 1932, duration: '2:34', audio: 'https://archive.org/download/78_crazy-people-with-guitar-and-bass-accomp-the-boswell-sisters-monaco/30333%20Crazy%20people.mp3' },
+  { title: 'Shout, Sister, Shout',                               artist: 'The Boswell Sisters', year: 1931, duration: '3:15', audio: 'https://archive.org/download/78_shout-sister-shout-with-dorsey-brothers-orchestra-the-boswell/30334%20Shout%2C%20sister%2C%20shout.mp3' },
+  { title: 'Mood Indigo',                                        artist: 'The Boswell Sisters', year: 1932, duration: '3:22', audio: 'https://archive.org/download/78_mood-indigo_the-boswell-sisters-dorsey-bros-orchestra-ellington-mills-bigard_gbia0429890b/MOOD%20INDIGO%20-%20THE%20BOSWELL%20SISTERS%20-%20DORSEY%20BROS.%27%20ORCHESTRA.mp3' },
+  { title: 'Louisiana Hayride',                                  artist: 'The Boswell Sisters', year: 1932, duration: '2:48', audio: 'https://archive.org/download/78_louisiana-hayride_the-boswell-sisters-dorsey-bros-orchestra-dietz-and-schwartz_gbia0429890a/LOUISIANA%20HAYRIDE%20-%20THE%20BOSWELL%20SISTERS%20-%20DORSEY%20BROS.%27%20ORCHESTRA.mp3' },
+  { title: 'When I Take My Sugar to Tea',                        artist: 'The Boswell Sisters', year: 1931, duration: '3:10', audio: 'https://archive.org/download/78_when-i-take-my-sugar-to-tea-with-orch-accomp-the-boswell-sisters-fain-kahal/31909%20When%20I%20take%20my%20sugar%20to%20tea.mp3' },
+  { title: 'Lullaby of Broadway',                                artist: 'The Boswell Sisters', year: 1935, duration: '2:46', audio: 'https://archive.org/download/78_lullaby-of-broadway-with-piano-accomp-the-boswell-sisters-dubin/29699%20Lullaby%20of%20Broadway.mp3' },
+  { title: "The Gold Diggers' Song",                             artist: 'The Boswell Sisters', year: 1933, duration: '2:33', audio: "https://archive.org/download/78_the-gold-diggers-song-acc-by-the-dorsey-brothers-the-boswell/31903%20The%20gold%20diggers%27%20song.mp3" },
+  { title: 'Sophisticated Lady',                                 artist: 'The Boswell Sisters', year: 1933, duration: '3:29', audio: 'https://archive.org/download/1933-USA-Archives-1933-00-00-The-Boswell-Sisters-Sophisticated-Lady/1933-USA-Archives-1933-00-00-The-Boswell-Sisters-Sophisticated-Lady.mp3' },
+  { title: "Doggone, I've Done It",                              artist: 'The Boswell Sisters', year: 1932, duration: '3:03', audio: "https://archive.org/download/78_doggone-ive-done-it-acc-by-the-dorsey-brothers-the-boswell/31905%20Doggone%20I%27ve%20done%20it.mp3" },
+  { title: 'Fare Thee Well',                                     artist: 'The Boswell Sisters', year: 1932, duration: '2:47', audio: 'https://archive.org/download/78_fare-thee-well-with-instr-accomp-the-boswell-sisters-wrubel/31907%20Fare%20thee%20well.mp3' },
+  { title: 'Dinah',                                              artist: 'The Boswell Sisters', year: 1932, duration: '2:55', audio: 'https://archive.org/download/78_2879-Dinah/2879-Dinah.mp3' },
+  { title: 'Forty-Second Street',                                artist: 'The Boswell Sisters', year: 1933, duration: '3:13', audio: 'https://archive.org/download/78_2405-Forty-second-street/2405-Forty-second-street.mp3' },
+  { title: "Alexander's Ragtime Band",                           artist: 'The Boswell Sisters', year: 1935, duration: '2:56', audio: 'https://archive.org/download/78_2880-Alexanders-Ragtime-Band/2880-Alexanders-Ragtime-Band.mp3' },
+  { title: 'Shuffle Off to Buffalo',                             artist: 'The Boswell Sisters', year: 1933, duration: '3:03', audio: 'https://archive.org/download/78_2406-Shuffle-off-to-Broadway/2406-Shuffle-off-to-Broadway.mp3' },
+  { title: 'Top Hat, White Tie and Tails',                       artist: 'The Boswell Sisters', year: 1935, duration: '3:13', audio: 'https://archive.org/download/78_top-hat-white-tie-and-tails-with-orch-accomp-the-boswell/29063%20Top%20hat%2C%20white%20tie%20and%20tails.mp3' },
+  { title: "Don't Let Your Love Go Wrong",                       artist: 'The Boswell Sisters', year: 1934, duration: '2:36', audio: "https://archive.org/download/78_dont-let-your-love-go-wrong_the-boswell-sisters-whiting-schwartz-johnson_gbia7032086b/DON%27T%20LET%20YOUR%20LOVE%20GO%20WRONG%20-%20THE%20BOSWELL%20SISTERS.mp3" },
+  { title: "Gee, But I'd Like to Make You Happy",                artist: 'The Boswell Sisters', year: 1931, duration: '3:11', audio: "https://archive.org/download/78_gee-but-id-like-to-make-you-happy_the-three-boswell-sisters-shay-ward-montgomery_gbia3029179a/GEE%2C%20BUT%20I%27D%20LIKE%20TO%20MAKE%20YOU%20HAPPY%20-%20THE%20THREE%20BOSWELL%20SISTERS.mp3" },
+  { title: 'Lawd, You Made the Night Too Long',                  artist: 'The Boswell Sisters', year: 1932, duration: '5:21', audio: 'https://archive.org/download/LawdYouMadeTheNightTooLongDonRedmanBingCrosbyBoswellSisters/LawdYouMadeTheNightTooLongDonRedmanBingCrosbyBoswellSisters_vbr.mp3' },
+  { title: 'Hand Me Down My Walking Cane',                       artist: 'The Boswell Sisters', year: 1932, duration: '2:51', audio: 'https://archive.org/download/1932-USA-Archives-1932-00-00-Boswell-Sisters-Hand-Me-Down-My-Walking-Kane/1932-USA-Archives-1932-00-00-Boswell-Sisters-Hand-Me-Down-My-Walking-Kane.mp3' },
+  { title: 'Old Yazoo',                                          artist: 'The Boswell Sisters', year: 1932, duration: '3:17', audio: 'https://archive.org/download/1932-USA-Archives-1932-00-00-Boswell-Sisters-Old-Yazoo/1932-USA-Archives-1932-00-00-Boswell-Sisters-Old-Yazoo.mp3' },
+  { title: "It Don't Mean a Thing (If It Ain't Got That Swing)", artist: 'The Boswell Sisters', year: 1932, duration: '3:22', audio: 'https://archive.org/download/78itdontmeanathingifitaintgotthatswingtheboswellsistersthedorseycleaningbypoofyhairproductions/78ItDontMeanAThingIfItAintGotThatSwingTheBoswellSistersTheDorseyCleaningByPoofyHairProductions.mp3' },
+  { title: "I'm All Dressed Up With a Broken Heart",             artist: 'The Boswell Sisters', year: 1925, duration: '3:08', audio: 'https://archive.org/download/1925-USA-Archives-1925-00-00-Boswell-Sisters-Im-All-Dressed-Up-With-A-Broken-Heart/1925-USA-Archives-1925-00-00-Boswell-Sisters-Im-All-Dressed-Up-With-A-Broken-Heart.mp3' },
+  { title: 'On the Highway to Heaven',                           artist: 'The Boswell Sisters', year: 1930, duration: '3:13', audio: 'https://archive.org/download/1930-USA-Archives-1930-07-20-Boswell-Sisters-Were-On-The-Highway-To-Heaven/1930-USA-Archives-1930-07-20-Boswell-Sisters-Were-On-The-Highway-To-Heaven.mp3' },
+  { title: "Doggone, I've Done It (Again)",                      artist: 'The Boswell Sisters', year: 1932, duration: '3:03', audio: 'https://archive.org/download/1932-USA-Archives-1932-00-00-Boswell-Sisters-Doggone-Ive-Done-It-Again/1932-USA-Archives-1932-00-00-Boswell-Sisters-Doggone-Ive-Done-It-Again.mp3' },
+];
+
+/* Quotes carousel — social proof sourced from the site's own content */
+const voices = [
+  { text: 'The world needs more Boswell Sisters.',                                                                                                                                     attribution: 'Bette Midler' },
+  { text: 'There was only one singer who influenced me. I tried to sing like her all the time because everything she did made sense musically, and that singer was Connie Boswell.',   attribution: 'Ella Fitzgerald' },
+  { text: 'The way they work out an arrangement is fascinating. One of them plays from an ordinary piano song company, singing the melody. The other two chip in with uncanny instinct.', attribution: 'The Melody Maker' },
+  { text: "If it hadn't been for the Boswell Sisters, there would be no Andrews Sisters.",                                                                                             attribution: 'Maxene Andrews' },
+  { text: "All these things tended to influence band orchestrations enormously. Glenn Miller even wrote many arrangements from Connee's dictation.",                                   attribution: 'John Lucas' },
 ];
 ---
-<Base title={data.title as string} description={data.introLede as string | undefined}>
+<Base title={data.title as string} description={data.tagline as string | undefined}>
+  {/* 1. HERO */}
   <Hero
-    eyebrow={data.eyebrow as string | undefined}
     title={data.title as string}
-    tagline={data.tagline as string | undefined}
     subtitle={data.subtitle as string | undefined}
     image={data.heroImage as string}
     imageAlt={data.heroImageAlt as string | undefined}
@@ -30,258 +61,86 @@ const sections = [
     layout="split"
   />
 
+  {/* 2. WELCOME / MISSION */}
   {(data.introLede || data.introBody) && (
     <section class="section ground-paper intro-section">
-      <MusicBackdrop variant="sheet-music" opacity={0.07} color="var(--purple)" />
+      <MusicBackdrop variant="sheet-music" opacity={0.06} color="var(--purple)" />
       <div class="container-narrow intro">
         {data.introEyebrow && <span class="eyebrow eyebrow--purple">{data.introEyebrow}</span>}
         {data.introLede && <p class="intro__lede">{data.introLede}</p>}
-        {data.introBody && <p class="intro__body">{data.introBody}</p>}
-      </div>
-    </section>
-  )}
-
-  {/* Featured / promo section — bourbon gold ground */}
-  {data.promoCards && data.promoCards.length > 0 && (
-    <section class="section ground-gold promo-section">
-      <MusicBackdrop variant="fleur" opacity={0.11} color="var(--purple)" />
-      <div class="container">
-        {(data.promoEyebrow || data.promoTitle) && (
-          <header class="promo-section__head">
-            {data.promoEyebrow && <span class="eyebrow eyebrow--purple">{data.promoEyebrow}</span>}
-            {data.promoTitle && <h2 class="promo-section__title">{data.promoTitle}</h2>}
-          </header>
-        )}
-        <ul class="promo-grid" role="list">
-          {data.promoCards.slice(0, 3).map((c: any) => (
-            <li class="promo-card">
-              <a class="promo-card__link" href={c.link} {...(c.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
-                {c.image && (
-                  <div class="promo-card__image-wrap">
-                    <img class="promo-card__image" src={c.image} alt={c.imageAlt || ''} loading="lazy" />
-                  </div>
-                )}
-                <div class="promo-card__body">
-                  {c.kicker && <span class="promo-card__kicker">{c.kicker}</span>}
-                  <h3 class="promo-card__title">{c.title}</h3>
-                  {c.subtitle && <p class="promo-card__subtitle">{c.subtitle}</p>}
-                  {c.description && <p class="promo-card__desc">{c.description}</p>}
-                  <span class="promo-card__cta">
-                    {c.linkLabel || (c.external ? 'Read more' : 'Read the article')}
-                    <svg class="promo-card__arrow" width="18" height="10" viewBox="0 0 18 10" aria-hidden="true">
-                      <path d="M0 5 H15 M11 1 L15 5 L11 9" stroke="currentColor" stroke-width="1" fill="none"/>
-                    </svg>
-                  </span>
-                </div>
-              </a>
-            </li>
-          ))}
-        </ul>
+        {Array.isArray(data.introBody)
+          ? data.introBody.map((para: string, i: number) => (
+              <p class:list={['intro__body', i === 0 && 'intro__body--lead']}>{para}</p>
+            ))
+          : data.introBody && <p class="intro__body">{data.introBody}</p>}
       </div>
     </section>
   )}
 
   <SectionDivider variant="jazz" color="purple" />
 
-  <section class="section ground-paper sections-index">
-    <MusicBackdrop variant="chevrons" opacity={0.04} color="var(--purple)" />
+  {/* 3. MUSIC PLAYLIST */}
+  <section class="section ground-paper playlist-section">
+    <MusicBackdrop variant="vinyl" opacity={0.05} color="var(--purple)" />
     <div class="container">
-      {(data.sectionsEyebrow || data.sectionsTitle) && (
-        <header class="sections-index__head">
-          {data.sectionsEyebrow && <span class="eyebrow eyebrow--yellow">{data.sectionsEyebrow}</span>}
-          {data.sectionsTitle && <h2 class="sections-index__title">{data.sectionsTitle}</h2>}
-        </header>
-      )}
-      <ul class="sections-index__grid" role="list">
-        {sections.map((s, i) => (
-          <li class={`sections-index__card sections-index__card--${s.accent}`}>
-            <a href={s.href} class="sections-index__link">
-              <span class="sections-index__num">{String(i + 1).padStart(2, '0')}</span>
-              <div class="sections-index__body">
-                <span class="sections-index__kicker">{s.kicker}</span>
-                <span class="sections-index__label">{s.label}</span>
-                <span class="sections-index__blurb">{s.blurb}</span>
-              </div>
-              <span class="sections-index__arrow" aria-hidden="true">
-                <svg width="28" height="10" viewBox="0 0 28 10" fill="none">
-                  <path d="M0 5 H25 M20 1 L25 5 L20 9" stroke="currentColor" stroke-width="1" fill="none"/>
-                </svg>
-              </span>
-            </a>
-          </li>
-        ))}
-        {/* Sixth cell — bold fleur-de-lis anchor, closing the grid with a New Orleans flourish */}
-        <li class="sections-index__fleur" aria-hidden="true">
-          <svg viewBox="0 0 140 180" width="100%" height="100%">
-            <g fill="var(--purple)" stroke="var(--purple)" stroke-width="2.2" stroke-linejoin="round" transform="translate(70 100)">
-              {/* Central spike */}
-              <path d="M0 -80 C 14 -58, 10 -32, 0 -20 C -10 -32, -14 -58, 0 -80 Z"/>
-              {/* Right petal */}
-              <path d="M0 -20 C 28 -36, 42 -14, 32 8 C 24 -2, 12 -6, 0 -10" stroke-width="2.4"/>
-              {/* Left petal */}
-              <path d="M0 -20 C -28 -36, -42 -14, -32 8 C -24 -2, -12 -6, 0 -10" stroke-width="2.4"/>
-              {/* Central band (horizontal wrap) */}
-              <rect x="-36" y="8" width="72" height="8" rx="2" stroke-width="0"/>
-              {/* Lower stem */}
-              <path d="M0 16 L 0 52" fill="none" stroke-width="3"/>
-              {/* Cross-tie */}
-              <path d="M-16 36 L 16 36" fill="none" stroke-width="3"/>
-              {/* Center jewel */}
-              <circle cx="0" cy="12" r="4" stroke-width="0"/>
-            </g>
-          </svg>
-        </li>
-      </ul>
+      <header class="playlist-section__head">
+        <span class="eyebrow eyebrow--purple">Music Playlist</span>
+        <h2 class="playlist-section__title">Hear the Boswell Sound</h2>
+        <p class="playlist-section__blurb">The Boswell Sisters Collection Volume One.</p>
+      </header>
+      <PlaylistPlayer tracks={playlist} />
     </div>
   </section>
 
+  {/* 4. VOICES — quotes carousel on purple */}
+  <section class="section ground-purple voices-section">
+    <MusicBackdrop variant="notes" opacity={0.09} color="var(--yellow-soft)" />
+    <div class="container">
+      <header class="voices-section__head">
+        {data.voicesEyebrow && <span class="eyebrow voices-section__eyebrow">{data.voicesEyebrow}</span>}
+        {data.voicesTitle && <h2 class="voices-section__title">{data.voicesTitle}</h2>}
+      </header>
+      <QuotesCarousel quotes={voices} intervalMs={7000} />
+    </div>
+  </section>
 
-  {data.quote && (
-    <section class="section ground-purple quote-section">
-      <MusicBackdrop variant="notes" opacity={0.11} color="var(--yellow-soft)" />
-      <MusicBackdrop variant="staves" opacity={0.06} color="var(--yellow-soft)" />
-      <div class="container">
-        <PullQuote attribution={data.quoteAttribution as string | undefined}>
-          {data.quote}
-        </PullQuote>
+  {/* 5. SAMPLE THE SOUND — educational lessons CTA */}
+  {(data.sampleTitle || data.sampleBody) && (
+    <section class="section ground-ink sample-section">
+      <MusicBackdrop variant="staves" opacity={0.10} color="var(--yellow-soft)" />
+      <div class="container-narrow sample__inner">
+        {data.sampleEyebrow && <span class="eyebrow">{data.sampleEyebrow}</span>}
+        {data.sampleTitle && <h2 class="sample__title">{data.sampleTitle}</h2>}
+        {data.sampleBody && <p class="sample__body">{data.sampleBody}</p>}
+        <a href="/media/lessons/1/" class="sample__cta">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M9 7 L17 12 L9 17 Z" fill="currentColor"/>
+          </svg>
+          Play Lesson 1 — The Blend
+        </a>
       </div>
     </section>
   )}
 
-
+  {/* 6. DONATE */}
   {(data.donateTitle || data.donateBody) && (
     <section class="section ground-paper donate-teaser">
-      <MusicBackdrop variant="vinyl" opacity={0.08} color="var(--purple)" />
+      <MusicBackdrop variant="diamond-grid" opacity={0.05} color="var(--purple)" />
       <div class="container-narrow donate-teaser__inner">
         {data.donateEyebrow && <span class="eyebrow eyebrow--purple">{data.donateEyebrow}</span>}
         {data.donateTitle && <h2 class="donate-teaser__title">{data.donateTitle}</h2>}
         {data.donateBody && <p class="donate-teaser__body">{data.donateBody}</p>}
-        <a href="/donate/" class="btn btn--purple">Donate</a>
+        <a href="https://example.com/donate" target="_blank" rel="noopener noreferrer" class="btn btn--purple">Donate</a>
       </div>
     </section>
   )}
 </Base>
 
 <style>
-  .intro-section, .sections-index, .quote-section, .donate-teaser, .promo-section { position: relative; overflow: hidden; }
+  .intro-section, .playlist-section, .voices-section, .sample-section, .donate-teaser { position: relative; overflow: hidden; }
 
-  /* --- Featured / promo section --- */
-  .promo-section__head { text-align: center; max-width: var(--measure-wide); margin-inline: auto; margin-bottom: clamp(var(--space-4), 1.6vw, var(--space-6)); position: relative; z-index: 1; }
-  .promo-section__title {
-    margin-top: var(--space-3);
-    font-family: var(--font-display);
-    font-size: clamp(var(--step-4), 3.5vw + 0.3rem, var(--step-6));
-    font-weight: 300;
-  }
-  .promo-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: clamp(var(--space-5), 2.4vw, var(--space-6));
-    position: relative;
-    z-index: 1;
-  }
-  @media (max-width: 900px) { .promo-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 640px) { .promo-grid { grid-template-columns: 1fr; } }
-  .promo-card {
-    background: var(--paper);
-    border: 1px solid var(--paper-hairline);
-    position: relative;
-    isolation: isolate;
-    transition: transform var(--dur) var(--ease-out-quart), box-shadow var(--dur) var(--ease-out-quart);
-  }
-  .promo-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 28px -18px rgba(24, 22, 21, 0.35);
-  }
-  /* Small Deco top-right corner accent on each card */
-  .promo-card::before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0;
-    width: 24px; height: 24px;
-    border-top: 1px solid var(--brass);
-    border-right: 1px solid var(--brass);
-    opacity: 0.65;
-    pointer-events: none;
-    z-index: 2;
-  }
-  .promo-card__link {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    border: 0;
-    color: inherit;
-  }
-  .promo-card__image-wrap {
-    position: relative;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    background: color-mix(in oklab, var(--paper) 92%, var(--purple) 8%);
-  }
-  .promo-card__image {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    filter: grayscale(1) contrast(1.06);
-    transition: transform 600ms var(--ease-out-quart), filter var(--dur) var(--ease-out-quart);
-  }
-  .promo-card__link:hover .promo-card__image {
-    transform: scale(1.03);
-    filter: grayscale(1) contrast(1.1) brightness(1.03);
-  }
-  .promo-card__body {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-    padding: clamp(var(--space-5), 2vw, var(--space-6));
-    flex: 1;
-  }
-  .promo-card__kicker {
-    font-family: var(--font-ui);
-    font-weight: 500;
-    font-size: var(--step--1);
-    letter-spacing: var(--track-caps);
-    text-transform: uppercase;
-    color: var(--purple);
-  }
-  .promo-card__title {
-    font-family: var(--font-display);
-    font-size: clamp(var(--step-3), 1.8vw + 0.4rem, var(--step-4));
-    font-weight: 400;
-    line-height: var(--leading-snug);
-    letter-spacing: var(--track-tight);
-    color: var(--ink);
-    margin-top: calc(var(--space-1) * -1);
-  }
-  .promo-card__subtitle {
-    font-family: var(--font-ui);
-    font-style: italic;
-    color: var(--text-on-paper-muted);
-    font-size: var(--step-0);
-    margin-top: calc(var(--space-2) * -1);
-  }
-  .promo-card__desc {
-    font-family: var(--font-body);
-    color: var(--text-on-paper);
-    font-size: var(--step-0);
-    line-height: var(--leading-normal);
-  }
-  .promo-card__cta {
-    margin-top: auto;
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    font-family: var(--font-ui);
-    font-weight: 500;
-    font-size: var(--step--1);
-    letter-spacing: var(--track-caps);
-    text-transform: uppercase;
-    color: var(--brass);
-    padding-top: var(--space-4);
-  }
-  .promo-card__arrow { transition: transform var(--dur) var(--ease-out-quart); }
-  .promo-card__link:hover .promo-card__cta { color: var(--purple); }
-  .promo-card__link:hover .promo-card__arrow { transform: translateX(4px); }
-
+  /* Welcome / Intro */
   .intro { text-align: left; position: relative; z-index: 1; }
   .intro__lede {
     font-family: var(--font-display);
@@ -300,138 +159,42 @@ const sections = [
     color: var(--text-on-paper);
     max-width: 52ch;
   }
+  .intro__body--lead { font-weight: 700; }
 
   .eyebrow--brass  { color: var(--brass); }
   .eyebrow--purple { color: var(--purple); }
   .eyebrow--yellow { color: var(--yellow); }
   .eyebrow--copper { color: var(--copper); }
 
-  .sections-index__head { max-width: var(--measure); margin-bottom: var(--space-5); position: relative; z-index: 1; }
-  .sections-index__title {
-    margin-top: var(--space-3);
-    font-size: clamp(var(--step-4), 4vw + 0.4rem, var(--step-6));
-    font-weight: 300;
-    display: inline-block;
-  }
+  /* Playlist section */
+  .playlist-section__head { text-align: center; margin: 0 auto var(--space-6); position: relative; z-index: 1; }
+  .playlist-section__title { margin: var(--space-3) auto 0; font-family: var(--font-display); font-size: clamp(var(--step-4), 3.5vw + 0.3rem, var(--step-6)); font-weight: 300; letter-spacing: var(--track-tight); text-align: center; color: var(--ink); }
+  .playlist-section__blurb { margin: var(--space-3) auto 0; font-family: var(--font-body); font-size: var(--step-0); color: var(--ink); max-width: 82ch; text-align: center; }
 
-  /* 3-column card grid: 5 section cards + 1 decorative fleur cell = 3x2 grid */
-  .sections-index__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    border-top: 1px solid var(--paper-hairline);
-    border-left: 1px solid var(--paper-hairline);
-    position: relative;
-    z-index: 1;
-  }
-  @media (max-width: 900px) {
-    .sections-index__grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 560px) {
-    .sections-index__grid { grid-template-columns: 1fr; }
-  }
+  /* Voices — purple ground with carousel */
+  .voices-section__head { text-align: center; margin: 0 auto var(--space-4); position: relative; z-index: 1; }
+  .voices-section__eyebrow { color: var(--yellow-soft); }
+  .voices-section__title { margin: var(--space-3) auto 0; font-family: var(--font-display); font-size: clamp(var(--step-4), 3.5vw + 0.3rem, var(--step-6)); font-weight: 300; color: #F5EAD1; text-align: center; max-width: 26ch; }
 
-  .sections-index__card {
-    border-right: 1px solid var(--paper-hairline);
-    border-bottom: 1px solid var(--paper-hairline);
-    position: relative;
-    background: color-mix(in oklab, var(--paper) 94%, var(--card-vivid, var(--brass)) 6%);
-    min-width: 0;
+  /* Sample the Sound (educational lessons) — ink (near-black) ground */
+  .sample-section { padding-bottom: clamp(var(--space-8), 6vw, var(--space-9)); }
+  .sample__inner { text-align: center; position: relative; z-index: 1; }
+  .sample__inner :global(.eyebrow) { color: var(--yellow-soft); }
+  .sample__title { margin: var(--space-3) auto 0; font-family: var(--font-display); font-size: clamp(var(--step-4), 3.5vw + 0.3rem, var(--step-5)); font-weight: 300; max-width: 24ch; color: #FFFFFF; }
+  .sample__body { margin: var(--space-4) auto 0; max-width: 48ch; font-family: var(--font-body); color: #FFFFFF; }
+  .sample__cta {
+    display: inline-flex; align-items: center; gap: var(--space-3);
+    margin-top: var(--space-6);
+    padding: var(--space-4) var(--space-6);
+    font-family: var(--font-ui); font-weight: 500; font-size: var(--step--1);
+    letter-spacing: var(--track-caps); text-transform: uppercase;
+    color: var(--paper); background: var(--purple); border: 1px solid var(--purple);
+    text-decoration: none;
+    transition: background var(--dur) var(--ease-out-quart), border-color var(--dur) var(--ease-out-quart);
   }
-  .sections-index__link {
-    display: grid;
-    grid-template-rows: auto auto auto 1fr auto;
-    gap: var(--space-2);
-    padding: clamp(var(--space-5), 2.2vw, var(--space-7));
-    padding-left: calc(clamp(var(--space-5), 2.2vw, var(--space-7)) + 6px);
-    height: 100%;
-    border: 0;
-    transition: background var(--dur) var(--ease-out-quart);
-  }
-  .sections-index__link:hover, .sections-index__link:focus-visible {
-    background: color-mix(in oklab, var(--card-vivid, var(--brass)) 12%, transparent);
-  }
+  .sample__cta:hover, .sample__cta:focus-visible { background: var(--oxblood); border-color: var(--oxblood); }
 
-  /* Two vars per card: --card-accent (dark, AA-compliant for text) and
-     --card-vivid (bright, more distinct for decorative stripe + tint) */
-  .sections-index__card--brass  { --card-accent: var(--brass);  --card-vivid: var(--brass-bright); }
-  .sections-index__card--purple { --card-accent: var(--purple); --card-vivid: var(--purple-soft); }
-  .sections-index__card--copper { --card-accent: var(--copper); --card-vivid: var(--copper-bright); }
-  .sections-index__card--yellow { --card-accent: var(--yellow); --card-vivid: var(--yellow-bright); }
-
-  /* Colored accent stripe on the left edge of each card — uses the vivid variant */
-  .sections-index__card::after {
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 6px;
-    background: var(--card-vivid, var(--brass));
-    opacity: 1;
-  }
-
-  .sections-index__num {
-    font-family: var(--font-display);
-    font-size: clamp(var(--step-4), 3.4vw, var(--step-5));
-    line-height: 0.95;
-    color: var(--card-accent, var(--brass));
-    font-feature-settings: 'tnum';
-    font-weight: 300;
-  }
-  .sections-index__body { display: contents; }
-  .sections-index__kicker {
-    font-family: var(--font-ui);
-    font-weight: 500;
-    font-size: var(--step--1);
-    letter-spacing: var(--track-caps);
-    text-transform: uppercase;
-    color: var(--card-accent, var(--brass));
-    margin-top: var(--space-3);
-  }
-  .sections-index__label {
-    font-family: var(--font-display);
-    font-size: clamp(var(--step-3), 2.4vw, var(--step-4));
-    font-weight: 400;
-    letter-spacing: var(--track-tight);
-    line-height: 1;
-    color: var(--ink);
-    margin-top: var(--space-2);
-  }
-  .sections-index__blurb {
-    font-family: var(--font-body);
-    color: var(--text-on-paper);
-    font-size: var(--step-0);
-    line-height: var(--leading-normal);
-    margin-top: var(--space-3);
-    max-width: 36ch;
-  }
-  .sections-index__arrow {
-    display: inline-block;
-    color: var(--card-accent, var(--brass));
-    margin-top: var(--space-5);
-    transition: transform var(--dur) var(--ease-out-quart);
-  }
-  .sections-index__link:hover .sections-index__arrow { transform: translateX(8px); }
-
-  /* Decorative fleur cell filling the 6th slot */
-  .sections-index__fleur {
-    border-right: 1px solid var(--paper-hairline);
-    border-bottom: 1px solid var(--paper-hairline);
-    background: color-mix(in oklab, var(--paper) 93%, var(--purple) 7%);
-    padding: clamp(var(--space-5), 2vw, var(--space-6));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100%;
-  }
-  .sections-index__fleur svg {
-    max-width: 200px;
-    height: auto;
-    opacity: 0.95;
-  }
-  @media (max-width: 560px) {
-    .sections-index__fleur { min-height: 240px; }
-  }
-
+  /* Donate teaser */
   .donate-teaser__inner { text-align: center; position: relative; z-index: 1; }
   .donate-teaser__title {
     font-family: var(--font-display);
@@ -447,7 +210,6 @@ const sections = [
     font-family: var(--font-body);
     color: var(--text-on-paper);
   }
-
   .btn {
     display: inline-block;
     margin-top: var(--space-6);
@@ -461,8 +223,6 @@ const sections = [
     text-decoration: none;
     transition: background var(--dur) var(--ease-out-quart), color var(--dur) var(--ease-out-quart);
   }
-  .btn--brass { color: var(--brass); border: 1px solid var(--brass); }
-  .btn--brass:hover, .btn--brass:focus-visible { background: var(--brass); color: var(--paper); }
-  .btn--purple { color: var(--purple); border: 1px solid var(--purple); }
-  .btn--purple:hover, .btn--purple:focus-visible { background: var(--purple); color: var(--paper); }
+  .btn--purple { color: var(--paper); background: var(--purple); border: 1px solid var(--purple); }
+  .btn--purple:hover, .btn--purple:focus-visible { background: var(--oxblood); border-color: var(--oxblood); }
 </style>

@@ -1,22 +1,11 @@
 ---
-title: BozBiz
+title: About
 originalUrl: "http://bozzies.org/bozbiz/"
 ---
-[![](/uploads/logo.png)](http://bozzies.org)
+[!](http://bozzies.org)
 
-![](/uploads/quote1.gif)
-Bozzies.com can connect you with the right person or resource to answer just about any research need you have. We want the world to know, and we will help the world get the information they need.
-![](/uploads/quote2.gif)
-
-- Cynthia Lucas
-
-* [BozBios](http://bozzies.org/bozbios/)
-* [BozBuz](http://bozzies.org/bozbuz/)
-* [BozBufs](http://bozzies.org/bozbufs/)
-* [Boz Beat](http://bozzies.org/bozbeat/)
-* [BozBuys](http://bozzies.org/bozbuys/)
-* [BozBiz](http://bozzies.org/bozbiz/)
-* [BozBlog](http://bozzies.org/blog/)
+!Bozzies.com can connect you with the right person or resource to answer just about any research need you have. We want the world to know, and we will help the world get the information they need.
+!- Cynthia Lucas
 
 # BozBiz
 

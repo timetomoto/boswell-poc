@@ -1,14 +1,16 @@
 ---
-// Nav — sticky, minimal, thin-line. Five sections + wordmark.
+// Nav — sticky, thin-line. 5 sections + wordmark + prominent Donate button.
 const { path = '/' } = Astro.props;
 
 const items = [
   { label: 'The Sisters', href: '/sisters/' },
-  { label: 'Music',       href: '/music/' },
   { label: 'Press',       href: '/press/' },
-  { label: 'Legacy',      href: '/legacy/' },
+  { label: 'Media',       href: '/media/' },
   { label: 'About',       href: '/about/' },
 ];
+
+/* Placeholder: swap this URL for the real donate destination once known. */
+const DONATE_URL = 'https://example.com/donate';
 ---
 <header class="site-nav">
   <div class="site-nav__inner container">
@@ -26,6 +28,9 @@ const items = [
             >{item.label}</a>
           </li>
         ))}
+        <li>
+          <a href={DONATE_URL} class="site-nav__donate" target="_blank" rel="noopener noreferrer">Donate</a>
+        </li>
       </ul>
     </nav>
   </div>
@@ -59,7 +64,6 @@ const items = [
     font-family: var(--font-display);
     font-weight: 500;
     font-size: var(--step-2);
-    letter-spacing: var(--track-tight);
     color: var(--ink);
   }
   .site-nav__mark-line-2 {
@@ -73,7 +77,8 @@ const items = [
   }
   .site-nav__list {
     display: flex;
-    gap: clamp(var(--space-4), 2.5vw, var(--space-7));
+    align-items: center;
+    gap: clamp(var(--space-4), 2.5vw, var(--space-6));
   }
   .site-nav__link {
     font-family: var(--font-ui);
@@ -100,9 +105,30 @@ const items = [
   .site-nav__link:hover, .site-nav__link:focus-visible { color: var(--brass); }
   .site-nav__link:hover::after, .site-nav__link.is-active::after { transform: scaleX(1); }
 
-  @media (max-width: 720px) {
+  /* Donate CTA — stands out from the plain nav links */
+  .site-nav__donate {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: var(--step--1);
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+    color: var(--paper);
+    background: var(--purple);
+    border: 1px solid var(--purple);
+    padding: var(--space-2) var(--space-4);
+    text-decoration: none;
+    transition: background var(--dur) var(--ease-out-quart), color var(--dur) var(--ease-out-quart), border-color var(--dur) var(--ease-out-quart);
+  }
+  .site-nav__donate:hover, .site-nav__donate:focus-visible {
+    background: var(--oxblood);
+    border-color: var(--oxblood);
+    color: var(--paper);
+  }
+
+  @media (max-width: 900px) {
     .site-nav__inner { flex-direction: column; gap: var(--space-3); align-items: flex-start; }
     .site-nav__list { flex-wrap: wrap; gap: var(--space-4) var(--space-5); }
     .site-nav__link { font-size: var(--step--2); }
+    .site-nav__donate { font-size: var(--step--2); }
   }
 </style>

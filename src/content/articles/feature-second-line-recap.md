@@ -17,7 +17,6 @@ Boswell Sisters - Boz Buz
 
 |  |  |  |  |
 | --- | --- | --- | --- |
-| Boswell Sister Links |  | [BozBios](bios.php) | [BozBuz](buz.php) | [BozBufs](bufs.php) | [BozBuds](http://www.bozzies.org/buds2010) | [BozBeat](beat.php) | [BozBuys](buys.html) | [BozBiz](biz.php) | Boswells Links |
 
 |  |  |  |  |  |  |
 | --- | --- | --- | --- | --- | --- |
