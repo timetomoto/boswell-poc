@@ -10,7 +10,7 @@ pullQuoteAttribution: "Luise King"
 
 ### By David W. McCain
 
-![4-King-Sisters-autographed](http://bozzies.org/wp-content/uploads/2016/05/4-King-Sisters-autographed.png)The recent death of Yvonne King of the King Sisters prompted me once again to observe that when you trace “the history of harmony” back to its roots, those roots more often than not end with the names of Martha, Connie and Vet Boswell. Like the Andrews Sisters, the King Sisters admired and were inspired by the Boswells and went on to develop their own particular blend and style which carried them to well-deserved fame and fortune.
+The recent death of Yvonne King of the King Sisters prompted me once again to observe that when you trace “the history of harmony” back to its roots, those roots more often than not end with the names of Martha, Connie and Vet Boswell. Like the Andrews Sisters, the King Sisters admired and were inspired by the Boswells and went on to develop their own particular blend and style which carried them to well-deserved fame and fortune.
 
 Autographed image of the 4 King Sisters
 
@@ -36,7 +36,7 @@ The King Sisters (as a trio) began their radio career on station KLX in Oakland,
 
 Huh? Was I seeing things? “Spun off into the Boswell Sisters?” That gives the impression that the King Sisters had billed themselves as such! When I called AP, I was told that I wasn’t the only fan of either group that called to point out the error. Where in the world did they get that from? What must the King Sisters themselves have thought about it?
 
-![alyceKingDownbeat-300](http://bozzies.org/wp-content/uploads/2016/05/alyceKingDownbeat-300.png)AP also didn’t get the sequence right in the subsequent configurations of the group after eldest sister Maxine left, so with some harmonious (and posthumous) assistance from Donna, Yvonne and Maxine King, I will give the information as told to me verbally or in writing by the sisters themselves.
+AP also didn’t get the sequence right in the subsequent configurations of the group after eldest sister Maxine left, so with some harmonious (and posthumous) assistance from Donna, Yvonne and Maxine King, I will give the information as told to me verbally or in writing by the sisters themselves.
 
 I discovered that Donna King Conkling was a member of the Society of Singers, so I wrote to her care of that organization in September 1996. (Donna’s husband, James “Jim” Conkling, was a music and broadcasting executive who helped create the Grammy Awards and had been head of artists and repertory at Capitol Records, president of Columbia Records and the first president of Warner Brothers Records). Not long afterwards, my phone rang one evening in my New York apartment. It was Donna King, a bright and talkative lady, who was delighted to receive my letter and was only too happy to give me a little family history as well as tell me what had happened with AP. She had given the Los Angeles Times a statement (in writing, no less, that had even been proofread by eldest sister Maxine!) that they began their career by wanting to sound like the Boswell Sisters. Donna related how she made it a point to say at Alyce’s funeral service that at no time were the King Sisters ever billed as the Boswell Sisters, which is what the AP story had conveyed.
 
@@ -58,8 +58,6 @@ Luise King Rey was still living at the time I contacted Donna and Yvonne, but he
 >
 > Luise King: Well, the Boswell Sisters are really our idols. That’s how we got started. We used to hock every penny we had and buy their records. We kind of took over their job, they were singing at San Francisco NBC and they left and got a commercial, Chesterfield or something, really big time and went to New York City. NBC was looking for a girls’ trio and we went up there and auditioned for their spot. We copied everything they did. They probably were our major influence. And then later on, I would say, when we got into the four-part harmony, I think it was the Merry Macs.
 
-![1931](http://bozzies.org/wp-content/uploads/2016/05/1931.png)
-
 Just to put Luise’s memory in the proper historical perspective, the Boswells left KGO— the flagship station of the NBC Pacific Coast network—in January 1931 to travel to New York where they had landed a 52-week network contract with NBC . They were to appear on several special broadcasts of the Pleasure Hour sponsored by not Chesterfield (that happened for the Boswells the next year and was their longest running commercial program, lasting 10 months) but by Camel cigarettes.
 
 I next called eldest sister Maxine King Thomas, who asked me to write her a letter with my questions. I did so and even enclosed the obituaries I had of Alyce and Luise plus some other articles. Since the Driggs family were Mormons, they were on top of their family history, and Maxine graciously replied with very detailed answers to each and every one of my questions, even correcting some erroneous information that had been published in the obituaries. Maxine said she had never seen an article about them which didn’t contain at least one error! (Of course, there were a lot of King Sisters to keep track of!)
@@ -74,7 +72,7 @@ The Boswell Sisters left KFWB in November of 1930 to accept the above-mentioned 
 >
 > We spent the summer ‘midst the tall redwoods ending up in San Francisco. Maxine had now joined Alice and Louise and were improving all the time. They auditioned at KPO in San Francisco, but again, did not get the job…So they took the ferry across the bay to Oakland where they were hired at KLX, Karleton accompanying them. They sang 2 days a week on their own show and then the big show “Hi Jinks” all for $25.00 for the 4 of them. It was enough to pay the rent on a large Victorian house, sparsely furnished and with a friendly front porch. We sent for Mama, Donna, and the baby and that became our home for the next couple of years.
 
-![SF-Examiner-Dec-1933-400](http://bozzies.org/wp-content/uploads/2016/06/SF-Examiner-Dec-1933-400.png)By the winter of 1931-32, Maxine, Luise and Alyce had become a popular feature on KLX in Oakland, and this is where they first billed themselves as “The King Sisters.” Their brother Karleton was their pianist, and Maxine remembered they got $100 a week. They were on 5 times a week and as was customary, their programs were 15 minutes in length. This was great money during the Depression, needless to say, especially for a family as large as the Driggs household.
+By the winter of 1931-32, Maxine, Luise and Alyce had become a popular feature on KLX in Oakland, and this is where they first billed themselves as “The King Sisters.” Their brother Karleton was their pianist, and Maxine remembered they got $100 a week. They were on 5 times a week and as was customary, their programs were 15 minutes in length. This was great money during the Depression, needless to say, especially for a family as large as the Driggs household.
 
 In the summer of 1932 Maxine, Luise and Alyce were hired by KSL in Salt Lake City for what they thought would be just for the summer, but turned into a year’s stay. It was during their tenure in Salt Lake City that bandleader Horace Heidt first heard the King Sisters on a KSL broadcast. He eventually signed them in 1933 to appear with his orchestra between movies at the Golden Gate Theater in San Francisco, and they were to be a vital part of his ensemble for the next few years.
 
@@ -97,8 +95,6 @@ Yvonne’s memoir goes into a little more detail and gives us “sister” Anita
 Maxine stayed with the group until the autumn of 1935, when she retired for good. Yvonne took her place, and the Four King Sisters were on their way to the Big Time, beginning with a national hookup on the Alemite Oil radio show, and in 1937 they made their first recordings on the Brunswick label (their very first being a vocal chorus of *Hot Lips* with Horace Heidt’s Orchestra on Brunswick 7916).
 
 As I wanted to focus on the early days of the King Sisters, I’ll conclude my “history of harmony” here. Those of you who want to know more about later King Sisters history can refer to Dana Countryman’s excellent *Goldmine* article and web page postings, plus there’s a lot more information on the King Sisters official website, the link to which is provided in the bibliography.
-
-![last-photo-bgr](http://bozzies.org/wp-content/uploads/2016/06/last-photo-bgr.png)
 
 ### A Special Added Attraction! Check the BozPod >>
 

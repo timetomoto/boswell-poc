@@ -25,7 +25,7 @@ promoCards:
     description: A candid mid-1970s conversation with Connee and Vet Boswell from Richard Lamparski's radio series, revisiting the trio years and the decades that followed.
     image: /uploads/Boswell_Sisters_1935.jpg
     imageAlt: Portrait of Martha, Connee, and Vet Boswell, 1935.
-    link: /press/feature-lamparski/
+    link: /press/feature/lamparski/
     external: false
     linkLabel: Read the interview
   - kicker: Interview
@@ -33,7 +33,7 @@ promoCards:
     description: A first-hand conversation with Vet Boswell in her later years, the opening installment of a series of family recollections.
     image: /uploads/Aura_Lee-Vet-Boswell.jpg
     imageAlt: Photograph of Vet Boswell with Aura Lee.
-    link: /press/feature-vet-tarto-aura-part-1/
+    link: /press/feature/vet-tarto-aura-part-1/
     external: false
     linkLabel: Read part one
 sectionsEyebrow: Explore

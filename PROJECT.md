@@ -5,7 +5,7 @@ returning developer (or Claude session) can pick up cold without re-reading the
 entire chat history. Nothing sensitive belongs in this file — no tokens, no
 secrets, no private URLs. Kept in the repo, not served by the site.
 
-**Last updated:** 2026-07-14, Press section commit.
+**Last updated:** 2026-07-14, Legacy section commit.
 
 ---
 
@@ -54,7 +54,7 @@ Five-item primary nav, each a real section:
 - `/sisters/` — The Sisters (bios + timelines) *[built]*
 - `/music/` — Music (Boz Beat lessons, discography, reviews) *[built]*
 - `/press/` — Press (vintage articles, press room, interviews, video) *[built]*
-- `/legacy/` — Legacy (tribute performers, Bozcasts, ASCAP, Boz of the Month) *[not yet built]*
+- `/legacy/` — Legacy (tribute performers, Bozcasts, ASCAP, Boz of the Month) *[built]*
 - `/about/` — About / donate / contact *[not yet built]*
 
 **URL scheme:** grouped by section. Examples:
@@ -297,8 +297,8 @@ All copy CMS-editable via `src/content/pages/home.md`.
 
 ## 11. Not yet built
 
-Section landings and entry templates for **Legacy** and **About**. Content
-is imported and waiting in `src/content/*` — routes need to be added.
+Section landing and entry templates for **About**. Content is imported and
+waiting in `src/content/*` — routes need to be added.
 
 **Also outstanding:**
 - The 12th vintage article (`/boz-buz-vintage-article/`, no suffix) failed

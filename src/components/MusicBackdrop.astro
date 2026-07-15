@@ -7,6 +7,7 @@ const {
   variant = 'sunburst',
   opacity = 0.055,
   color = 'currentColor',
+  topOffset = 0,
 } = Astro.props as {
   variant?: 'sunburst' | 'chevrons' | 'arcs' | 'rays' | 'diamond-grid'
           | 'staves' | 'notes' | 'fleur' | 'ironwork'
@@ -14,9 +15,10 @@ const {
           | 'saxophone' | 'jazz-club';
   opacity?: number;
   color?: string;
+  topOffset?: number;
 };
 ---
-<div class="music-backdrop" style={`--mb-opacity:${opacity}; --mb-color:${color}`} aria-hidden="true">
+<div class="music-backdrop" style={`--mb-opacity:${opacity}; --mb-color:${color}; --mb-top:${topOffset}px`} aria-hidden="true">
   {/* --- ART DECO backgrounds --- */}
   {variant === 'sunburst' && (
     <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
@@ -442,7 +444,10 @@ const {
 <style>
   .music-backdrop {
     position: absolute;
-    inset: 0;
+    top: var(--mb-top, 0);
+    right: 0;
+    bottom: 0;
+    left: 0;
     pointer-events: none;
     z-index: 0;
     opacity: var(--mb-opacity);

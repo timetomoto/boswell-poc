@@ -60,10 +60,10 @@ h5, h6 { font-family: var(--font-ui); font-weight: 500; }
 p { max-width: var(--measure); line-height: var(--leading-loose); }
 p + p { margin-top: var(--space-4); }
 
-/* Links */
-a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--ink-hairline); transition: color var(--dur) var(--ease-out-quart), border-color var(--dur) var(--ease-out-quart); }
-a:hover { color: var(--brass); border-color: var(--brass); }
-a:focus-visible { outline: 2px solid var(--brass); outline-offset: 4px; border-radius: 2px; }
+/* Links — recognizable, accessible blue with a solid underline */
+a { color: var(--link); text-decoration: none; border-bottom: 1px solid var(--link); transition: color var(--dur) var(--ease-out-quart), border-color var(--dur) var(--ease-out-quart); }
+a:hover { color: var(--link-hover); border-color: var(--link-hover); }
+a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; border-radius: 2px; }
 
 /* Selection */
 ::selection { background: var(--brass); color: var(--ink); }
@@ -74,8 +74,8 @@ a:focus-visible { outline: 2px solid var(--brass); outline-offset: 4px; border-r
   background: var(--ink);
   color: var(--text-on-ink);
 }
-.ground-ink a { border-color: rgba(200, 169, 106, 0.35); }
-.ground-ink a:hover { color: var(--champagne); border-color: var(--champagne); }
+.ground-ink a { color: var(--link-on-dark); border-color: var(--link-on-dark); }
+.ground-ink a:hover { color: var(--link-on-dark-hover); border-color: var(--link-on-dark-hover); }
 
 /* Solid Mardi Gras purple ground, footer and quote sections */
 .ground-purple {
@@ -84,8 +84,8 @@ a:focus-visible { outline: 2px solid var(--brass); outline-offset: 4px; border-r
   position: relative;
   isolation: isolate;
 }
-.ground-purple a { color: var(--yellow-soft); border-color: rgba(225, 194, 99, 0.35); }
-.ground-purple a:hover { color: #F5DE8C; border-color: #F5DE8C; }
+.ground-purple a { color: var(--link-on-dark); border-color: var(--link-on-dark); }
+.ground-purple a:hover { color: var(--link-on-dark-hover); border-color: var(--link-on-dark-hover); }
 .ground-purple .eyebrow { color: var(--yellow-soft); }
 
 /* Pull quote on purple: pure white, defined here to bypass Astro scoped-style scoping */
@@ -103,8 +103,8 @@ a:focus-visible { outline: 2px solid var(--brass); outline-offset: 4px; border-r
   position: relative;
   isolation: isolate;
 }
-.ground-gold a { color: var(--purple); border-color: rgba(74, 46, 90, 0.4); }
-.ground-gold a:hover { color: var(--oxblood); border-color: var(--oxblood); }
+.ground-gold a { color: var(--link); border-color: var(--link); }
+.ground-gold a:hover { color: var(--link-hover); border-color: var(--link-hover); }
 .ground-gold .eyebrow { color: var(--purple); }
 
 .ground-paper {

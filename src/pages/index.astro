@@ -12,8 +12,8 @@ const data = (home?.data ?? {}) as any;
 const sections = [
   { label: 'The Sisters', href: '/sisters/', accent: 'brass',  kicker: 'Bios and Timelines', blurb: 'Three sisters from New Orleans. Their lives, in their own rhythm.' },
   { label: 'Music',       href: '/music/',   accent: 'purple', kicker: 'The Sound',           blurb: 'Boz Beat lessons, chart positions, and the reviews that recognized them.' },
-  { label: 'Press',       href: '/press/',   accent: 'copper', kicker: 'Vintage and Modern',  blurb: 'A century of writing on the Boswells, from 1930s dailies to modern press.' },
-  { label: 'Legacy',      href: '/legacy/',  accent: 'yellow', kicker: 'Influence Carried',   blurb: 'Tribute performers, Bozcasts, and scholarship keeping the sound alive.' },
+  { label: 'Press',       href: '/press/',   accent: 'brass',  kicker: 'Vintage and Modern',  blurb: 'A century of writing on the Boswells, from 1930s dailies to modern press.' },
+  { label: 'Legacy',      href: '/legacy/',  accent: 'purple', kicker: 'Influence Carried',   blurb: 'Tribute performers, Bozcasts, and scholarship keeping the sound alive.' },
   { label: 'About',       href: '/about/',   accent: 'brass',  kicker: 'The Non-Profit',      blurb: 'The organization behind Bozzies.org, and how to support the work.' },
 ];
 ---
@@ -32,7 +32,7 @@ const sections = [
 
   {(data.introLede || data.introBody) && (
     <section class="section ground-paper intro-section">
-      <MusicBackdrop variant="jazz-club" opacity={0.09} color="var(--purple)" />
+      <MusicBackdrop variant="sheet-music" opacity={0.07} color="var(--purple)" />
       <div class="container-narrow intro">
         {data.introEyebrow && <span class="eyebrow eyebrow--purple">{data.introEyebrow}</span>}
         {data.introLede && <p class="intro__lede">{data.introLede}</p>}
@@ -288,7 +288,6 @@ const sections = [
     font-weight: 400;
     font-size: clamp(var(--step-3), 2.5vw + 0.4rem, var(--step-4));
     line-height: var(--leading-snug);
-    letter-spacing: var(--track-tight);
     color: var(--ink);
     margin-top: var(--space-4);
     max-width: 38ch;
@@ -313,15 +312,6 @@ const sections = [
     font-size: clamp(var(--step-4), 4vw + 0.4rem, var(--step-6));
     font-weight: 300;
     display: inline-block;
-    position: relative;
-  }
-  .sections-index__title::after {
-    content: '';
-    position: absolute;
-    left: 0; bottom: -0.4em;
-    width: 3.5rem;
-    height: 3px;
-    background: linear-gradient(90deg, var(--purple) 0 60%, var(--yellow) 60% 100%);
   }
 
   /* 3-column card grid: 5 section cards + 1 decorative fleur cell = 3x2 grid */
@@ -345,7 +335,7 @@ const sections = [
     border-right: 1px solid var(--paper-hairline);
     border-bottom: 1px solid var(--paper-hairline);
     position: relative;
-    background: color-mix(in oklab, var(--paper) 97%, var(--card-accent, var(--brass)) 3%);
+    background: color-mix(in oklab, var(--paper) 94%, var(--card-vivid, var(--brass)) 6%);
     min-width: 0;
   }
   .sections-index__link {
@@ -359,22 +349,24 @@ const sections = [
     transition: background var(--dur) var(--ease-out-quart);
   }
   .sections-index__link:hover, .sections-index__link:focus-visible {
-    background: color-mix(in oklab, var(--card-accent, var(--brass)) 8%, transparent);
+    background: color-mix(in oklab, var(--card-vivid, var(--brass)) 12%, transparent);
   }
 
-  .sections-index__card--brass  { --card-accent: var(--brass); }
-  .sections-index__card--purple { --card-accent: var(--purple); }
-  .sections-index__card--copper { --card-accent: var(--copper); }
-  .sections-index__card--yellow { --card-accent: var(--yellow); }
+  /* Two vars per card: --card-accent (dark, AA-compliant for text) and
+     --card-vivid (bright, more distinct for decorative stripe + tint) */
+  .sections-index__card--brass  { --card-accent: var(--brass);  --card-vivid: var(--brass-bright); }
+  .sections-index__card--purple { --card-accent: var(--purple); --card-vivid: var(--purple-soft); }
+  .sections-index__card--copper { --card-accent: var(--copper); --card-vivid: var(--copper-bright); }
+  .sections-index__card--yellow { --card-accent: var(--yellow); --card-vivid: var(--yellow-bright); }
 
-  /* Colored accent stripe on the left edge of each card */
+  /* Colored accent stripe on the left edge of each card — uses the vivid variant */
   .sections-index__card::after {
     content: '';
     position: absolute;
     left: 0; top: 0; bottom: 0;
-    width: 4px;
-    background: var(--card-accent, var(--brass));
-    opacity: 0.9;
+    width: 6px;
+    background: var(--card-vivid, var(--brass));
+    opacity: 1;
   }
 
   .sections-index__num {

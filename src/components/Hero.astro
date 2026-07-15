@@ -184,7 +184,6 @@ const {
     font-weight: 400;
     font-size: clamp(var(--step-1), 1.4vw + 0.3rem, var(--step-2));
     color: var(--yellow-soft);
-    letter-spacing: 0;
     line-height: 1.35;
     max-width: 36ch;
   }
@@ -274,7 +273,7 @@ const {
 
   /* Corner frames — sit inside the image panel (split) or the whole hero (full-bleed) */
   .hero__frame { position: absolute; inset: clamp(var(--space-3), 2vw, var(--space-6)); z-index: 3; pointer-events: none; color: var(--yellow-soft); }
-  .hero__frame-corner { position: absolute; width: 44px; height: 44px; opacity: 0.75; }
+  .hero__frame-corner { position: absolute; width: 88px; height: 88px; opacity: 0.75; }
   .hero__frame-corner--tl { top: 0; left: 0; }
   .hero__frame-corner--tr { top: 0; right: 0; }
   .hero__frame-corner--bl { bottom: 0; left: 0; }

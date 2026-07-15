@@ -37,6 +37,12 @@
   --text-on-paper: #1E1B18;
   --text-on-paper-muted: rgba(30, 27, 24, 0.78);   /* bumped from 0.62 for AA (~6.7:1) */
 
+  /* Text links — recognizable, AA-compliant blue on ivory + a lighter variant for dark grounds */
+  --link: #0044AA;                  /* on ivory: ~6.78:1 */
+  --link-hover: #002F80;
+  --link-on-dark: #9EC5FF;          /* on ink/purple: ~7:1+ */
+  --link-on-dark-hover: #C0DBFF;
+
   /* Type stacks */
   --font-display: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
   --font-body: 'Source Serif 4', 'Charter', 'Georgia', serif;

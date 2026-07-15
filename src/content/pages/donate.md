@@ -26,4 +26,3 @@ We hope you are enjoying your visit. We are a non-profit, dedicated to keeping t
 
 ## Our ride needs some gas and a good wash, will you help? 🙂
 
-![](https://www.paypal.com/en_US/i/scr/pixel.gif)

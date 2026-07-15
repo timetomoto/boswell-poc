@@ -1,0 +1,114 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import SectionDivider from '../../components/SectionDivider.astro';
+import MusicBackdrop from '../../components/MusicBackdrop.astro';
+import { getEntry, getCollection, render } from 'astro:content';
+
+const page = await getEntry('pages', 'legacy');
+if (!page) throw new Error('Missing src/content/pages/legacy.md');
+const { Content: PageContent } = await render(page);
+
+const features = await getCollection('legacyFeatures');
+
+const subhubOrder: Array<{key: string; label: string; kicker: string; blurb: string}> = [
+  { key: 'bozcasts',         label: 'Bozcasts',            kicker: 'Audio Series',   blurb: 'Long-form interviews and audio essays about the Boswell legacy.' },
+  { key: 'ascap',            label: 'ASCAP Recognition',   kicker: 'Scholarship',    blurb: 'ASCAP-honored writing and scholarship on the Boswell Sisters.' },
+  { key: 'boz-of-the-month', label: 'Boz of the Month',    kicker: 'Fan Features',   blurb: 'A running series of fans, performers, and scholars carrying the sound forward.' },
+  { key: 'feature',          label: 'Community',           kicker: 'Tributes and Talk', blurb: 'Tribute performer directories and community writings on the Bozzies.' },
+];
+
+const grouped = subhubOrder.map(sh => ({
+  ...sh,
+  entries: features
+    .filter(f => f.data.subhub === sh.key)
+    .sort((a, b) => a.data.title.localeCompare(b.data.title))
+    .map(f => ({ id: f.id, title: f.data.title, date: f.data.date })),
+})).filter(g => g.entries.length > 0);
+---
+<Base title={page.data.title as string} description={page.data.subtitle as string | undefined}>
+  <Hero
+    eyebrow={page.data.eyebrow as string | undefined}
+    title={page.data.title as string}
+    subtitle={page.data.subtitle as string | undefined}
+    image={page.data.heroImage as string | undefined}
+    imageAlt={page.data.heroImageAlt as string | undefined}
+    height="medium"
+    layout="full-bleed"
+    align="center"
+  />
+
+  <section class="section ground-paper section-intro">
+    <MusicBackdrop variant="fleur" opacity={0.06} color="var(--purple)" />
+    <div class="container-narrow prose">
+      <PageContent />
+    </div>
+  </section>
+
+  <SectionDivider variant="jazz" color="purple" />
+
+  {grouped.map(group => (
+    <section class="section ground-paper subhub-section">
+      <div class="container">
+        <header class="subhub-head">
+          <span class="eyebrow eyebrow--purple">{group.kicker}</span>
+          <h2 class="subhub-title">{group.label}</h2>
+          <p class="subhub-blurb">{group.blurb}</p>
+        </header>
+        <ol class="feature-list" role="list">
+          {group.entries.map((entry, i) => (
+            <li class="feature-row">
+              <a href={`/legacy/${group.key}/${entry.id}/`} class="feature-row__link">
+                <span class="feature-row__num">{String(i + 1).padStart(2, '0')}</span>
+                <div class="feature-row__body">
+                  <h3 class="feature-row__title">{entry.title}</h3>
+                  {entry.date && <p class="feature-row__meta">{entry.date}</p>}
+                </div>
+                <span class="feature-row__arrow" aria-hidden="true">
+                  <svg width="24" height="10" viewBox="0 0 24 10" fill="none">
+                    <path d="M0 5 H21 M17 1 L21 5 L17 9" stroke="currentColor" stroke-width="1" fill="none"/>
+                  </svg>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  ))}
+</Base>
+
+<style>
+  .section-intro, .subhub-section { position: relative; overflow: hidden; }
+
+  .prose { font-family: var(--font-body); font-size: var(--step-1); line-height: var(--leading-loose); color: var(--text-on-paper); position: relative; z-index: 1; }
+  .prose :global(p) { max-width: 62ch; }
+  .prose :global(p) + :global(p) { margin-top: var(--space-4); }
+  .prose :global(h2) { margin-top: var(--space-6); margin-bottom: var(--space-3); font-family: var(--font-display); font-size: var(--step-3); font-weight: 400; letter-spacing: var(--track-tight); }
+
+  .subhub-section { padding-block: clamp(var(--space-5), 2.6vw, var(--space-7)); border-bottom: 1px solid var(--paper-hairline); }
+  .subhub-section:last-of-type { border-bottom: 0; }
+  .subhub-head { max-width: var(--measure); margin-bottom: var(--space-5); }
+  .subhub-title { margin-top: var(--space-2); font-family: var(--font-display); font-size: clamp(var(--step-4), 3vw + 0.3rem, var(--step-5)); font-weight: 300; letter-spacing: var(--track-tight); }
+  .subhub-blurb { margin-top: var(--space-2); font-family: var(--font-body); font-size: var(--step-0); color: var(--text-on-paper); max-width: 56ch; line-height: var(--leading-normal); }
+
+  .feature-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--paper-hairline); }
+  .feature-row { border-bottom: 1px solid var(--paper-hairline); }
+  .feature-row__link {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: clamp(var(--space-4), 2.5vw, var(--space-6));
+    align-items: center;
+    padding: var(--space-4) 0;
+    border: 0;
+    color: inherit;
+    transition: color var(--dur) var(--ease-out-quart), padding var(--dur) var(--ease-out-quart);
+  }
+  .feature-row__link:hover, .feature-row__link:focus-visible { padding-left: var(--space-3); background: color-mix(in oklab, var(--purple) 4%, transparent); }
+  .feature-row__num { font-family: var(--font-display); font-size: var(--step-3); color: var(--purple); line-height: 1; font-feature-settings: 'tnum'; min-width: 3ch; }
+  .feature-row__body { min-width: 0; }
+  .feature-row__title { margin: 0; font-family: var(--font-display); font-size: clamp(var(--step-2), 1.6vw + 0.2rem, var(--step-3)); font-weight: 400; letter-spacing: var(--track-tight); color: var(--ink); }
+  .feature-row__meta { margin-top: var(--space-1); font-family: var(--font-ui); font-weight: 500; font-size: var(--step--1); letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--text-on-paper-muted); }
+  .feature-row__arrow { color: var(--purple); transition: transform var(--dur) var(--ease-out-quart); }
+  .feature-row__link:hover .feature-row__arrow { transform: translateX(6px); }
+</style>
