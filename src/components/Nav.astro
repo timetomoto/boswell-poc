@@ -1,16 +1,14 @@
 ---
-// Nav — sticky, thin-line. 5 sections + wordmark + prominent Donate button.
+// Nav — sticky, thin-line. Wordmark + CMS-driven nav items + Donate button.
+import { getEntry } from 'astro:content';
 const { path = '/' } = Astro.props;
 
-const items = [
-  { label: 'The Sisters', href: '/sisters/' },
-  { label: 'Press',       href: '/press/' },
-  { label: 'Media',       href: '/media/' },
-  { label: 'About',       href: '/about/' },
-];
+const nav = await getEntry('navigation', 'primary');
+const items = nav?.data.items ?? [];
 
-/* Placeholder: swap this URL for the real donate destination once known. */
-const DONATE_URL = 'https://example.com/donate';
+const settings = await getEntry('siteSettings', 'settings');
+const DONATE_URL = (settings?.data.donateUrl ?? '').trim();
+const DONATE_LABEL = (settings?.data.donateLabel ?? 'Donate').trim();
 ---
 <header class="site-nav">
   <div class="site-nav__inner container">
@@ -29,7 +27,7 @@ const DONATE_URL = 'https://example.com/donate';
           </li>
         ))}
         <li>
-          <a href={DONATE_URL} class="site-nav__donate" target="_blank" rel="noopener noreferrer">Donate</a>
+          <a href={DONATE_URL} class="site-nav__donate" target="_blank" rel="noopener noreferrer">{DONATE_LABEL}</a>
         </li>
       </ul>
     </nav>

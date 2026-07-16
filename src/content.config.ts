@@ -22,11 +22,45 @@ const pages = defineCollection({
     sampleEyebrow: z.string().optional(),
     sampleTitle: z.string().optional(),
     sampleBody: z.string().optional(),
+    sampleCtaLabel: z.string().optional(),
+    playlistEyebrow: z.string().optional(),
+    playlistTitle: z.string().optional(),
     voicesEyebrow: z.string().optional(),
     voicesTitle: z.string().optional(),
     donateEyebrow: z.string().optional(),
     donateTitle: z.string().optional(),
     donateBody: z.string().optional(),
+    /* Media landing */
+    lessonsEyebrow: z.string().optional(),
+    lessonsTitle: z.string().optional(),
+    lessonsLede: z.string().optional(),
+    chartsTeaserEyebrow: z.string().optional(),
+    chartsTeaserTitle: z.string().optional(),
+    chartsTeaserBody: z.string().optional(),
+    chartsTeaserCta: z.string().optional(),
+    reviewsTeaserEyebrow: z.string().optional(),
+    reviewsTeaserTitle: z.string().optional(),
+    reviewsTeaserBody: z.string().optional(),
+    reviewsTeaserCta: z.string().optional(),
+    /* Sisters landing */
+    sistersEyebrow: z.string().optional(),
+    sistersSectionTitle: z.string().optional(),
+    bioReadLabel: z.string().optional(),
+    bioResourcesEyebrow: z.string().optional(),
+    bioResourcesCtaLabel: z.string().optional(),
+    /* Bio-resources */
+    bioBookUrl: z.string().optional(),
+    bioBookLabel: z.string().optional(),
+    /* Press landing */
+    pressReleasesEyebrow: z.string().optional(),
+    pressReleasesTitle: z.string().optional(),
+    pressReleasesBlurb: z.string().optional(),
+    /* About */
+    ctaEyebrow: z.string().optional(),
+    ctaTitle: z.string().optional(),
+    ctaBody: z.string().optional(),
+    ctaContactLabel: z.string().optional(),
+    ctaDonateLabel: z.string().optional(),
     // Hero tagline (short playful line below the title)
     tagline: z.string().optional(),
     // Featured promo section — up to 3 cards
@@ -215,7 +249,43 @@ const siteSettings = defineCollection({
     tagline: z.string().optional(),
     contactEmail: z.string().email().optional(),
     donateUrl: z.string().url().optional(),
+    donateLabel: z.string().optional(),
     footerCredits: z.string().optional(),
+  }),
+});
+
+// Primary navigation — editable label + href list, used by Nav and Footer
+const navigation = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/navigation' }),
+  schema: z.object({
+    items: z.array(z.object({
+      label: z.string(),
+      href: z.string(),
+      external: z.boolean().optional(),
+    })),
+  }),
+});
+
+// Quotes carousel entries — used on the home page voices section
+const voices = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/voices' }),
+  schema: z.object({
+    quotes: z.array(z.object({
+      text: z.string(),
+      attribution: z.string(),
+    })),
+  }),
+});
+
+// Press sub-hub descriptors — one entry per article sub-hub (vintage, in-their-own-words, etc.)
+const pressHubs = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/press-hubs' }),
+  schema: z.object({
+    slug: z.enum(['vintage', 'in-their-own-words', 'video', 'essay', 'feature']),
+    kicker: z.string().optional(),
+    label: z.string(),
+    blurb: z.string().optional(),
+    order: z.number().optional(),
   }),
 });
 
@@ -231,4 +301,7 @@ export const collections = {
   legacyFeatures,
   chartEntries,
   siteSettings,
+  navigation,
+  voices,
+  pressHubs,
 };

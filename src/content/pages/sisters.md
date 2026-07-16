@@ -1,11 +1,15 @@
 ---
 title: The Sisters
-
 subtitle: Get to know the Boswell Sisters — Martha at the piano, Connee out front, Vet in the middle.
 heroImage: /uploads/bozbios.jpg
 heroImageAlt: The Boswell Sisters.
 quote: We had loads of fun with our swinging trio. We were billed one time as musicians and in small print it said, "They also sing".
 quoteAttribution: Connee Boswell
+sistersEyebrow: Meet the Sisters
+sistersSectionTitle: Martha, Connie and Vet
+bioReadLabel: Read the bio
+bioResourcesEyebrow: Further Reading
+bioResourcesCtaLabel: Explore the Boz Biography
 originalUrl: http://bozzies.org/bozbios/
 ---
 

@@ -1,0 +1,95 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import SectionDivider from '../components/SectionDivider.astro';
+import MusicBackdrop from '../components/MusicBackdrop.astro';
+import { getEntry, render } from 'astro:content';
+
+const page = await getEntry('pages', 'about');
+if (!page) throw new Error('Missing src/content/pages/about.md');
+const { Content: PageContent } = await render(page);
+
+const settings = await getEntry('siteSettings', 'settings');
+const donateUrl = (settings?.data.donateUrl ?? '').trim();
+const contactEmail = (settings?.data.contactEmail ?? '').trim();
+---
+<Base title={page.data.title as string} description={page.data.subtitle as string | undefined}>
+  <Hero
+    eyebrow={page.data.eyebrow as string | undefined}
+    title={page.data.title as string}
+    subtitle={page.data.subtitle as string | undefined}
+    image={page.data.heroImage as string | undefined}
+    imageAlt={page.data.heroImageAlt as string | undefined}
+    height="medium"
+    layout="full-bleed"
+    align="center"
+  />
+
+  <section class="section ground-paper section-intro">
+    <MusicBackdrop variant="sheet-music" opacity={0.06} color="var(--purple)" />
+    <div class="container-narrow">
+      <div class="prose">
+        <PageContent />
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider variant="jazz" color="purple" />
+
+  <section class="section ground-purple about-cta">
+    <MusicBackdrop variant="notes" opacity={0.09} color="var(--yellow-soft)" />
+    <div class="container about-cta__inner">
+      <header class="about-cta__head">
+        {page.data.ctaEyebrow && <span class="eyebrow about-cta__eyebrow">{page.data.ctaEyebrow}</span>}
+        {page.data.ctaTitle && <h2 class="about-cta__title">{page.data.ctaTitle}</h2>}
+        {page.data.ctaBody && <p class="about-cta__body">{page.data.ctaBody}</p>}
+      </header>
+      <div class="about-cta__actions">
+        <a href={contactEmail ? `mailto:${contactEmail}` : ''} class="btn btn--outline">{page.data.ctaContactLabel || 'Contact'}</a>
+        <a href={donateUrl} target="_blank" rel="noopener noreferrer" class="btn btn--gold">{page.data.ctaDonateLabel || 'Donate'}</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .section-intro, .about-cta { position: relative; overflow: hidden; }
+
+  /* Prose (shared with sisters landing) */
+  .prose { font-family: var(--font-body); font-size: var(--step-1); line-height: var(--leading-loose); color: var(--text-on-paper); position: relative; z-index: 1; }
+  .prose :global(p) { max-width: 62ch; }
+  .prose :global(p) + :global(p),
+  .prose :global(p) + :global(h2),
+  .prose :global(p) + :global(h3),
+  .prose :global(ul) + :global(h2),
+  .prose :global(ul) + :global(p) { margin-top: var(--space-5); }
+  .prose :global(h2) { margin-top: var(--space-7); margin-bottom: var(--space-3); font-family: var(--font-display); font-weight: 400; font-size: clamp(var(--step-3), 2.4vw, var(--step-5)); letter-spacing: var(--track-tight); color: var(--ink); }
+  .prose :global(h2:first-child) { margin-top: 0; }
+  .prose :global(h3) { margin-top: var(--space-5); font-family: var(--font-display); font-weight: 400; font-size: var(--step-2); }
+  .prose :global(ul) { margin-top: var(--space-4); padding-left: var(--space-5); max-width: 62ch; }
+  .prose :global(ul li) { margin-top: var(--space-2); }
+
+  /* Contact / donate CTA */
+  .about-cta__inner { text-align: center; position: relative; z-index: 1; }
+  .about-cta__head { max-width: var(--measure); margin: 0 auto; }
+  .about-cta__eyebrow { color: var(--yellow-soft); }
+  .about-cta__title { margin: var(--space-3) auto 0; font-family: var(--font-display); font-size: clamp(var(--step-4), 3.5vw + 0.3rem, var(--step-6)); font-weight: 300; color: #F5EAD1; max-width: 22ch; }
+  .about-cta__body { margin: var(--space-4) auto 0; font-family: var(--font-body); font-size: var(--step-1); line-height: var(--leading-normal); color: rgba(245, 234, 209, 0.9); max-width: 52ch; }
+  .about-cta__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-4); margin-top: var(--space-7); }
+  .btn {
+    display: inline-block;
+    padding: var(--space-3) var(--space-6);
+    font-family: var(--font-ui);
+    font-weight: 500;
+    font-size: var(--step--1);
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: background var(--dur) var(--ease-out-quart), color var(--dur) var(--ease-out-quart), border-color var(--dur) var(--ease-out-quart);
+  }
+  .btn--outline { color: var(--yellow-soft); border-color: var(--yellow-soft); background: transparent; }
+  .btn--outline:hover, .btn--outline:focus-visible { background: var(--yellow-soft); color: var(--purple); }
+  .btn--gold { color: var(--purple); background: var(--yellow-soft); border-color: var(--yellow-soft); }
+  .btn--gold:hover, .btn--gold:focus-visible { background: #F5D680; border-color: #F5D680; }
+</style>

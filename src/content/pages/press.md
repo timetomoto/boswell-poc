@@ -1,11 +1,13 @@
 ---
 title: Press
-
 subtitle: A century of writing on the Boswells — vintage newspaper pieces, modern press releases, interviews, and video features.
 heroImage: /uploads/bozbuz.jpg
 heroImageAlt: A Boswell Sisters press photograph.
 quote: The way they work out an "arrangement" is fascinating. One of them plays from an ordinary piano song company, singing the melody. The other two chip in with uncanny instinct on the right harmony and distribution.
 quoteAttribution: The Melody Maker
+pressReleasesEyebrow: The Press Room
+pressReleasesTitle: Press releases & media
+pressReleasesBlurb: Original press releases, event announcements, and archival documents. Each opens as a PDF.
 originalUrl: http://bozzies.org/bozbuz/
 ---
 

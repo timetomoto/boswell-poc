@@ -4,6 +4,8 @@ eyebrow: A Family Affair
 subtitle: The definitive family biography of the Boswell Sisters.
 quote: They were special. They were unique. And although they were born elsewhere, Martha, Connie, and Helvetia "Vet" Boswell were pure New Orleans.
 quoteAttribution: Steve Steinberg, Offbeat Magazine
+bioBookUrl: http://www.babybeebooks.com/Boswell.htm
+bioBookLabel: Get the Book at Baby Bee Books
 originalUrl: http://bozzies.org/boz-bio-links/
 ---
 

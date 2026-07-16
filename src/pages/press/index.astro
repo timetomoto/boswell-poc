@@ -12,23 +12,22 @@ const { Content: PageContent } = await render(page);
 const articles = await getCollection('articles');
 const releases = await getCollection('pressReleases');
 
-/* Group articles by subhub, in display order */
-const subhubOrder: Array<{key: string; label: string; kicker: string; blurb: string}> = [
-  { key: 'vintage',            label: 'Vintage Articles',   kicker: 'From the 1930s',    blurb: 'Newspaper and magazine pieces published while the trio was in full swing.' },
-  { key: 'in-their-own-words', label: 'In Their Own Words', kicker: 'Interviews',        blurb: 'Firsthand accounts and interview transcripts.' },
-  { key: 'video',              label: 'Video Features',     kicker: 'On Screen',         blurb: 'Documentaries and video essays about the Boswell sound.' },
-  { key: 'feature',            label: 'Features',           kicker: 'Modern Writing',    blurb: 'Contemporary essays and long-form pieces on the trio and Connee.' },
-  { key: 'essay',              label: 'About the Site',     kicker: 'Bozzies.com',       blurb: 'What Getting Bozzed means, and why the site exists.' },
-];
+/* Sub-hub descriptors pulled from the CMS-editable press-hubs collection */
+const hubs = (await getCollection('pressHubs')).sort(
+  (a, b) => (a.data.order ?? 999) - (b.data.order ?? 999)
+);
 
-const grouped = subhubOrder.map(sh => ({
-  ...sh,
+const grouped = hubs.map(hub => ({
+  key: hub.data.slug,
+  label: hub.data.label,
+  kicker: hub.data.kicker ?? '',
+  blurb: hub.data.blurb ?? '',
   entries: articles
-    .filter(a => a.data.subhub === sh.key)
+    .filter(a => a.data.subhub === hub.data.slug)
     .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999))
     .map(a => ({
       id: a.id,
-      slug: a.id.replace(new RegExp(`^${sh.key}[-_]?`), '') || a.id,
+      slug: a.id.replace(new RegExp(`^${hub.data.slug}[-_]?`), '') || a.id,
       title: a.data.title,
       publication: a.data.publication,
       author: a.data.author,
@@ -98,9 +97,9 @@ const sortedReleases = releases.sort((a, b) => a.data.title.localeCompare(b.data
       <MusicBackdrop variant="staves" opacity={0.07} color="var(--yellow-soft)" />
       <div class="container">
         <header class="releases-head">
-          <span class="eyebrow releases-head__eyebrow">The Press Room</span>
-          <h2 class="releases-head__title">Press releases &amp; media</h2>
-          <p class="releases-head__blurb">Original press releases, event announcements, and archival documents. Each opens as a PDF.</p>
+          {page.data.pressReleasesEyebrow && <span class="eyebrow releases-head__eyebrow">{page.data.pressReleasesEyebrow}</span>}
+          {page.data.pressReleasesTitle && <h2 class="releases-head__title">{page.data.pressReleasesTitle}</h2>}
+          {page.data.pressReleasesBlurb && <p class="releases-head__blurb">{page.data.pressReleasesBlurb}</p>}
         </header>
         <ul class="releases-grid" role="list">
           {sortedReleases.map(r => (

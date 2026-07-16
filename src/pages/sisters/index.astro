@@ -43,8 +43,8 @@ const trio = await getEntry('timelines', 'trio');
   <section class="section ground-paper sisters-grid">
     <div class="container">
       <header class="sisters-grid__head">
-        <span class="eyebrow eyebrow--purple">Meet the Sisters</span>
-        <h2 class="sisters-grid__title">Martha, Connie and Vet</h2>
+        {page.data.sistersEyebrow && <span class="eyebrow eyebrow--purple">{page.data.sistersEyebrow}</span>}
+        {page.data.sistersSectionTitle && <h2 class="sisters-grid__title">{page.data.sistersSectionTitle}</h2>}
       </header>
       <ul class="sisters-cards" role="list">
         {sisters.map(s => (
@@ -61,7 +61,7 @@ const trio = await getEntry('timelines', 'trio');
                 </blockquote>
               )}
               <span class="sister-card__cta">
-                Read the bio
+                {page.data.bioReadLabel || 'Read the bio'}
                 <svg width="20" height="10" viewBox="0 0 20 10" aria-hidden="true">
                   <path d="M0 5 H17 M13 1 L17 5 L13 9" stroke="currentColor" stroke-width="1" fill="none"/>
                 </svg>
@@ -88,10 +88,10 @@ const trio = await getEntry('timelines', 'trio');
   {bioLinks && (
     <section class="section ground-gold">
       <div class="container-narrow bio-links-teaser">
-        <span class="eyebrow eyebrow--purple">Further Reading</span>
+        {page.data.bioResourcesEyebrow && <span class="eyebrow eyebrow--purple">{page.data.bioResourcesEyebrow}</span>}
         <h2 class="bio-links-teaser__title">{bioLinks.data.title}</h2>
         {bioLinks.data.subtitle && <p class="bio-links-teaser__subtitle">{bioLinks.data.subtitle}</p>}
-        <a href="/sisters/bio-resources/" class="btn btn--purple">Explore the Boz Biography</a>
+        <a href="/sisters/bio-resources/" class="btn btn--purple">{page.data.bioResourcesCtaLabel || 'Explore'}</a>
       </div>
     </section>
   )}

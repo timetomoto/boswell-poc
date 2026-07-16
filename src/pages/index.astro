@@ -10,19 +10,18 @@ import { getEntry } from 'astro:content';
 const home = await getEntry('pages', 'home');
 const data = (home?.data ?? {}) as any;
 
-/* Playlist pulled from the CMS-editable content collection (see src/content/playlists/) */
+const settings = await getEntry('siteSettings', 'settings');
+const donateUrl = (settings?.data.donateUrl ?? '').trim();
+const donateLabel = (settings?.data.donateLabel ?? 'Donate').trim();
+
+/* Playlist pulled from the CMS-editable content collection */
 const playlistEntry = await getEntry('playlists', 'volume-one');
 const playlist = playlistEntry?.data.tracks ?? [];
-const playlistTitle = playlistEntry?.data.title ?? '';
+const playlistCollectionTitle = playlistEntry?.data.title ?? '';
 
-/* Quotes carousel — social proof sourced from the site's own content */
-const voices = [
-  { text: 'The world needs more Boswell Sisters.',                                                                                                                                     attribution: 'Bette Midler' },
-  { text: 'There was only one singer who influenced me. I tried to sing like her all the time because everything she did made sense musically, and that singer was Connie Boswell.',   attribution: 'Ella Fitzgerald' },
-  { text: 'The way they work out an arrangement is fascinating. One of them plays from an ordinary piano song company, singing the melody. The other two chip in with uncanny instinct.', attribution: 'The Melody Maker' },
-  { text: "If it hadn't been for the Boswell Sisters, there would be no Andrews Sisters.",                                                                                             attribution: 'Maxene Andrews' },
-  { text: "All these things tended to influence band orchestrations enormously. Glenn Miller even wrote many arrangements from Connee's dictation.",                                   attribution: 'John Lucas' },
-];
+/* Quotes carousel — CMS-editable via the voices collection */
+const voicesEntry = await getEntry('voices', 'home');
+const voices = voicesEntry?.data.quotes ?? [];
 ---
 <Base title={data.title as string} description={data.tagline as string | undefined}>
   {/* 1. HERO */}
@@ -59,9 +58,9 @@ const voices = [
     <MusicBackdrop variant="vinyl" opacity={0.05} color="var(--purple)" />
     <div class="container">
       <header class="playlist-section__head">
-        <span class="eyebrow eyebrow--purple">Music Playlist</span>
-        <h2 class="playlist-section__title">Hear the Boswell Sound</h2>
-        {playlistTitle && <p class="playlist-section__blurb">{playlistTitle}.</p>}
+        {data.playlistEyebrow && <span class="eyebrow eyebrow--purple">{data.playlistEyebrow}</span>}
+        {data.playlistTitle && <h2 class="playlist-section__title">{data.playlistTitle}</h2>}
+        {playlistCollectionTitle && <p class="playlist-section__blurb">{playlistCollectionTitle}.</p>}
       </header>
       <PlaylistPlayer tracks={playlist} />
     </div>
@@ -92,7 +91,7 @@ const voices = [
             <circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.4"/>
             <path d="M9 7 L17 12 L9 17 Z" fill="currentColor"/>
           </svg>
-          Play Lesson 1 — The Blend
+          {data.sampleCtaLabel || 'Play Lesson 1'}
         </a>
       </div>
     </section>
@@ -106,7 +105,7 @@ const voices = [
         {data.donateEyebrow && <span class="eyebrow eyebrow--purple">{data.donateEyebrow}</span>}
         {data.donateTitle && <h2 class="donate-teaser__title">{data.donateTitle}</h2>}
         {data.donateBody && <p class="donate-teaser__body">{data.donateBody}</p>}
-        <a href="https://example.com/donate" target="_blank" rel="noopener noreferrer" class="btn btn--purple">Donate</a>
+        <a href={donateUrl} target="_blank" rel="noopener noreferrer" class="btn btn--purple">{donateLabel}</a>
       </div>
     </section>
   )}

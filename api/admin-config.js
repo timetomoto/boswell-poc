@@ -23,11 +23,65 @@ collections:
         file: "src/content/site/settings.md"
         fields:
           - { name: "siteName", label: "Site name", widget: "string" }
-          - { name: "tagline", label: "Tagline", widget: "string", required: false }
+          - { name: "tagline", label: "Tagline (footer)", widget: "string", required: false }
           - { name: "contactEmail", label: "Contact email", widget: "string", required: false }
           - { name: "donateUrl", label: "Donate URL", widget: "string", required: false }
+          - { name: "donateLabel", label: "Donate button label", widget: "string", required: false }
           - { name: "footerCredits", label: "Footer credits", widget: "text", required: false }
           - { name: "body", label: "Notes (unused on site)", widget: "markdown", required: false }
+
+  - name: "navigation"
+    label: "Navigation"
+    label_singular: "Nav config"
+    files:
+      - name: "primary"
+        label: "Primary nav (used by header + footer)"
+        file: "src/content/navigation/primary.md"
+        fields:
+          - name: "items"
+            label: "Nav items"
+            widget: "list"
+            fields:
+              - { name: "label", label: "Label", widget: "string" }
+              - { name: "href", label: "URL / path", widget: "string" }
+              - { name: "external", label: "External link (open in new tab)", widget: "boolean", required: false, default: false }
+          - { name: "body", label: "Notes", widget: "markdown", required: false }
+
+  - name: "voices"
+    label: "Home — quotes carousel"
+    label_singular: "Quotes set"
+    folder: "src/content/voices"
+    format: "frontmatter"
+    extension: "md"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - name: "quotes"
+        label: "Quotes"
+        widget: "list"
+        fields:
+          - { name: "text", label: "Quote text", widget: "text" }
+          - { name: "attribution", label: "Attribution", widget: "string" }
+      - { name: "body", label: "Notes", widget: "markdown", required: false }
+
+  - name: "pressHubs"
+    label: "Press — sub-hub labels"
+    label_singular: "Sub-hub"
+    folder: "src/content/press-hubs"
+    format: "frontmatter"
+    extension: "md"
+    create: true
+    slug: "{{fields.slug}}"
+    fields:
+      - name: "slug"
+        label: "Slug (must match one of: vintage, in-their-own-words, video, feature, essay)"
+        widget: "select"
+        options: ["vintage", "in-their-own-words", "video", "feature", "essay"]
+      - { name: "kicker", label: "Kicker (small label above section title)", widget: "string", required: false }
+      - { name: "label", label: "Section title (H2)", widget: "string" }
+      - { name: "blurb", label: "Section blurb", widget: "text", required: false }
+      - { name: "order", label: "Display order", widget: "number", required: false }
+      - { name: "body", label: "Notes", widget: "markdown", required: false }
 
   - name: "pages"
     label: "Pages"
@@ -37,23 +91,47 @@ collections:
         label: "Home"
         file: "src/content/pages/home.md"
         fields:
-          - { name: "title", label: "Title", widget: "string" }
-          - { name: "eyebrow", label: "Eyebrow (small caps above title)", widget: "string", required: false }
-          - { name: "subtitle", label: "Subtitle", widget: "string", required: false }
+          - { name: "title", label: "Hero — Title (H1)", widget: "string" }
+          - { name: "eyebrow", label: "Hero — Eyebrow (small caps above title)", widget: "string", required: false }
+          - { name: "subtitle", label: "Hero — Subtitle", widget: "string", required: false }
+          - { name: "tagline", label: "Hero — Tagline (below glyph)", widget: "string", required: false }
           - { name: "heroImage", label: "Hero image", widget: "image", required: false }
           - { name: "heroImageAlt", label: "Hero image — alt text", widget: "string", required: false }
           - { name: "heroCredit", label: "Hero image credit", widget: "string", required: false }
-          - { name: "body", label: "Body", widget: "markdown" }
+          - { name: "introEyebrow", label: "Intro — Eyebrow", widget: "string", required: false }
+          - { name: "introLede", label: "Intro — Lede", widget: "string", required: false }
+          - name: "introBody"
+            label: "Intro — Body paragraphs"
+            widget: "list"
+            field: { name: "para", label: "Paragraph", widget: "text" }
+            required: false
+          - { name: "playlistEyebrow", label: "Playlist section — Eyebrow", widget: "string", required: false }
+          - { name: "playlistTitle", label: "Playlist section — Title", widget: "string", required: false }
+          - { name: "voicesEyebrow", label: "Voices section — Eyebrow", widget: "string", required: false }
+          - { name: "voicesTitle", label: "Voices section — Title", widget: "string", required: false }
+          - { name: "sampleEyebrow", label: "Sample the Sound — Eyebrow", widget: "string", required: false }
+          - { name: "sampleTitle", label: "Sample the Sound — Title", widget: "string", required: false }
+          - { name: "sampleBody", label: "Sample the Sound — Body", widget: "text", required: false }
+          - { name: "sampleCtaLabel", label: "Sample the Sound — CTA button label", widget: "string", required: false }
+          - { name: "donateEyebrow", label: "Donate section — Eyebrow", widget: "string", required: false }
+          - { name: "donateTitle", label: "Donate section — Title", widget: "string", required: false }
+          - { name: "donateBody", label: "Donate section — Body", widget: "text", required: false }
       - name: "about"
-        label: "About / BozBiz"
+        label: "About"
         file: "src/content/pages/about.md"
         fields:
-          - { name: "title", label: "Title", widget: "string" }
-          - { name: "eyebrow", label: "Eyebrow", widget: "string", required: false }
-          - { name: "subtitle", label: "Subtitle", widget: "string", required: false }
+          - { name: "title", label: "Hero — Title", widget: "string" }
+          - { name: "eyebrow", label: "Hero — Eyebrow", widget: "string", required: false }
+          - { name: "subtitle", label: "Hero — Subtitle", widget: "string", required: false }
           - { name: "heroImage", label: "Hero image", widget: "image", required: false }
           - { name: "heroImageAlt", label: "Hero image — alt text", widget: "string", required: false }
-          - { name: "body", label: "Body", widget: "markdown" }
+          - { name: "heroCredit", label: "Hero image credit", widget: "string", required: false }
+          - { name: "ctaEyebrow", label: "CTA section — Eyebrow", widget: "string", required: false }
+          - { name: "ctaTitle", label: "CTA section — Title", widget: "string", required: false }
+          - { name: "ctaBody", label: "CTA section — Body", widget: "text", required: false }
+          - { name: "ctaContactLabel", label: "CTA — Contact button label", widget: "string", required: false }
+          - { name: "ctaDonateLabel", label: "CTA — Donate button label", widget: "string", required: false }
+          - { name: "body", label: "Body (markdown)", widget: "markdown" }
       - name: "contact"
         label: "Contact"
         file: "src/content/pages/contact.md"
@@ -71,37 +149,73 @@ collections:
         label: "The Sisters — landing"
         file: "src/content/pages/sisters.md"
         fields:
+          - { name: "title", label: "Hero — Title", widget: "string" }
+          - { name: "eyebrow", label: "Hero — Eyebrow", widget: "string", required: false }
+          - { name: "subtitle", label: "Hero — Subtitle", widget: "string", required: false }
+          - { name: "heroImage", label: "Hero image", widget: "image", required: false }
+          - { name: "heroImageAlt", label: "Hero image — alt text", widget: "string", required: false }
+          - { name: "heroCredit", label: "Hero image credit", widget: "string", required: false }
+          - { name: "quote", label: "Pull-quote text", widget: "text", required: false }
+          - { name: "quoteAttribution", label: "Pull-quote attribution", widget: "string", required: false }
+          - { name: "sistersEyebrow", label: "Sisters grid — Eyebrow", widget: "string", required: false }
+          - { name: "sistersSectionTitle", label: "Sisters grid — Section title", widget: "string", required: false }
+          - { name: "bioReadLabel", label: "Sisters grid — Card CTA label", widget: "string", required: false }
+          - { name: "bioResourcesEyebrow", label: "Further-reading section — Eyebrow", widget: "string", required: false }
+          - { name: "bioResourcesCtaLabel", label: "Further-reading section — CTA label", widget: "string", required: false }
+          - { name: "body", label: "Body (intro markdown)", widget: "markdown" }
+      - name: "bio-resources"
+        label: "The Sisters — Boz Biography subpage"
+        file: "src/content/pages/bio-resources.md"
+        fields:
           - { name: "title", label: "Title", widget: "string" }
           - { name: "eyebrow", label: "Eyebrow", widget: "string", required: false }
           - { name: "subtitle", label: "Subtitle", widget: "string", required: false }
-          - { name: "heroImage", label: "Hero image", widget: "image", required: false }
-          - { name: "heroImageAlt", label: "Hero image — alt text", widget: "string", required: false }
-          - { name: "body", label: "Body", widget: "markdown" }
+          - { name: "quote", label: "Pull-quote text", widget: "text", required: false }
+          - { name: "quoteAttribution", label: "Pull-quote attribution", widget: "string", required: false }
+          - { name: "bioBookUrl", label: "Book CTA — URL", widget: "string", required: false }
+          - { name: "bioBookLabel", label: "Book CTA — Button label", widget: "string", required: false }
+          - { name: "body", label: "Body (markdown)", widget: "markdown" }
       - name: "music-landing"
         label: "Media — landing"
         file: "src/content/pages/music.md"
         fields:
-          - { name: "title", label: "Title", widget: "string" }
-          - { name: "eyebrow", label: "Eyebrow", widget: "string", required: false }
-          - { name: "subtitle", label: "Subtitle", widget: "string", required: false }
+          - { name: "title", label: "Hero — Title", widget: "string" }
+          - { name: "eyebrow", label: "Hero — Eyebrow", widget: "string", required: false }
+          - { name: "subtitle", label: "Hero — Subtitle", widget: "string", required: false }
           - { name: "heroImage", label: "Hero image", widget: "image", required: false }
-          - { name: "body", label: "Body", widget: "markdown" }
+          - { name: "heroImageAlt", label: "Hero image — alt text", widget: "string", required: false }
+          - { name: "heroCredit", label: "Hero image credit", widget: "string", required: false }
+          - { name: "quote", label: "Pull-quote text", widget: "text", required: false }
+          - { name: "quoteAttribution", label: "Pull-quote attribution", widget: "string", required: false }
+          - { name: "playlistEyebrow", label: "Playlist section — Eyebrow", widget: "string", required: false }
+          - { name: "lessonsEyebrow", label: "Lessons section — Eyebrow", widget: "string", required: false }
+          - { name: "lessonsTitle", label: "Lessons section — Title", widget: "string", required: false }
+          - { name: "lessonsLede", label: "Lessons section — Lede", widget: "text", required: false }
+          - { name: "chartsTeaserEyebrow", label: "Charts teaser — Eyebrow", widget: "string", required: false }
+          - { name: "chartsTeaserTitle", label: "Charts teaser — Title", widget: "string", required: false }
+          - { name: "chartsTeaserBody", label: "Charts teaser — Body", widget: "text", required: false }
+          - { name: "chartsTeaserCta", label: "Charts teaser — CTA label", widget: "string", required: false }
+          - { name: "reviewsTeaserEyebrow", label: "Reviews teaser — Eyebrow", widget: "string", required: false }
+          - { name: "reviewsTeaserTitle", label: "Reviews teaser — Title", widget: "string", required: false }
+          - { name: "reviewsTeaserBody", label: "Reviews teaser — Body", widget: "text", required: false }
+          - { name: "reviewsTeaserCta", label: "Reviews teaser — CTA label", widget: "string", required: false }
+          - { name: "body", label: "Body (intro markdown)", widget: "markdown" }
       - name: "press-landing"
         label: "Press — landing"
         file: "src/content/pages/press.md"
         fields:
-          - { name: "title", label: "Title", widget: "string" }
-          - { name: "eyebrow", label: "Eyebrow", widget: "string", required: false }
-          - { name: "subtitle", label: "Subtitle", widget: "string", required: false }
-          - { name: "body", label: "Body", widget: "markdown" }
-      - name: "legacy-landing"
-        label: "Legacy — landing"
-        file: "src/content/pages/legacy.md"
-        fields:
-          - { name: "title", label: "Title", widget: "string" }
-          - { name: "eyebrow", label: "Eyebrow", widget: "string", required: false }
-          - { name: "subtitle", label: "Subtitle", widget: "string", required: false }
-          - { name: "body", label: "Body", widget: "markdown" }
+          - { name: "title", label: "Hero — Title", widget: "string" }
+          - { name: "eyebrow", label: "Hero — Eyebrow", widget: "string", required: false }
+          - { name: "subtitle", label: "Hero — Subtitle", widget: "string", required: false }
+          - { name: "heroImage", label: "Hero image", widget: "image", required: false }
+          - { name: "heroImageAlt", label: "Hero image — alt text", widget: "string", required: false }
+          - { name: "heroCredit", label: "Hero image credit", widget: "string", required: false }
+          - { name: "quote", label: "Pull-quote text", widget: "text", required: false }
+          - { name: "quoteAttribution", label: "Pull-quote attribution", widget: "string", required: false }
+          - { name: "pressReleasesEyebrow", label: "Press releases — Eyebrow", widget: "string", required: false }
+          - { name: "pressReleasesTitle", label: "Press releases — Title", widget: "string", required: false }
+          - { name: "pressReleasesBlurb", label: "Press releases — Blurb", widget: "text", required: false }
+          - { name: "body", label: "Body (intro markdown)", widget: "markdown" }
 
   - name: "sisters"
     label: "Sisters — biographies"

@@ -50,7 +50,7 @@ const reviews = await getEntry('pages', 'reviews');
       <MusicBackdrop variant="vinyl" opacity={0.05} color="var(--purple)" />
       <div class="container">
         <header class="playlist-section__head">
-          <span class="eyebrow eyebrow--purple">Music Playlist</span>
+          {page.data.playlistEyebrow && <span class="eyebrow eyebrow--purple">{page.data.playlistEyebrow}</span>}
           <h2 class="playlist-section__title">{featuredPlaylist.data.title}</h2>
           {featuredPlaylist.data.subtitle && (
             <p class="playlist-section__blurb">{featuredPlaylist.data.subtitle}</p>
@@ -66,9 +66,9 @@ const reviews = await getEntry('pages', 'reviews');
   <section class="section ground-paper lessons-grid">
     <div class="container">
       <header class="lessons-grid__head">
-        <span class="eyebrow eyebrow--purple">Audio Lessons</span>
-        <h2 class="lessons-grid__title">Five keys to the Boswell sound</h2>
-        <p class="lessons-grid__lede">Cynthia Lucas, one of the best-known Boz historians, narrates five audio lessons that unpack how the Sisters actually did what they did.</p>
+        {page.data.lessonsEyebrow && <span class="eyebrow eyebrow--purple">{page.data.lessonsEyebrow}</span>}
+        {page.data.lessonsTitle && <h2 class="lessons-grid__title">{page.data.lessonsTitle}</h2>}
+        {page.data.lessonsLede && <p class="lessons-grid__lede">{page.data.lessonsLede}</p>}
       </header>
       <ol class="lessons-cards" role="list">
         {lessons.map(l => (
@@ -101,11 +101,11 @@ const reviews = await getEntry('pages', 'reviews');
     <div class="container music-teasers__grid">
       {charts && (
         <a href="/media/charts/" class="music-teaser">
-          <span class="eyebrow music-teaser__eyebrow">Discography</span>
-          <h3 class="music-teaser__title">Boz on the Charts</h3>
-          <p class="music-teaser__body">Chart positions from Brunswick 6083 in 1931 to Decca in the late 1930s and beyond — how the Boswell Sisters and Connee actually rated with the record-buying public.</p>
+          {page.data.chartsTeaserEyebrow && <span class="eyebrow music-teaser__eyebrow">{page.data.chartsTeaserEyebrow}</span>}
+          <h3 class="music-teaser__title">{page.data.chartsTeaserTitle}</h3>
+          {page.data.chartsTeaserBody && <p class="music-teaser__body">{page.data.chartsTeaserBody}</p>}
           <span class="music-teaser__cta">
-            Explore the charts
+            {page.data.chartsTeaserCta || 'Explore'}
             <svg width="20" height="10" viewBox="0 0 20 10" aria-hidden="true">
               <path d="M0 5 H17 M13 1 L17 5 L13 9" stroke="currentColor" stroke-width="1" fill="none"/>
             </svg>
@@ -114,11 +114,11 @@ const reviews = await getEntry('pages', 'reviews');
       )}
       {reviews && (
         <a href="/media/reviews/" class="music-teaser">
-          <span class="eyebrow music-teaser__eyebrow">Reviews</span>
-          <h3 class="music-teaser__title">Album reviews from the experts</h3>
-          <p class="music-teaser__body">Storyville volumes, Singing the Blues, Shout Sisters Shout, and the lost 1957 RCA classic — hand-picked reviews for anyone starting a Boz collection.</p>
+          {page.data.reviewsTeaserEyebrow && <span class="eyebrow music-teaser__eyebrow">{page.data.reviewsTeaserEyebrow}</span>}
+          <h3 class="music-teaser__title">{page.data.reviewsTeaserTitle}</h3>
+          {page.data.reviewsTeaserBody && <p class="music-teaser__body">{page.data.reviewsTeaserBody}</p>}
           <span class="music-teaser__cta">
-            Read the reviews
+            {page.data.reviewsTeaserCta || 'Read'}
             <svg width="20" height="10" viewBox="0 0 20 10" aria-hidden="true">
               <path d="M0 5 H17 M13 1 L17 5 L13 9" stroke="currentColor" stroke-width="1" fill="none"/>
             </svg>

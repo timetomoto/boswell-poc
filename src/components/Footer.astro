@@ -3,23 +3,24 @@ import { getEntry } from 'astro:content';
 const settings = await getEntry('siteSettings', 'settings');
 const site = (settings?.data ?? {}) as any;
 const year = new Date().getFullYear();
-const tagline = (site.tagline as string | undefined) ||
-  'A tribute archive to Martha, Connee, and Vet Boswell, pioneers of American vocal harmony.';
-const footerCredits = (site.footerCredits as string | undefined) ||
-  'Bozzies.com and Bozzies.org are non-profit organizations dedicated to keeping alive the memory of the Boswell Sisters and their wonderful contributions to the history of music and performance.';
+const tagline = (site.tagline as string | undefined) || '';
+const footerCredits = (site.footerCredits as string | undefined) || '';
+const siteName = (site.siteName as string | undefined) || 'The Boswell Sisters';
+
+const nav = await getEntry('navigation', 'primary');
+const navItems = nav?.data.items ?? [];
 ---
 <footer class="site-footer ground-purple">
   <div class="container site-footer__inner">
     <div class="site-footer__mark">
-      <p class="site-footer__wordmark">The Boswell Sisters</p>
+      <p class="site-footer__wordmark">{siteName}</p>
       <p class="site-footer__tagline">{tagline}</p>
     </div>
     <nav aria-label="Footer" class="site-footer__nav">
       <ul role="list">
-        <li><a href="/sisters/">The Sisters</a></li>
-        <li><a href="/press/">Press</a></li>
-        <li><a href="/media/">Media</a></li>
-        <li><a href="/about/">About</a></li>
+        {navItems.map(item => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
       </ul>
     </nav>
     <div class="site-footer__meta">
