@@ -1,9 +1,9 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Hero from '../../components/Hero.astro';
-import PullQuote from '../../components/PullQuote.astro';
 import SectionDivider from '../../components/SectionDivider.astro';
 import MusicBackdrop from '../../components/MusicBackdrop.astro';
+import PlaylistPlayer from '../../components/PlaylistPlayer.astro';
 import { getEntry, getCollection, render } from 'astro:content';
 
 const page = await getEntry('pages', 'music');
@@ -13,6 +13,12 @@ const { Content: PageContent } = await render(page);
 const lessons = (await getCollection('lessons')).sort(
   (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0)
 );
+
+/* Playlists: pick the first (lowest `order`) as the featured playlist for this page. */
+const playlists = (await getCollection('playlists')).sort(
+  (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0)
+);
+const featuredPlaylist = playlists[0];
 
 const charts = await getEntry('pages', 'charts');
 const reviews = await getEntry('pages', 'reviews');
@@ -30,18 +36,37 @@ const reviews = await getEntry('pages', 'reviews');
   />
 
   <section class="section ground-paper section-intro">
-    <MusicBackdrop variant="jazz-club" opacity={0.06} color="var(--purple)" />
-    <div class="container-narrow prose">
+    <MusicBackdrop variant="saxophone" opacity={0.06} color="var(--purple)" />
+    <div class="container-narrow prose prose--centered">
       <PageContent />
     </div>
   </section>
 
   <SectionDivider variant="jazz" color="purple" />
 
+  {/* Music playlist — pulled from CMS playlists collection */}
+  {featuredPlaylist && (
+    <section class="section ground-paper playlist-section">
+      <MusicBackdrop variant="vinyl" opacity={0.05} color="var(--purple)" />
+      <div class="container">
+        <header class="playlist-section__head">
+          <span class="eyebrow eyebrow--purple">Music Playlist</span>
+          <h2 class="playlist-section__title">{featuredPlaylist.data.title}</h2>
+          {featuredPlaylist.data.subtitle && (
+            <p class="playlist-section__blurb">{featuredPlaylist.data.subtitle}</p>
+          )}
+        </header>
+        <PlaylistPlayer tracks={featuredPlaylist.data.tracks} />
+      </div>
+    </section>
+  )}
+
+  <SectionDivider variant="jazz" color="purple" />
+
   <section class="section ground-paper lessons-grid">
     <div class="container">
       <header class="lessons-grid__head">
-        <span class="eyebrow eyebrow--purple">Boz Beat Lessons</span>
+        <span class="eyebrow eyebrow--purple">Audio Lessons</span>
         <h2 class="lessons-grid__title">Five keys to the Boswell sound</h2>
         <p class="lessons-grid__lede">Cynthia Lucas, one of the best-known Boz historians, narrates five audio lessons that unpack how the Sisters actually did what they did.</p>
       </header>
@@ -105,10 +130,17 @@ const reviews = await getEntry('pages', 'reviews');
 </Base>
 
 <style>
-  .section-intro, .lessons-grid, .music-teasers { position: relative; overflow: hidden; }
+  .section-intro, .playlist-section, .lessons-grid, .music-teasers { position: relative; overflow: hidden; }
+
+  /* Playlist section (Media page) */
+  .playlist-section__head { text-align: center; margin: 0 auto var(--space-6); position: relative; z-index: 1; }
+  .playlist-section__title { margin: var(--space-3) auto 0; font-family: var(--font-display); font-size: clamp(var(--step-4), 3.5vw + 0.3rem, var(--step-6)); font-weight: 300; letter-spacing: var(--track-tight); text-align: center; color: var(--ink); }
+  .playlist-section__blurb { margin: var(--space-3) auto 0; font-family: var(--font-body); font-size: var(--step-0); color: var(--ink); max-width: 72ch; text-align: center; }
 
   /* Prose block, shared with sisters pages */
   .prose { font-family: var(--font-body); font-size: var(--step-1); line-height: var(--leading-loose); color: var(--text-on-paper); position: relative; z-index: 1; }
+  .prose--centered { text-align: center; margin-inline: auto; }
+  .prose--centered :global(p), .prose--centered :global(blockquote) { margin-inline: auto; }
   .prose :global(p) { max-width: 62ch; }
   .prose :global(p) + :global(p), .prose :global(p) + :global(h2), .prose :global(p) + :global(h3), .prose :global(p) + :global(h4) { margin-top: var(--space-4); }
   .prose :global(h2), .prose :global(h3), .prose :global(h4) { margin-top: var(--space-6); margin-bottom: var(--space-3); font-family: var(--font-display); font-weight: 400; letter-spacing: var(--track-tight); }
@@ -117,9 +149,9 @@ const reviews = await getEntry('pages', 'reviews');
   .prose :global(blockquote) { border-left: 3px solid var(--brass); padding-left: var(--space-4); margin: var(--space-5) 0; font-family: var(--font-ui); font-style: italic; font-size: var(--step-0); color: var(--oxblood); }
 
   /* Lessons grid */
-  .lessons-grid__head { max-width: var(--measure-wide); margin-bottom: var(--space-6); }
-  .lessons-grid__title { margin-top: var(--space-2); font-family: var(--font-display); font-size: clamp(var(--step-4), 3.5vw + 0.3rem, var(--step-6)); font-weight: 300; letter-spacing: var(--track-tight); }
-  .lessons-grid__lede { margin-top: var(--space-3); font-family: var(--font-body); font-size: var(--step-1); line-height: var(--leading-loose); color: var(--text-on-paper); max-width: 60ch; }
+  .lessons-grid__head { max-width: var(--measure-wide); margin: 0 auto var(--space-6); text-align: center; position: relative; z-index: 1; }
+  .lessons-grid__title { margin: var(--space-2) auto 0; font-family: var(--font-display); font-size: clamp(var(--step-4), 3.5vw + 0.3rem, var(--step-6)); font-weight: 300; letter-spacing: var(--track-tight); text-align: center; }
+  .lessons-grid__lede { margin: var(--space-3) auto 0; font-family: var(--font-body); font-size: var(--step-1); line-height: var(--leading-loose); color: var(--text-on-paper); max-width: 60ch; text-align: center; }
 
   .lessons-cards { display: flex; flex-direction: column; gap: 0; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--paper-hairline); position: relative; z-index: 1; }
   .lesson-card { border-bottom: 1px solid var(--paper-hairline); position: relative; background: color-mix(in oklab, var(--paper) 97%, var(--purple) 3%); }

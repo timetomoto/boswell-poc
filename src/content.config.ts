@@ -95,7 +95,7 @@ const timelines = defineCollection({
   }),
 });
 
-// Boz Beat audio lessons — one entry per lesson (5 total from the scrape)
+// Audio lessons — one entry per lesson (5 total from the scrape)
 const lessons = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/lessons' }),
   schema: z.object({
@@ -106,6 +106,23 @@ const lessons = defineCollection({
     summary: z.string().optional(),
     heroImage: z.string().optional(),
     heroImageAlt: z.string().optional(),
+  }),
+});
+
+// Music playlists — one entry per curated collection (Volume One, etc.)
+const playlists = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/playlists' }),
+  schema: z.object({
+    title: z.string(),
+    subtitle: z.string().optional(),
+    order: z.number().optional(),
+    tracks: z.array(z.object({
+      title: z.string(),
+      artist: z.string().optional(),
+      year: z.union([z.string(), z.number()]).optional(),
+      duration: z.string().optional(),
+      audio: z.string(),
+    })),
   }),
 });
 
@@ -207,6 +224,7 @@ export const collections = {
   sisters,
   timelines,
   lessons,
+  playlists,
   articles,
   pressReleases,
   performers,

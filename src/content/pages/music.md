@@ -1,12 +1,10 @@
 ---
-title: Music
-
-subtitle: The Boswell sound — lessons, discography, and the reviews that recognized them.
+title: Media
+subtitle: A curated playlist, five audio lessons on the Boswell sound, and chart positions and reviews that recognized them.
 heroImage: /uploads/Boswell_Sisters_Bing_Crosby.jpg
 heroImageAlt: The Boswell Sisters recording with Bing Crosby.
 quote: "...All these things tended to influence band orchestrations enormously! Glenn Miller even wrote many arrangements from Connee's dictation."
 quoteAttribution: John Lucas
-originalUrl: http://bozzies.org/bozbeat/
 ---
 
 ## The Boswell Sound Explained

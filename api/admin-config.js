@@ -78,7 +78,7 @@ collections:
           - { name: "heroImageAlt", label: "Hero image — alt text", widget: "string", required: false }
           - { name: "body", label: "Body", widget: "markdown" }
       - name: "music-landing"
-        label: "Music — landing"
+        label: "Media — landing"
         file: "src/content/pages/music.md"
         fields:
           - { name: "title", label: "Title", widget: "string" }
@@ -159,8 +159,30 @@ collections:
           - { name: "imageAlt", label: "Image — alt text", widget: "string", required: false }
       - { name: "body", label: "Notes", widget: "markdown", required: false }
 
+  - name: "playlists"
+    label: "Media — playlists"
+    label_singular: "Playlist"
+    folder: "src/content/playlists"
+    format: "frontmatter"
+    extension: "md"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "subtitle", label: "Subtitle", widget: "string", required: false }
+      - { name: "order", label: "Display order", widget: "number", required: false }
+      - name: "tracks"
+        label: "Tracks"
+        widget: "list"
+        fields:
+          - { name: "title", label: "Track title", widget: "string" }
+          - { name: "artist", label: "Artist", widget: "string", required: false }
+          - { name: "year", label: "Year", widget: "string", required: false }
+          - { name: "duration", label: "Duration (M:SS)", widget: "string", required: false }
+          - { name: "audio", label: "Audio URL (MP3)", widget: "string" }
+
   - name: "lessons"
-    label: "Music — lessons"
+    label: "Media — lessons"
     label_singular: "Lesson"
     folder: "src/content/lessons"
     format: "frontmatter"
@@ -265,7 +287,7 @@ collections:
       - { name: "body", label: "Body", widget: "markdown" }
 
   - name: "chartEntries"
-    label: "Music — chart entries"
+    label: "Media — chart entries"
     label_singular: "Chart entry"
     folder: "src/content/chart-entries"
     format: "frontmatter"
