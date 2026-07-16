@@ -19,12 +19,6 @@ reviewsTeaserBody: Storyville volumes, Singing the Blues, Shout Sisters Shout, a
 reviewsTeaserCta: Read the reviews
 ---
 
-## The Boswell Sound Explained
+## A living archive of the Boswell sound
 
-> *An optimal Boswell's performance is a lunatic concoction with several key changes, four to five tempo shifts executed with uncanny precision, unexpected returns to the verse, choruses sung in something resembling pig Latin, and blues refrains or complete reharmonizations of the melody thrown in just because they feel like it and have the musicianship to pull it off.*
->
-> — Tom McDermott, [Gambit Weekly](http://www.bestofneworleans.com/dispatch/2002-12-21/feat.html)
-
-### So what's this "Boswell Sound" all about anyway?
-
-Let the wonks at Bozzies.com educate your ears with a little explanation of the classic sounds. Cynthia Lucas, one of the best known Boz historians around, narrates five key lessons that will help you get the Boz Bliss.
+Everything the Boswell Sisters left behind, arranged so you can hear it. New material lands here as the archive grows.

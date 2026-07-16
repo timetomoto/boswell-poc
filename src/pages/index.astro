@@ -38,7 +38,6 @@ const voices = voicesEntry?.data.quotes ?? [];
   {/* 2. WELCOME / MISSION */}
   {(data.introLede || data.introBody) && (
     <section class="section ground-paper intro-section">
-      <MusicBackdrop variant="sheet-music" opacity={0.06} color="var(--purple)" />
       <div class="container-narrow intro">
         {data.introEyebrow && <span class="eyebrow eyebrow--purple">{data.introEyebrow}</span>}
         {data.introLede && <p class="intro__lede">{data.introLede}</p>}

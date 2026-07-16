@@ -2,7 +2,6 @@
 import Base from '../../layouts/Base.astro';
 import PullQuote from '../../components/PullQuote.astro';
 import SectionDivider from '../../components/SectionDivider.astro';
-import MusicBackdrop from '../../components/MusicBackdrop.astro';
 import { getEntry, render } from 'astro:content';
 
 const page = await getEntry('pages', 'bio-resources');
@@ -21,7 +20,6 @@ const { Content: PageContent } = await render(page);
 
   {page.data.quote && (
     <section class="section ground-purple">
-      <MusicBackdrop variant="staves" opacity={0.07} color="var(--yellow-soft)" />
       <div class="container">
         <PullQuote attribution={page.data.quoteAttribution}>
           {page.data.quote}
