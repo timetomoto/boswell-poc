@@ -30,4 +30,4 @@ Whom do we owe all this is the best ever “Little Angel” and if God spares me
 
 Mr. Meise, I would ask of you a personal favor. Would you please write a story about Connie Boswell and tell the folks in New Orleans that the South should be proud of a daughter like her? Thanking you for paying attention to this letter. I remain very truly yours. Charles Probstein.
 
-[Articles Written About the Sisters](http://bozzies.org/boz-buz-vintage-articles/)
+[More vintage articles](/press/vintage/)

@@ -34,4 +34,4 @@ He hopes that the three will get together soon at his farm and go on the air aga
 
 Martha’s young son Jules, 10, (by a former marriage) calls the major father. They expect to leave Friday for the farm.
 
-[Articles Written About the Sisters](http://bozzies.org/boz-buz-vintage-articles/)
+[More vintage articles](/press/vintage/)

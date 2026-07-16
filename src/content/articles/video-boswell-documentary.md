@@ -13,6 +13,4 @@ Scott and McCain brought us “Sing Sister Sing .Ross and Hampton brought us “
 
 When will this Bozumentary be completed? Stay tuned to Bozzies.org and we will keep you posted!
 
-[Post your thoughts on the new Boz Buds Board!](http://www.bozzies.org/buds.php)
-
-[See More Boz Video Buz](http://www.bozzies.org/buz-video.php)
+[See more video features](/press/video/)

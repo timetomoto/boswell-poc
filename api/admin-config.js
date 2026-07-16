@@ -25,10 +25,20 @@ collections:
           - { name: "siteName", label: "Site name", widget: "string" }
           - { name: "tagline", label: "Tagline (footer)", widget: "string", required: false }
           - { name: "contactEmail", label: "Contact email", widget: "string", required: false }
-          - { name: "donateUrl", label: "Donate URL", widget: "string", required: false }
-          - { name: "donateLabel", label: "Donate button label", widget: "string", required: false }
           - { name: "footerCredits", label: "Footer credits", widget: "text", required: false }
           - { name: "body", label: "Notes (unused on site)", widget: "markdown", required: false }
+
+  - name: "donate"
+    label: "Donate button"
+    label_singular: "Donate config"
+    files:
+      - name: "button"
+        label: "Donate button (applies to nav, home, about)"
+        file: "src/content/donate/button.md"
+        fields:
+          - { name: "url", label: "Donate URL (where the button links to)", widget: "string", required: false }
+          - { name: "label", label: "Button label (default: Donate)", widget: "string", required: false }
+          - { name: "body", label: "Notes", widget: "markdown", required: false }
 
   - name: "navigation"
     label: "Navigation"

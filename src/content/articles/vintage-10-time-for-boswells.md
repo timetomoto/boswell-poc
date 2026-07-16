@@ -45,4 +45,4 @@ How ironic that the Boswell Sisters rose to prominence when the grit and grime o
 
 The time the Boswells kept with their musical sound was, metaphysically, joyous, exciting, inspiring, exhilarating, and, stylistically, flawless. They will never be duplicated again, but with their recordings they leave a rich legacy for our enjoyment and evaluation. And because of their happy blend, they helped the world keep better time, too.
 
-[Articles Written About the Sisters](http://bozzies.org/boz-buz-vintage-articles/)
+[More vintage articles](/press/vintage/)

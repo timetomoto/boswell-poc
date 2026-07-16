@@ -10,9 +10,9 @@ import { getEntry } from 'astro:content';
 const home = await getEntry('pages', 'home');
 const data = (home?.data ?? {}) as any;
 
-const settings = await getEntry('siteSettings', 'settings');
-const donateUrl = (settings?.data.donateUrl ?? '').trim();
-const donateLabel = (settings?.data.donateLabel ?? 'Donate').trim();
+const donateBtn = await getEntry('donate', 'button');
+const donateUrl = (donateBtn?.data.url ?? '').trim();
+const donateLabel = (donateBtn?.data.label ?? 'Donate').trim();
 
 /* Playlist pulled from the CMS-editable content collection */
 const playlistEntry = await getEntry('playlists', 'volume-one');

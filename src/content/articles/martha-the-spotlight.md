@@ -41,4 +41,4 @@ Sorry for the interruption Mel, but I’ve just been listening to Connie singing
 
 I must have written more than enough by now, so goodbye old bean. We are off to New York and from there the whole family (Pappa and Uncle Charlie – the whoopee boys – Mamma and Aunt Matt, Connie and Harry, George, Jules and myself) will assemble in Toronto where toward the end of this month our dear little Vet will contribute to human happiness another small voice.
 
-[Articles Written by the Sisters](http://bozzies.org/boz-buz/)
+[More articles in the Sisters' own words](/press/in-their-own-words/)

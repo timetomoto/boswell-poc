@@ -44,4 +44,4 @@ One of Connee’s prize possessions is a very critical letter in which some irat
 
 (The second and concluding article on Connee Boswell by John Lucas will appear in the November 1 issue of *Down Beat.)* [Continue to Part 2](http://bozzies.org/boz-buz-vintage-article-3/) >
 
-[Articles Written About the Sisters](http://bozzies.org/boz-buz-vintage-articles/)
+[More vintage articles](/press/vintage/)

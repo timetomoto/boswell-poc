@@ -19,6 +19,4 @@ Related Links
 
 Visit the [O Sister!](http://vimeo.com/user790471) Vimeo Channel.
 
-[Post your thoughts on Boz Buds!](http://www.bozzies.org/buds2010)
-
-[See More Boz Video Buz](http://www.bozzies.org/buz-video.php)
+[See more video features](/press/video/)

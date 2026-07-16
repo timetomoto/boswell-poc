@@ -10,8 +10,11 @@ if (!page) throw new Error('Missing src/content/pages/about.md');
 const { Content: PageContent } = await render(page);
 
 const settings = await getEntry('siteSettings', 'settings');
-const donateUrl = (settings?.data.donateUrl ?? '').trim();
 const contactEmail = (settings?.data.contactEmail ?? '').trim();
+
+const donateBtn = await getEntry('donate', 'button');
+const donateUrl = (donateBtn?.data.url ?? '').trim();
+const donateLabel = (donateBtn?.data.label ?? 'Donate').trim();
 ---
 <Base title={page.data.title as string} description={page.data.subtitle as string | undefined}>
   <Hero
@@ -45,7 +48,7 @@ const contactEmail = (settings?.data.contactEmail ?? '').trim();
       </header>
       <div class="about-cta__actions">
         <a href={contactEmail ? `mailto:${contactEmail}` : ''} class="btn btn--outline">{page.data.ctaContactLabel || 'Contact'}</a>
-        <a href={donateUrl} target="_blank" rel="noopener noreferrer" class="btn btn--gold">{page.data.ctaDonateLabel || 'Donate'}</a>
+        <a href={donateUrl} target="_blank" rel="noopener noreferrer" class="btn btn--gold">{page.data.ctaDonateLabel || donateLabel}</a>
       </div>
     </div>
   </section>

@@ -32,4 +32,4 @@ I have forgotten to discuss the handicap under which Connee has always worked. I
 
 Both Decca, in the Brunswick Series, and Columbia have excellent albums of the Boswell Sisters.
 
-[Articles Written About the Sisters](http://bozzies.org/boz-buz-vintage-articles/)
+[More vintage articles](/press/vintage/)

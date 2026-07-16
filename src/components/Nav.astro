@@ -6,9 +6,9 @@ const { path = '/' } = Astro.props;
 const nav = await getEntry('navigation', 'primary');
 const items = nav?.data.items ?? [];
 
-const settings = await getEntry('siteSettings', 'settings');
-const DONATE_URL = (settings?.data.donateUrl ?? '').trim();
-const DONATE_LABEL = (settings?.data.donateLabel ?? 'Donate').trim();
+const donateBtn = await getEntry('donate', 'button');
+const DONATE_URL = (donateBtn?.data.url ?? '').trim();
+const DONATE_LABEL = (donateBtn?.data.label ?? 'Donate').trim();
 ---
 <header class="site-nav">
   <div class="site-nav__inner container">

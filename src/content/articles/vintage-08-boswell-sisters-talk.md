@@ -88,4 +88,4 @@ Radioland – Date Unknown c1933
 
 > Connie and Vet like to paint. Martha prefers to cook…
 
-[Articles Written About the Sisters](http://bozzies.org/boz-buz-vintage-articles/)
+[More vintage articles](/press/vintage/)

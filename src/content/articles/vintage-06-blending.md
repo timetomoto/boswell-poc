@@ -38,4 +38,4 @@ Asked if there was a romance in the life of any member of the trio which might b
 
 “All three of us are leading very conservative lives and saving our money. Some day we will retire from the radio entertainment business and our occasional vaudeville engagements. While something may happen to interfere with out plans, when that time comes we intend to return to New Orleans to spend the rest of our lives.”
 
-[Articles Written About the Sisters](http://bozzies.org/boz-buz-vintage-articles/)
+[More vintage articles](/press/vintage/)

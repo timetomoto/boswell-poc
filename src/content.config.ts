@@ -241,16 +241,23 @@ const chartEntries = defineCollection({
   }),
 });
 
-// Site-wide settings — nav labels, contact email, footer copy
+// Site-wide settings — site name, tagline, contact email, footer copy
 const siteSettings = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/site' }),
   schema: z.object({
     siteName: z.string(),
     tagline: z.string().optional(),
     contactEmail: z.string().email().optional(),
-    donateUrl: z.string().url().optional(),
-    donateLabel: z.string().optional(),
     footerCredits: z.string().optional(),
+  }),
+});
+
+// Donate button — single source for URL + label used by nav, home teaser, and about CTA
+const donate = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/donate' }),
+  schema: z.object({
+    url: z.string().optional(),
+    label: z.string().optional(),
   }),
 });
 
@@ -304,4 +311,5 @@ export const collections = {
   navigation,
   voices,
   pressHubs,
+  donate,
 };

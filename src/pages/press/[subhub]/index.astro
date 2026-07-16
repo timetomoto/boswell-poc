@@ -1,0 +1,118 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const hubs = await getCollection('pressHubs');
+  return hubs.map(hub => ({ params: { subhub: hub.data.slug }, props: { hub } }));
+}
+
+const { hub } = Astro.props;
+
+const articles = (await getCollection('articles'))
+  .filter(a => a.data.subhub === hub.data.slug)
+  .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999));
+---
+<Base title={`${hub.data.label} — Press`} description={hub.data.blurb}>
+  <section class="page-hero ground-purple">
+    <div class="container-narrow page-hero__inner">
+      <a href="/press/" class="page-hero__back">← Press</a>
+      {hub.data.kicker && <span class="eyebrow page-hero__eyebrow">{hub.data.kicker}</span>}
+      <h1 class="page-hero__title">{hub.data.label}</h1>
+      {hub.data.blurb && <p class="page-hero__subtitle">{hub.data.blurb}</p>}
+    </div>
+  </section>
+
+  <section class="section ground-paper subhub-section">
+    <div class="container">
+      {articles.length === 0 ? (
+        <p class="empty">No articles in this section yet.</p>
+      ) : (
+        <ol class="article-list" role="list">
+          {articles.map((a, i) => {
+            const slug = a.id.replace(new RegExp(`^${hub.data.slug}[-_]?`), '') || a.id;
+            return (
+              <li class="article-row">
+                <a href={`/press/${hub.data.slug}/${slug}/`} class="article-row__link">
+                  <span class="article-row__num">{String(i + 1).padStart(2, '0')}</span>
+                  <div class="article-row__body">
+                    <h3 class="article-row__title">{a.data.title}</h3>
+                    {(a.data.author || a.data.publication || a.data.publicationDate) && (
+                      <p class="article-row__meta">
+                        {[a.data.author, a.data.publication, a.data.publicationDate].filter(Boolean).join(' · ')}
+                      </p>
+                    )}
+                  </div>
+                  <span class="article-row__arrow" aria-hidden="true">
+                    <svg width="24" height="10" viewBox="0 0 24 10" fill="none">
+                      <path d="M0 5 H21 M17 1 L21 5 L17 9" stroke="currentColor" stroke-width="1" fill="none"/>
+                    </svg>
+                  </span>
+                </a>
+              </li>
+            );
+          })}
+        </ol>
+      )}
+    </div>
+  </section>
+</Base>
+
+<style>
+  .page-hero { padding-block: clamp(var(--space-6), 4vw, var(--space-8)); position: relative; overflow: hidden; }
+  .page-hero__inner { position: relative; z-index: 1; }
+  .page-hero__back {
+    display: block; width: fit-content;
+    font-family: var(--font-ui); font-weight: 500; font-size: var(--step--1);
+    letter-spacing: var(--track-caps); text-transform: uppercase;
+    color: var(--yellow-soft); border: 0;
+    margin-bottom: var(--space-5);
+  }
+  .page-hero__back:hover { color: #F5DE8C; }
+  .page-hero__eyebrow { color: var(--yellow-soft); }
+  .page-hero__title {
+    font-family: var(--font-display); font-weight: 300;
+    font-size: clamp(var(--step-5), 6vw, var(--step-7)); line-height: 1;
+    letter-spacing: var(--track-tight);
+    color: #F5EAD1; margin-top: var(--space-2);
+  }
+  .page-hero__subtitle {
+    margin-top: var(--space-4); font-family: var(--font-body);
+    font-size: clamp(var(--step-1), 1.4vw + 0.3rem, var(--step-2));
+    color: rgba(245, 234, 209, 0.9); max-width: 60ch;
+  }
+
+  .subhub-section { padding-block: clamp(var(--space-6), 3vw, var(--space-8)); position: relative; }
+  .empty { font-family: var(--font-body); font-style: italic; color: var(--text-on-paper-muted); text-align: center; padding-block: var(--space-6); }
+
+  .article-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--paper-hairline); }
+  .article-row { border-bottom: 1px solid var(--paper-hairline); }
+  .article-row__link {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: clamp(var(--space-4), 2.5vw, var(--space-6));
+    align-items: center;
+    padding: var(--space-4) var(--space-3);
+    border: 0;
+    color: var(--ink);
+    transition: background var(--dur) var(--ease-out-quart);
+  }
+  .article-row__link:hover, .article-row__link:focus-visible { background: color-mix(in oklab, var(--purple) 5%, transparent); }
+  .article-row__num {
+    font-family: var(--font-display); font-size: var(--step-3); font-weight: 300;
+    color: var(--purple); font-feature-settings: 'tnum';
+    min-width: 3ch;
+  }
+  .article-row__title {
+    font-family: var(--font-display); font-weight: 400;
+    font-size: clamp(var(--step-2), 2vw, var(--step-3));
+    letter-spacing: var(--track-tight); color: var(--ink); margin: 0;
+  }
+  .article-row__meta {
+    margin-top: var(--space-1); font-family: var(--font-ui);
+    font-size: var(--step--2); color: var(--text-on-paper-muted);
+    letter-spacing: 0.02em;
+  }
+  .article-row__arrow { color: var(--purple); opacity: 0.7; transition: transform var(--dur) var(--ease-out-quart); }
+  .article-row__link:hover .article-row__arrow { transform: translateX(3px); opacity: 1; }
+</style>

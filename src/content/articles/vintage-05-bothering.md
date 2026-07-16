@@ -124,4 +124,4 @@ After the Café de Paris they tore off to a private party given by Mrs. Somerset
 
 It is not yet known whether they will play the second week at the Palladium. There is still some hitch in the negotiations. We hope, for everyone’s sake, that they will.
 
-[Articles Written About the Sisters](http://bozzies.org/boz-buz-vintage-articles/)
+[More vintage articles](/press/vintage/)
