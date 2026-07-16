@@ -43,7 +43,10 @@ const {
 
       <div class="pp__progress-wrap">
         <span class="pp__time" data-current>0:00</span>
-        <div class="pp__progress" data-progress-container>
+        <div class="pp__progress" data-progress-container
+             role="slider" tabindex="0"
+             aria-label="Seek within track"
+             aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
           <div class="pp__progress-bar" data-progress></div>
         </div>
         <span class="pp__time" data-duration>--:--</span>
@@ -125,13 +128,29 @@ const {
     audio.addEventListener('loadedmetadata', () => { if (durEl) durEl.textContent = fmt(audio.duration); });
     audio.addEventListener('timeupdate', () => {
       if (curEl) curEl.textContent = fmt(audio.currentTime);
-      if (progBar && audio.duration) progBar.style.width = `${(audio.currentTime / audio.duration) * 100}%`;
+      if (audio.duration) {
+        const pct = (audio.currentTime / audio.duration) * 100;
+        if (progBar) progBar.style.width = `${pct}%`;
+        progContainer?.setAttribute('aria-valuenow', String(Math.round(pct)));
+      }
     });
 
     progContainer?.addEventListener('click', (e: Event) => {
       const rect = (progContainer as HTMLElement).getBoundingClientRect();
       const pct = ((e as MouseEvent).clientX - rect.left) / rect.width;
       if (audio.duration) audio.currentTime = pct * audio.duration;
+    });
+
+    /* Keyboard seeking on the progress bar — WCAG 2.1.1 */
+    progContainer?.addEventListener('keydown', (e: Event) => {
+      const key = (e as KeyboardEvent).key;
+      if (!audio.duration) return;
+      const step = 5;
+      if (key === 'ArrowRight' || key === 'ArrowUp')   { audio.currentTime = Math.min(audio.duration, audio.currentTime + step); e.preventDefault(); }
+      if (key === 'ArrowLeft'  || key === 'ArrowDown') { audio.currentTime = Math.max(0,              audio.currentTime - step); e.preventDefault(); }
+      if (key === 'Home')                              { audio.currentTime = 0;                                                   e.preventDefault(); }
+      if (key === 'End')                               { audio.currentTime = audio.duration;                                      e.preventDefault(); }
+      if (key === ' ' || key === 'Enter')              { if (audio.paused) audio.play().catch(() => {}); else audio.pause();      e.preventDefault(); }
     });
 
     load(0, false);
@@ -191,7 +210,8 @@ const {
 
   .pp__progress-wrap { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: var(--space-3); }
   .pp__time { font-family: var(--font-ui); font-size: var(--step--1); color: var(--text-on-paper-muted); font-variant-numeric: tabular-nums; }
-  .pp__progress { position: relative; height: 6px; background: color-mix(in oklab, var(--paper) 85%, var(--purple) 15%); cursor: pointer; }
+  .pp__progress { position: relative; height: 6px; background: color-mix(in oklab, var(--paper) 85%, var(--purple) 15%); cursor: pointer; outline: none; }
+  .pp__progress:focus-visible { outline: 2px solid var(--purple); outline-offset: 3px; }
   .pp__progress-bar { position: absolute; left: 0; top: 0; bottom: 0; width: 0%; background: var(--purple); transition: width 120ms linear; }
 
   .pp__list {

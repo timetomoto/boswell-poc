@@ -108,12 +108,12 @@ const stripPrefix = (id: string, sh: string) => id.replace(new RegExp(`^${sh}[-_
     color: var(--yellow-soft); border: 0;
     margin-bottom: var(--space-5);
   }
-  .article-hero__back:hover { color: #F5DE8C; }
+  .article-hero__back:hover { color: var(--yellow-hover); }
   .article-hero__title {
     font-family: var(--font-display); font-weight: 300;
     font-size: clamp(var(--step-5), 5vw + 0.3rem, var(--step-7));
     line-height: 1.05; letter-spacing: var(--track-tight);
-    color: #F5EAD1; margin: 0;
+    color: var(--paper-warm); margin: 0;
     max-width: 28ch;
   }
   .article-hero__meta {

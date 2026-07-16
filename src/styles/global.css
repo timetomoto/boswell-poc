@@ -171,3 +171,20 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; border-ra
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
 }
+
+/* Skip link — hidden until keyboard-focused, then floats top-left over the nav.
+   WCAG 2.4.1 (Bypass Blocks). */
+.skip-link {
+  position: absolute; left: -9999px; top: 0;
+  z-index: 100;
+  padding: var(--space-3) var(--space-4);
+  background: var(--ink); color: var(--paper);
+  font-family: var(--font-ui); font-weight: 500; font-size: var(--step--1);
+  letter-spacing: var(--track-caps); text-transform: uppercase;
+  text-decoration: none; border: 2px solid var(--yellow-soft);
+}
+.skip-link:focus, .skip-link:focus-visible {
+  left: var(--space-3); top: var(--space-3);
+  outline: 2px solid var(--yellow-soft); outline-offset: 2px;
+  color: var(--paper);
+}

@@ -29,9 +29,9 @@ const { Content: PageContent } = await render(page);
   .page-hero { padding-block: clamp(var(--space-6), 4vw, var(--space-8)); position: relative; overflow: hidden; }
   .page-hero__inner { position: relative; z-index: 1; }
   .page-hero__back { display: block; width: fit-content; font-family: var(--font-ui); font-weight: 500; font-size: var(--step--1); letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--yellow-soft); border: 0; margin-bottom: var(--space-5); }
-  .page-hero__back:hover { color: #F5DE8C; }
+  .page-hero__back:hover { color: var(--yellow-hover); }
   .page-hero__eyebrow { color: var(--yellow-soft); }
-  .page-hero__title { font-family: var(--font-display); font-weight: 300; font-size: clamp(var(--step-5), 6vw, var(--step-7)); line-height: 1; letter-spacing: var(--track-tight); color: #F5EAD1; margin-top: var(--space-2); }
+  .page-hero__title { font-family: var(--font-display); font-weight: 300; font-size: clamp(var(--step-5), 6vw, var(--step-7)); line-height: 1; letter-spacing: var(--track-tight); color: var(--paper-warm); margin-top: var(--space-2); }
   .page-hero__subtitle { margin-top: var(--space-4); font-family: var(--font-body); font-size: clamp(var(--step-1), 1.4vw + 0.3rem, var(--step-2)); color: rgba(245, 234, 209, 0.9); max-width: 52ch; }
 
   /* Reviews prose — each H3 becomes a review row separated by a hairline */

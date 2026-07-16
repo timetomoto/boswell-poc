@@ -92,8 +92,8 @@ const sortedReleases = releases.sort((a, b) => a.data.title.localeCompare(b.data
   ))}
 
   {sortedReleases.length > 0 && (
-    <section class="section ground-purple press-releases">
-      <MusicBackdrop variant="staves" opacity={0.07} color="var(--yellow-soft)" />
+    <section class="section ground-gold press-releases">
+      <MusicBackdrop variant="staves" opacity={0.08} color="var(--purple)" />
       <div class="container">
         <header class="releases-head">
           {page.data.pressReleasesEyebrow && <span class="eyebrow releases-head__eyebrow">{page.data.pressReleasesEyebrow}</span>}
@@ -127,7 +127,7 @@ const sortedReleases = releases.sort((a, b) => a.data.title.localeCompare(b.data
   .subhub-section:last-of-type { border-bottom: 0; }
   .subhub-head { max-width: var(--measure); margin-bottom: var(--space-5); }
   .subhub-title { margin-top: var(--space-2); font-family: var(--font-display); font-size: clamp(var(--step-4), 3vw + 0.3rem, var(--step-5)); font-weight: 300; letter-spacing: var(--track-tight); }
-  .subhub-blurb { margin-top: var(--space-2); font-family: var(--font-body); font-size: var(--step-0); color: var(--text-on-paper); max-width: 56ch; line-height: var(--leading-normal); }
+  .subhub-blurb { margin-top: var(--space-2); font-family: var(--font-body); font-size: var(--step-0); color: var(--text-on-paper); max-width: var(--measure-body); line-height: var(--leading-normal); }
 
   .article-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--paper-hairline); }
   .article-row { border-bottom: 1px solid var(--paper-hairline); }
@@ -149,11 +149,10 @@ const sortedReleases = releases.sort((a, b) => a.data.title.localeCompare(b.data
   .article-row__arrow { color: var(--purple); transition: transform var(--dur) var(--ease-out-quart); }
   .article-row__link:hover .article-row__arrow { transform: translateX(6px); }
 
-  /* Press releases grid on purple */
+  /* Press releases grid on bourbon-gold */
   .releases-head { max-width: var(--measure-wide); margin-bottom: var(--space-5); }
-  .releases-head__eyebrow { color: var(--yellow-soft); }
-  .releases-head__title { margin-top: var(--space-2); font-family: var(--font-display); font-size: clamp(var(--step-4), 3vw + 0.3rem, var(--step-5)); font-weight: 300; color: #F5EAD1; }
-  .releases-head__blurb { margin-top: var(--space-2); font-family: var(--font-body); font-size: var(--step-0); color: rgba(245, 234, 209, 0.85); max-width: 56ch; }
+  .releases-head__title { margin-top: var(--space-2); font-family: var(--font-display); font-size: clamp(var(--step-4), 3vw + 0.3rem, var(--step-5)); font-weight: 300; color: var(--ink); }
+  .releases-head__blurb { margin-top: var(--space-2); font-family: var(--font-body); font-size: var(--step-0); color: var(--ink); max-width: var(--measure-body); }
 
   .releases-grid {
     display: grid;
@@ -165,21 +164,20 @@ const sortedReleases = releases.sort((a, b) => a.data.title.localeCompare(b.data
     position: relative;
     z-index: 1;
   }
-  .release-card { }
   .release-card__link {
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
     padding: var(--space-5);
-    background: color-mix(in oklab, var(--purple) 90%, black);
-    border: 1px solid rgba(225, 194, 99, 0.3);
-    color: #F5EAD1;
+    background: color-mix(in oklab, var(--purple) 92%, black);
+    border: 1px solid color-mix(in oklab, var(--purple) 55%, black);
+    color: var(--paper-warm);
     text-decoration: none;
     transition: transform var(--dur) var(--ease-out-quart), background var(--dur) var(--ease-out-quart);
     height: 100%;
   }
-  .release-card__link:hover { transform: translateY(-3px); background: color-mix(in oklab, var(--purple) 85%, black); }
+  .release-card__link:hover { transform: translateY(-3px); background: var(--oxblood); }
   .release-card__type { font-family: var(--font-ui); font-weight: 600; font-size: var(--step--2); letter-spacing: var(--track-caps); color: var(--yellow-soft); }
-  .release-card__title { margin: 0; font-family: var(--font-display); font-size: var(--step-2); font-weight: 400; line-height: var(--leading-snug); color: #F5EAD1; }
-  .release-card__date { margin: 0; font-family: var(--font-ui); font-size: var(--step--1); color: rgba(245, 234, 209, 0.7); }
+  .release-card__title { margin: 0; font-family: var(--font-display); font-size: var(--step-2); font-weight: 400; line-height: var(--leading-snug); color: var(--paper-warm); }
+  .release-card__date { margin: 0; font-family: var(--font-ui); font-size: var(--step--1); color: rgba(245, 234, 209, 0.75); }
 </style>

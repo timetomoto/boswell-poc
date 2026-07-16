@@ -95,8 +95,8 @@ const reviews = await getEntry('pages', 'reviews');
     </div>
   </section>
 
-  <section class="section ground-purple music-teasers">
-    <MusicBackdrop variant="vinyl" opacity={0.10} color="var(--yellow-soft)" />
+  <section class="section ground-gold music-teasers">
+    <MusicBackdrop variant="vinyl" opacity={0.08} color="var(--purple)" />
     <div class="container music-teasers__grid">
       {charts && (
         <a href="/media/charts/" class="music-teaser">
@@ -150,7 +150,7 @@ const reviews = await getEntry('pages', 'reviews');
   /* Lessons grid */
   .lessons-grid__head { max-width: var(--measure-wide); margin: 0 auto var(--space-6); text-align: center; position: relative; z-index: 1; }
   .lessons-grid__title { margin: var(--space-2) auto 0; font-family: var(--font-display); font-size: clamp(var(--step-4), 3.5vw + 0.3rem, var(--step-6)); font-weight: 300; letter-spacing: var(--track-tight); text-align: center; }
-  .lessons-grid__lede { margin: var(--space-3) auto 0; font-family: var(--font-body); font-size: var(--step-1); line-height: var(--leading-loose); color: var(--text-on-paper); max-width: 60ch; text-align: center; }
+  .lessons-grid__lede { margin: var(--space-3) auto 0; font-family: var(--font-body); font-size: var(--step-1); line-height: var(--leading-loose); color: var(--text-on-paper); max-width: var(--measure-body); text-align: center; }
 
   .lessons-cards { display: flex; flex-direction: column; gap: 0; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--paper-hairline); position: relative; z-index: 1; }
   .lesson-card { border-bottom: 1px solid var(--paper-hairline); position: relative; background: color-mix(in oklab, var(--paper) 97%, var(--purple) 3%); }
@@ -171,7 +171,7 @@ const reviews = await getEntry('pages', 'reviews');
   .lesson-card__num-value { font-family: var(--font-display); font-size: var(--step-5); font-weight: 300; color: var(--purple); line-height: 1; font-feature-settings: 'tnum'; }
   .lesson-card__body { min-width: 0; }
   .lesson-card__title { font-family: var(--font-display); font-size: clamp(var(--step-3), 2vw, var(--step-4)); font-weight: 400; letter-spacing: var(--track-tight); color: var(--ink); margin: 0; }
-  .lesson-card__summary { margin-top: var(--space-2); font-family: var(--font-body); font-size: var(--step-0); line-height: var(--leading-normal); color: var(--text-on-paper); max-width: 62ch; }
+  .lesson-card__summary { margin-top: var(--space-2); font-family: var(--font-body); font-size: var(--step-0); line-height: var(--leading-normal); color: var(--text-on-paper); max-width: var(--measure-body); }
   .lesson-card__cta { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--purple); font-family: var(--font-ui); font-weight: 500; font-size: var(--step--1); letter-spacing: var(--track-caps); text-transform: uppercase; }
   .lesson-card__cta svg { transition: transform var(--dur) var(--ease-out-quart); }
   .lesson-card__link:hover .lesson-card__cta svg { transform: scale(1.1); }
@@ -186,16 +186,16 @@ const reviews = await getEntry('pages', 'reviews');
   .music-teaser {
     display: flex; flex-direction: column; gap: var(--space-3);
     padding: clamp(var(--space-5), 2.4vw, var(--space-6));
-    border: 1px solid rgba(225, 194, 99, 0.35);
+    border: 1px solid color-mix(in oklab, var(--purple) 55%, black);
     background: color-mix(in oklab, var(--purple) 92%, black);
-    color: #F5EAD1;
+    color: var(--paper-warm);
     text-decoration: none;
     transition: transform var(--dur) var(--ease-out-quart), background var(--dur) var(--ease-out-quart);
   }
-  .music-teaser:hover { transform: translateY(-3px); background: color-mix(in oklab, var(--purple) 88%, black); }
+  .music-teaser:hover { transform: translateY(-3px); background: var(--oxblood); }
   .music-teaser__eyebrow { color: var(--yellow-soft); }
-  .music-teaser__title { font-family: var(--font-display); font-size: clamp(var(--step-3), 2.4vw, var(--step-4)); font-weight: 400; letter-spacing: var(--track-tight); color: #F5EAD1; margin: 0; }
-  .music-teaser__body { font-family: var(--font-body); font-size: var(--step-0); line-height: var(--leading-normal); color: rgba(245, 234, 209, 0.85); margin: 0; max-width: 46ch; }
+  .music-teaser__title { font-family: var(--font-display); font-size: clamp(var(--step-3), 2.4vw, var(--step-4)); font-weight: 400; letter-spacing: var(--track-tight); color: var(--paper-warm); margin: 0; }
+  .music-teaser__body { font-family: var(--font-body); font-size: var(--step-0); line-height: var(--leading-normal); color: rgba(245, 234, 209, 0.9); margin: 0; max-width: var(--measure-body); }
   .music-teaser__cta { margin-top: auto; display: inline-flex; align-items: center; gap: var(--space-2); color: var(--yellow-soft); font-family: var(--font-ui); font-weight: 500; font-size: var(--step--1); letter-spacing: var(--track-caps); text-transform: uppercase; padding-top: var(--space-3); }
   .music-teaser:hover .music-teaser__cta svg { transform: translateX(4px); }
   .music-teaser__cta svg { transition: transform var(--dur) var(--ease-out-quart); }

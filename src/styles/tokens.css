@@ -92,6 +92,18 @@
   --measure-wide: 60rem;     /* editorial spreads */
   --measure-max: 84rem;      /* hero/gallery */
 
+  /* Text-block widths — applied to page-section titles and reading prose.
+     Titles stay tight for balanced display headlines; body is set to the
+     lower end of the WCAG-recommended reading measure (45–75ch). */
+  --measure-title: 34ch;
+  --measure-body: 58ch;
+
+  /* Warm cream — canonical text color on purple / dark-card grounds
+     (13+ call sites). Slightly warmer than --text-on-ink for hero/pull-out use. */
+  --paper-warm: #F5EAD1;
+  /* Brighter yellow-soft — canonical hover state for yellow-soft controls */
+  --yellow-hover: #F5DE8C;
+
   /* Motion — elegant, never bouncy */
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);

@@ -38,8 +38,8 @@ const donateLabel = (donateBtn?.data.label ?? 'Donate').trim();
 
   <SectionDivider variant="jazz" color="purple" />
 
-  <section class="section ground-purple about-cta">
-    <MusicBackdrop variant="notes" opacity={0.09} color="var(--yellow-soft)" />
+  <section class="section ground-gold about-cta">
+    <MusicBackdrop variant="notes" opacity={0.10} color="var(--purple)" />
     <div class="container about-cta__inner">
       <header class="about-cta__head">
         {page.data.ctaEyebrow && <span class="eyebrow about-cta__eyebrow">{page.data.ctaEyebrow}</span>}
@@ -71,12 +71,11 @@ const donateLabel = (donateBtn?.data.label ?? 'Donate').trim();
   .prose :global(ul) { margin-top: var(--space-4); padding-left: var(--space-5); max-width: 62ch; }
   .prose :global(ul li) { margin-top: var(--space-2); }
 
-  /* Contact / donate CTA */
+  /* Contact / donate CTA — on bourbon-gold ground */
   .about-cta__inner { text-align: center; position: relative; z-index: 1; }
   .about-cta__head { max-width: var(--measure); margin: 0 auto; }
-  .about-cta__eyebrow { color: var(--yellow-soft); }
-  .about-cta__title { margin: var(--space-3) auto 0; font-family: var(--font-display); font-size: clamp(var(--step-4), 3.5vw + 0.3rem, var(--step-6)); font-weight: 300; color: #F5EAD1; max-width: 22ch; }
-  .about-cta__body { margin: var(--space-4) auto 0; font-family: var(--font-body); font-size: var(--step-1); line-height: var(--leading-normal); color: rgba(245, 234, 209, 0.9); max-width: 52ch; }
+  .about-cta__title { margin: var(--space-3) auto 0; font-family: var(--font-display); font-size: clamp(var(--step-4), 3.5vw + 0.3rem, var(--step-6)); font-weight: 300; color: var(--ink); max-width: var(--measure-title); }
+  .about-cta__body { margin: var(--space-4) auto 0; font-family: var(--font-body); font-size: var(--step-1); line-height: var(--leading-normal); color: var(--ink); max-width: var(--measure-body); }
   .about-cta__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-4); margin-top: var(--space-7); }
   .btn {
     display: inline-block;
@@ -90,8 +89,10 @@ const donateLabel = (donateBtn?.data.label ?? 'Donate').trim();
     border: 1px solid transparent;
     transition: background var(--dur) var(--ease-out-quart), color var(--dur) var(--ease-out-quart), border-color var(--dur) var(--ease-out-quart);
   }
-  .btn--outline { color: var(--yellow-soft); border-color: var(--yellow-soft); background: transparent; }
-  .btn--outline:hover, .btn--outline:focus-visible { background: var(--yellow-soft); color: var(--purple); }
-  .btn--gold { color: var(--purple); background: var(--yellow-soft); border-color: var(--yellow-soft); }
-  .btn--gold:hover, .btn--gold:focus-visible { background: #F5D680; border-color: #F5D680; }
+  /* Secondary — outline purple on gold */
+  .btn--outline { color: var(--purple); border-color: var(--purple); background: transparent; }
+  .btn--outline:hover, .btn--outline:focus-visible { background: var(--purple); color: var(--paper); }
+  /* Primary — filled purple on gold */
+  .btn--gold { color: var(--paper); background: var(--purple); border-color: var(--purple); }
+  .btn--gold:hover, .btn--gold:focus-visible { background: var(--oxblood); border-color: var(--oxblood); color: var(--paper); }
 </style>

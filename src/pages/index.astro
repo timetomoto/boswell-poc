@@ -79,10 +79,10 @@ const voices = voicesEntry?.data.quotes ?? [];
 
   {/* 5. SAMPLE THE SOUND — educational lessons CTA */}
   {(data.sampleTitle || data.sampleBody) && (
-    <section class="section ground-ink sample-section">
-      <MusicBackdrop variant="staves" opacity={0.10} color="var(--yellow-soft)" />
+    <section class="section ground-paper sample-section">
+      <MusicBackdrop variant="staves" opacity={0.06} color="var(--purple)" />
       <div class="container-narrow sample__inner">
-        {data.sampleEyebrow && <span class="eyebrow">{data.sampleEyebrow}</span>}
+        {data.sampleEyebrow && <span class="eyebrow eyebrow--purple">{data.sampleEyebrow}</span>}
         {data.sampleTitle && <h2 class="sample__title">{data.sampleTitle}</h2>}
         {data.sampleBody && <p class="sample__body">{data.sampleBody}</p>}
         <a href="/media/lessons/1/" class="sample__cta">
@@ -98,8 +98,8 @@ const voices = voicesEntry?.data.quotes ?? [];
 
   {/* 6. DONATE */}
   {(data.donateTitle || data.donateBody) && (
-    <section class="section ground-paper donate-teaser">
-      <MusicBackdrop variant="diamond-grid" opacity={0.05} color="var(--purple)" />
+    <section class="section ground-gold donate-teaser">
+      <MusicBackdrop variant="diamond-grid" opacity={0.08} color="var(--purple)" />
       <div class="container-narrow donate-teaser__inner">
         {data.donateEyebrow && <span class="eyebrow eyebrow--purple">{data.donateEyebrow}</span>}
         {data.donateTitle && <h2 class="donate-teaser__title">{data.donateTitle}</h2>}
@@ -122,7 +122,7 @@ const voices = voicesEntry?.data.quotes ?? [];
     line-height: var(--leading-snug);
     color: var(--ink);
     margin-top: var(--space-4);
-    max-width: 38ch;
+    max-width: var(--measure-body);
   }
   .intro__body {
     margin-top: var(--space-5);
@@ -130,7 +130,7 @@ const voices = voicesEntry?.data.quotes ?? [];
     font-size: var(--step-1);
     line-height: var(--leading-loose);
     color: var(--text-on-paper);
-    max-width: 52ch;
+    max-width: var(--measure-body);
   }
   .intro__body--lead { font-weight: 700; }
 
@@ -147,14 +147,13 @@ const voices = voicesEntry?.data.quotes ?? [];
   /* Voices — purple ground with carousel */
   .voices-section__head { text-align: center; margin: 0 auto var(--space-4); position: relative; z-index: 1; }
   .voices-section__eyebrow { color: var(--yellow-soft); }
-  .voices-section__title { margin: var(--space-3) auto 0; font-family: var(--font-display); font-size: clamp(var(--step-4), 3.5vw + 0.3rem, var(--step-6)); font-weight: 300; color: #F5EAD1; text-align: center; max-width: 26ch; }
+  .voices-section__title { margin: var(--space-3) auto 0; font-family: var(--font-display); font-size: clamp(var(--step-4), 3.5vw + 0.3rem, var(--step-6)); font-weight: 300; color: var(--paper-warm); text-align: center; max-width: var(--measure-title); }
 
-  /* Sample the Sound (educational lessons) — ink (near-black) ground */
+  /* Sample the Sound (educational lessons) — paper ground */
   .sample-section { padding-bottom: clamp(var(--space-8), 6vw, var(--space-9)); }
   .sample__inner { text-align: center; position: relative; z-index: 1; }
-  .sample__inner :global(.eyebrow) { color: var(--yellow-soft); }
-  .sample__title { margin: var(--space-3) auto 0; font-family: var(--font-display); font-size: clamp(var(--step-4), 3.5vw + 0.3rem, var(--step-5)); font-weight: 300; max-width: 24ch; color: #FFFFFF; }
-  .sample__body { margin: var(--space-4) auto 0; max-width: 48ch; font-family: var(--font-body); color: #FFFFFF; }
+  .sample__title { margin: var(--space-3) auto 0; font-family: var(--font-display); font-size: clamp(var(--step-4), 3.5vw + 0.3rem, var(--step-5)); font-weight: 300; max-width: var(--measure-title); color: var(--ink); }
+  .sample__body { margin: var(--space-4) auto 0; max-width: var(--measure-body); font-family: var(--font-body); color: var(--ink); }
   .sample__cta {
     display: inline-flex; align-items: center; gap: var(--space-3);
     margin-top: var(--space-6);
@@ -167,21 +166,22 @@ const voices = voicesEntry?.data.quotes ?? [];
   }
   .sample__cta:hover, .sample__cta:focus-visible { background: var(--oxblood); border-color: var(--oxblood); }
 
-  /* Donate teaser */
+  /* Donate teaser — on bourbon-gold ground */
   .donate-teaser__inner { text-align: center; position: relative; z-index: 1; }
   .donate-teaser__title {
     font-family: var(--font-display);
     font-size: clamp(var(--step-3), 2.5vw + 0.4rem, var(--step-5));
     margin-top: var(--space-4);
     margin-inline: auto;
-    max-width: 24ch;
+    max-width: var(--measure-title);
+    color: var(--ink);
   }
   .donate-teaser__body {
     margin-inline: auto;
-    max-width: 48ch;
+    max-width: var(--measure-body);
     margin-top: var(--space-4);
     font-family: var(--font-body);
-    color: var(--text-on-paper);
+    color: var(--ink);
   }
   .btn {
     display: inline-block;
@@ -197,5 +197,5 @@ const voices = voicesEntry?.data.quotes ?? [];
     transition: background var(--dur) var(--ease-out-quart), color var(--dur) var(--ease-out-quart);
   }
   .btn--purple { color: var(--paper); background: var(--purple); border: 1px solid var(--purple); }
-  .btn--purple:hover, .btn--purple:focus-visible { background: var(--oxblood); border-color: var(--oxblood); }
+  .btn--purple:hover, .btn--purple:focus-visible { background: var(--oxblood); border-color: var(--oxblood); color: var(--paper); }
 </style>

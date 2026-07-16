@@ -22,7 +22,7 @@ const pathname = Astro.url?.pathname ?? '/';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
   <body class={bodyClass}>
-    <a class="visually-hidden" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main">Skip to content</a>
     <Nav path={pathname} />
     <main id="main">
       <slot />
