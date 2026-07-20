@@ -23,6 +23,20 @@ const { Content: PageContent } = await render(page);
       <PageContent />
     </div>
   </section>
+
+  <section class="section ground-gold see-also">
+    <div class="container see-also__grid">
+      <a href="/media/discography/" class="see-also__card">
+        <span class="eyebrow see-also__eyebrow">See also</span>
+        <h2 class="see-also__title">The full discography</h2>
+        <p class="see-also__body">Chart positions tell you how the records sold. The discography goes deeper — 128 sessions and 500+ tracks, with matrix numbers, personnel, and label catalog data.</p>
+        <span class="see-also__cta">
+          Browse the sessions
+          <svg width="20" height="10" viewBox="0 0 20 10" aria-hidden="true"><path d="M0 5 H17 M13 1 L17 5 L13 9" stroke="currentColor" stroke-width="1" fill="none"/></svg>
+        </span>
+      </a>
+    </div>
+  </section>
 </Base>
 
 <style>
@@ -80,4 +94,31 @@ const { Content: PageContent } = await render(page);
   .prose :global(td:nth-child(2)) { font-family: var(--font-display); font-size: var(--step-2); font-weight: 400; color: var(--brass); text-align: center; }
   /* Weeks charted */
   .prose :global(td:nth-child(3)) { text-align: center; color: var(--text-on-paper-muted); }
+
+  /* See also — cross-link to sibling media subpage */
+  .see-also { position: relative; overflow: hidden; }
+  .see-also__grid { display: flex; justify-content: center; }
+  .see-also__card {
+    display: flex; flex-direction: column; gap: var(--space-3);
+    padding: clamp(var(--space-5), 2.4vw, var(--space-6));
+    max-width: 40rem; width: 100%;
+    border: 1px solid color-mix(in oklab, var(--purple) 55%, black);
+    background: color-mix(in oklab, var(--purple) 92%, black);
+    color: var(--paper-warm);
+    text-decoration: none;
+    transition: transform var(--dur) var(--ease-out-quart), background var(--dur) var(--ease-out-quart);
+  }
+  .see-also__card:hover, .see-also__card:focus-visible { transform: translateY(-3px); background: var(--oxblood); color: var(--paper-warm); }
+  .see-also__eyebrow { color: var(--yellow-soft); }
+  .see-also__title { font-family: var(--font-display); font-weight: 400; font-size: clamp(var(--step-3), 2.4vw, var(--step-4)); letter-spacing: var(--track-tight); color: var(--paper-warm); margin: 0; max-width: var(--measure-title); }
+  .see-also__body { font-family: var(--font-body); font-size: var(--step-0); line-height: var(--leading-normal); color: rgba(245, 234, 209, 0.9); margin: 0; max-width: var(--measure-body); }
+  .see-also__cta {
+    margin-top: auto; padding-top: var(--space-3);
+    display: inline-flex; align-items: center; gap: var(--space-2);
+    color: var(--yellow-soft);
+    font-family: var(--font-ui); font-weight: 500; font-size: var(--step--1);
+    letter-spacing: var(--track-caps); text-transform: uppercase;
+  }
+  .see-also__cta svg { transition: transform var(--dur) var(--ease-out-quart); }
+  .see-also__card:hover .see-also__cta svg { transform: translateX(4px); }
 </style>
