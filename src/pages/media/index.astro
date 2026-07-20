@@ -124,6 +124,17 @@ const reviews = await getEntry('pages', 'reviews');
           </span>
         </a>
       )}
+      <a href="/media/discography/" class="music-teaser">
+        {page.data.discographyTeaserEyebrow && <span class="eyebrow music-teaser__eyebrow">{page.data.discographyTeaserEyebrow}</span>}
+        <h3 class="music-teaser__title">{page.data.discographyTeaserTitle}</h3>
+        {page.data.discographyTeaserBody && <p class="music-teaser__body">{page.data.discographyTeaserBody}</p>}
+        <span class="music-teaser__cta">
+          {page.data.discographyTeaserCta || 'Browse the sessions'}
+          <svg width="20" height="10" viewBox="0 0 20 10" aria-hidden="true">
+            <path d="M0 5 H17 M13 1 L17 5 L13 9" stroke="currentColor" stroke-width="1" fill="none"/>
+          </svg>
+        </span>
+      </a>
     </div>
   </section>
 </Base>
@@ -181,8 +192,9 @@ const reviews = await getEntry('pages', 'reviews');
   }
 
   /* Music sub-page teasers */
-  .music-teasers__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(var(--space-4), 2.4vw, var(--space-6)); position: relative; z-index: 1; }
-  @media (max-width: 820px) { .music-teasers__grid { grid-template-columns: 1fr; } }
+  .music-teasers__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(var(--space-4), 2.4vw, var(--space-6)); position: relative; z-index: 1; }
+  @media (max-width: 1000px) { .music-teasers__grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px)  { .music-teasers__grid { grid-template-columns: 1fr; } }
   .music-teaser {
     display: flex; flex-direction: column; gap: var(--space-3);
     padding: clamp(var(--space-5), 2.4vw, var(--space-6));

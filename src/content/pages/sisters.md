@@ -10,6 +10,10 @@ sistersSectionTitle: Martha, Connie and Vet
 bioReadLabel: Read the bio
 bioResourcesEyebrow: Further Reading
 bioResourcesCtaLabel: Explore the Boz Biography
+timelineEyebrow: Career Timeline
+timelineTitle: Their story, year by year
+timelineBody: From Martha's 1905 birth through the trio's final broadcast in 1936 — every recording, tour, and turning point in one scrollable timeline.
+timelineCtaLabel: Open the timeline
 originalUrl: http://bozzies.org/bozbios/
 ---
 

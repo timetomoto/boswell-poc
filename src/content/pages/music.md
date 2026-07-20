@@ -17,6 +17,10 @@ reviewsTeaserEyebrow: Reviews
 reviewsTeaserTitle: Album reviews from the experts
 reviewsTeaserBody: Storyville volumes, Singing the Blues, Shout Sisters Shout, and the lost 1957 RCA classic — hand-picked reviews for anyone starting a Boz collection.
 reviewsTeaserCta: Read the reviews
+discographyTeaserEyebrow: Discography
+discographyTeaserTitle: Every session, every track
+discographyTeaserBody: 128 recording sessions spanning 1925 to 1957, from the trio's first Victor sides through Connee's final solos with Sy Oliver. Searchable by title, matrix, or personnel.
+discographyTeaserCta: Browse the sessions
 ---
 
 ## A living archive of the Boswell sound

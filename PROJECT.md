@@ -5,7 +5,7 @@ returning developer (or Claude session) can pick up cold without re-reading the
 entire chat history. Nothing sensitive belongs in this file — no tokens, no
 secrets, no private URLs. Kept in the repo, not served by the site.
 
-**Last updated:** 2026-07-16, CMS editability + About page + broken-link sweep.
+**Last updated:** 2026-07-20, Career Timeline + Discography pages.
 
 ---
 
@@ -48,9 +48,9 @@ footer) without a developer in the loop.
 Four-item primary nav, each a real section, plus a Donate button:
 
 - `/` — Home (hero, welcome intro, playlist section, voices carousel, sample-the-sound CTA on ink ground, donate teaser)
-- `/sisters/` — The Sisters (bios + timelines)
+- `/sisters/` — The Sisters (bios + Bio Biography subpage + Career Timeline subpage)
 - `/press/` — Press (vintage articles, in-their-own-words, video features, features, essays, press releases)
-- `/media/` — Media (playlist, audio lessons, charts teaser, reviews teaser)
+- `/media/` — Media (playlist, audio lessons, charts, reviews, discography)
 - `/about/` — About (mission, contact + donate CTA)
 
 **Donate button** — sits after the four nav items; URL and label pulled from `siteSettings`.
@@ -85,6 +85,7 @@ below is CMS-editable — templates never hard-code copy.
 | `navigation` | `src/content/navigation/` | Nav item list used by both header and footer. Fields: items[] (label, href, external). |
 | `voices` | `src/content/voices/` | Home-page quotes carousel (one file with a quotes[] list). |
 | `pressHubs` | `src/content/press-hubs/` | Press sub-hub descriptors (5 files: vintage, in-their-own-words, video, feature, essay). Fields: slug, kicker, label, blurb, order. |
+| `discographySessions` | `src/content/discography/` | Session-by-session discography, 2 files (trio-era, connee-solo). Fields: title, subtitle, attribution, sessions[] (each with header + tracks[{matrix, title, notes, refs}]). 128 sessions, 500+ tracks. Sourced from Paul Gaffey's guymcafee.com via web.archive.org. |
 
 Every image field in the CMS enforces alt text at the schema level.
 
@@ -169,7 +170,8 @@ boswell-poc/
         ├── sisters/
         │   ├── index.astro          ← /sisters/
         │   ├── [slug].astro         ← /sisters/{connee,martha,vet}/
-        │   └── bio-resources.astro
+        │   ├── bio-resources.astro  ← /sisters/bio-resources/
+        │   └── career-timeline.astro← /sisters/career-timeline/ (trio timeline via <Timeline>)
         ├── press/
         │   ├── index.astro          ← /press/
         │   └── [subhub]/[slug].astro
@@ -177,6 +179,7 @@ boswell-poc/
             ├── index.astro          ← /media/
             ├── charts.astro
             ├── reviews.astro
+            ├── discography.astro    ← /media/discography/ (client-side search across 128 sessions)
             └── lessons/[order].astro
 ```
 

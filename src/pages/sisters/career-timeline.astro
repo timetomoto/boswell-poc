@@ -1,0 +1,71 @@
+---
+import Base from '../../layouts/Base.astro';
+import Timeline from '../../components/Timeline.astro';
+import PullQuote from '../../components/PullQuote.astro';
+import { getEntry } from 'astro:content';
+
+const timeline = await getEntry('timelines', 'trio');
+if (!timeline) throw new Error('Missing src/content/timelines/trio.md');
+---
+<Base
+  title="Career Timeline"
+  description={timeline.data.intro}
+>
+  <section class="page-hero ground-purple">
+    <div class="container-narrow page-hero__inner">
+      <a href="/sisters/" class="page-hero__back">← The Sisters</a>
+      <span class="eyebrow page-hero__eyebrow">Career Timeline</span>
+      <h1 class="page-hero__title">{timeline.data.title}</h1>
+      {timeline.data.intro && <p class="page-hero__subtitle">{timeline.data.intro}</p>}
+    </div>
+  </section>
+
+  {timeline.data.pullQuote && (
+    <section class="section ground-purple">
+      <div class="container">
+        <PullQuote attribution={timeline.data.pullQuoteAttribution}>
+          {timeline.data.pullQuote}
+        </PullQuote>
+      </div>
+    </section>
+  )}
+
+  <section class="section ground-paper timeline-section">
+    <div class="container">
+      <Timeline entries={timeline.data.entries ?? []} color="purple" />
+    </div>
+  </section>
+</Base>
+
+<style>
+  .page-hero { padding-block: clamp(var(--space-6), 4vw, var(--space-8)); position: relative; overflow: hidden; }
+  .page-hero__inner { position: relative; z-index: 1; }
+  .page-hero__back {
+    display: block; width: fit-content;
+    font-family: var(--font-ui); font-weight: 500; font-size: var(--step--1);
+    letter-spacing: var(--track-caps); text-transform: uppercase;
+    color: var(--yellow-soft); border: 0;
+    margin-bottom: var(--space-5);
+  }
+  .page-hero__back:hover { color: var(--yellow-hover); }
+  .page-hero__eyebrow { color: var(--yellow-soft); }
+  .page-hero__title {
+    font-family: var(--font-display); font-weight: 300;
+    font-size: clamp(var(--step-5), 6vw, var(--step-7)); line-height: 1;
+    letter-spacing: var(--track-tight);
+    color: var(--paper-warm); margin-top: var(--space-2);
+    max-width: var(--measure-title);
+  }
+  .page-hero__subtitle {
+    margin-top: var(--space-4); font-family: var(--font-body);
+    font-size: clamp(var(--step-1), 1.4vw + 0.3rem, var(--step-2));
+    color: rgba(245, 234, 209, 0.9); max-width: var(--measure-body);
+  }
+
+  .timeline-section { padding-block: clamp(var(--space-7), 5vw, var(--space-9)); }
+  /* Cap timeline image size for editorial consistency across the 21 entries */
+  .timeline-section :global(.timeline__image) {
+    max-width: 320px;
+    height: auto;
+  }
+</style>

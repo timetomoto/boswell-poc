@@ -1,0 +1,252 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const entries = (await getCollection('discographySessions')).sort((a, b) => {
+  // trio-era first, then connee-solo
+  const rank = (id: string) => (id.includes('trio') ? 0 : 1);
+  return rank(a.id) - rank(b.id);
+});
+
+/* Extract a year from a session header for filtering — takes the first
+   4-digit year OR converts m/d/yy pairs (all 20th century). */
+function yearFromHeader(h: string): string {
+  const m = h.match(/\b(19\d{2}|20\d{2})\b/);
+  if (m) return m[1];
+  const m2 = h.match(/\b\d{1,2}\/\d{1,2}\/(\d{2})\b/);
+  if (m2) {
+    const yy = parseInt(m2[1], 10);
+    return yy < 40 ? `19${m2[1].padStart(2, '0')}` : `19${m2[1].padStart(2, '0')}`;
+  }
+  return '';
+}
+---
+<Base title="Discography" description="Session-by-session discography of the Boswell Sisters and Connee Boswell.">
+  <section class="page-hero ground-purple">
+    <div class="container-narrow page-hero__inner">
+      <a href="/media/" class="page-hero__back">← Media</a>
+      <span class="eyebrow page-hero__eyebrow">Discography</span>
+      <h1 class="page-hero__title">Every session, every track</h1>
+      <p class="page-hero__subtitle">Compiled from the Boswell Sisters Discography maintained by Paul Gaffey (preserved via web.archive.org after his site was abandoned). 128 sessions, 500+ tracks.</p>
+    </div>
+  </section>
+
+  <section class="section ground-paper discography-tools">
+    <div class="container">
+      <div class="disc-search">
+        <label class="disc-search__label" for="disc-search-input">Search titles, matrix numbers, personnel…</label>
+        <input id="disc-search-input" type="search" class="disc-search__input" placeholder="e.g. Heebie Jeebies, Brunswick, Dorsey" data-disc-search>
+        <p class="disc-search__count" data-disc-count aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section ground-paper">
+    <div class="container">
+      {entries.map(entry => (
+        <article class="disc-scope" data-scope-id={entry.id}>
+          <header class="disc-scope__head">
+            <h2 class="disc-scope__title">{entry.data.title}</h2>
+            {entry.data.subtitle && <p class="disc-scope__subtitle">{entry.data.subtitle}</p>}
+          </header>
+          <ol class="disc-sessions" role="list">
+            {entry.data.sessions.map(session => {
+              const year = yearFromHeader(session.header);
+              const searchable = [
+                session.header,
+                ...(session.tracks ?? []).flatMap(t => [t.title, t.matrix, t.notes, t.refs].filter(Boolean))
+              ].join(' ').toLowerCase();
+              return (
+                <li class="disc-session" data-year={year} data-search={searchable}>
+                  <h3 class="disc-session__header">{session.header}</h3>
+                  {session.tracks && session.tracks.length > 0 && (
+                    <ol class="disc-tracks" role="list">
+                      {session.tracks.map(t => (
+                        <li class="disc-track" data-track-search={[t.title, t.matrix, t.notes, t.refs].filter(Boolean).join(' ').toLowerCase()}>
+                          {t.matrix && <span class="disc-track__matrix">{t.matrix}</span>}
+                          <span class="disc-track__title">{t.title}</span>
+                          {t.notes && <span class="disc-track__notes">{t.notes}</span>}
+                          {t.refs && <span class="disc-track__refs">{t.refs}</span>}
+                        </li>
+                      ))}
+                    </ol>
+                  )}
+                </li>
+              );
+            })}
+          </ol>
+          {entry.data.attribution && (
+            <p class="disc-scope__attribution">{entry.data.attribution}</p>
+          )}
+        </article>
+      ))}
+    </div>
+  </section>
+</Base>
+
+<script>
+  const input = document.querySelector('[data-disc-search]') as HTMLInputElement | null;
+  const countEl = document.querySelector('[data-disc-count]');
+  if (input) {
+    let debounceTimer: number | undefined;
+    const totalSessions = document.querySelectorAll('.disc-session').length;
+    const totalTracks   = document.querySelectorAll('.disc-track').length;
+
+    function applyFilter(q: string) {
+      const query = q.trim().toLowerCase();
+      let sessionsShown = 0, tracksShown = 0;
+      document.querySelectorAll('.disc-session').forEach((sessionEl) => {
+        const session = sessionEl as HTMLElement;
+        if (!query) {
+          session.style.display = '';
+          session.querySelectorAll('.disc-track').forEach((t) => { (t as HTMLElement).style.display = ''; });
+          sessionsShown++;
+          return;
+        }
+        const sessionMatches = (session.dataset.search || '').includes(query);
+        let anyTrack = false;
+        session.querySelectorAll('.disc-track').forEach((t) => {
+          const track = t as HTMLElement;
+          const trackMatches = sessionMatches || (track.dataset.trackSearch || '').includes(query);
+          track.style.display = trackMatches ? '' : 'none';
+          if (trackMatches) anyTrack = true;
+        });
+        // Show session if header matches, OR any track matches
+        const show = sessionMatches || anyTrack;
+        session.style.display = show ? '' : 'none';
+        if (show) sessionsShown++;
+      });
+      tracksShown = Array.from(document.querySelectorAll('.disc-track')).filter(t => (t as HTMLElement).style.display !== 'none').length;
+      if (countEl) {
+        countEl.textContent = query
+          ? `Showing ${sessionsShown} of ${totalSessions} sessions, ${tracksShown} of ${totalTracks} tracks.`
+          : `${totalSessions} sessions, ${totalTracks} tracks.`;
+      }
+    }
+
+    input.addEventListener('input', () => {
+      window.clearTimeout(debounceTimer);
+      debounceTimer = window.setTimeout(() => applyFilter(input.value), 120);
+    });
+    // Initial count
+    applyFilter('');
+  }
+</script>
+
+<style>
+  .page-hero { padding-block: clamp(var(--space-6), 4vw, var(--space-8)); position: relative; overflow: hidden; }
+  .page-hero__inner { position: relative; z-index: 1; }
+  .page-hero__back {
+    display: block; width: fit-content;
+    font-family: var(--font-ui); font-weight: 500; font-size: var(--step--1);
+    letter-spacing: var(--track-caps); text-transform: uppercase;
+    color: var(--yellow-soft); border: 0;
+    margin-bottom: var(--space-5);
+  }
+  .page-hero__back:hover { color: var(--yellow-hover); }
+  .page-hero__eyebrow { color: var(--yellow-soft); }
+  .page-hero__title {
+    font-family: var(--font-display); font-weight: 300;
+    font-size: clamp(var(--step-5), 6vw, var(--step-7)); line-height: 1;
+    letter-spacing: var(--track-tight);
+    color: var(--paper-warm); margin-top: var(--space-2);
+    max-width: var(--measure-title);
+  }
+  .page-hero__subtitle {
+    margin-top: var(--space-4); font-family: var(--font-body);
+    font-size: clamp(var(--step-1), 1.4vw + 0.3rem, var(--step-2));
+    color: rgba(245, 234, 209, 0.9); max-width: var(--measure-body);
+  }
+
+  /* Search bar */
+  .discography-tools { padding-block: clamp(var(--space-5), 3vw, var(--space-6)); border-bottom: 1px solid var(--paper-hairline); }
+  .disc-search { max-width: var(--measure-wide); margin: 0 auto; }
+  .disc-search__label {
+    display: block;
+    font-family: var(--font-ui); font-weight: 500; font-size: var(--step--1);
+    letter-spacing: var(--track-caps); text-transform: uppercase;
+    color: var(--text-on-paper-muted);
+    margin-bottom: var(--space-2);
+  }
+  .disc-search__input {
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    font-family: var(--font-body); font-size: var(--step-1);
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--paper-hairline);
+    border-radius: 0;
+  }
+  .disc-search__input:focus-visible { outline: 2px solid var(--purple); outline-offset: 2px; border-color: var(--purple); }
+  .disc-search__count {
+    margin-top: var(--space-2);
+    font-family: var(--font-ui); font-size: var(--step--1);
+    color: var(--text-on-paper-muted);
+  }
+
+  /* Scope blocks */
+  .disc-scope + .disc-scope { margin-top: var(--space-8); border-top: 1px solid var(--paper-hairline); padding-top: var(--space-7); }
+  .disc-scope__head { max-width: var(--measure-wide); margin-bottom: var(--space-5); }
+  .disc-scope__title {
+    font-family: var(--font-display); font-weight: 300;
+    font-size: clamp(var(--step-3), 2.4vw, var(--step-5));
+    letter-spacing: var(--track-tight);
+    color: var(--ink); margin: 0;
+  }
+  .disc-scope__subtitle {
+    margin-top: var(--space-2);
+    font-family: var(--font-body); font-size: var(--step-0);
+    color: var(--text-on-paper); max-width: var(--measure-body);
+  }
+  .disc-scope__attribution {
+    margin-top: var(--space-6);
+    font-family: var(--font-ui); font-style: italic; font-size: var(--step--1);
+    color: var(--text-on-paper-muted);
+    max-width: var(--measure-body);
+  }
+
+  /* Session list */
+  .disc-sessions { list-style: none; padding: 0; margin: 0; }
+  .disc-session { padding-block: var(--space-5); border-bottom: 1px solid var(--paper-hairline); }
+  .disc-session:last-child { border-bottom: 0; }
+  .disc-session__header {
+    font-family: var(--font-ui); font-weight: 600; font-size: var(--step-0);
+    letter-spacing: 0.01em;
+    color: var(--purple);
+    margin: 0 0 var(--space-3);
+    max-width: 90ch;
+  }
+
+  /* Track list */
+  .disc-tracks { list-style: none; padding: 0; margin: 0; }
+  .disc-track {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    gap: var(--space-3);
+    padding: var(--space-2) 0;
+    align-items: baseline;
+    font-family: var(--font-body); font-size: var(--step-0); color: var(--ink);
+    line-height: var(--leading-normal);
+  }
+  .disc-track__matrix {
+    font-family: var(--font-ui); font-size: var(--step--1); color: var(--text-on-paper-muted);
+    letter-spacing: 0.02em;
+    grid-column: 1;
+  }
+  .disc-track__title {
+    font-weight: 500; grid-column: 2;
+  }
+  .disc-track__notes, .disc-track__refs {
+    grid-column: 2;
+    font-family: var(--font-ui); font-size: var(--step--1);
+    color: var(--text-on-paper-muted);
+    display: block;
+  }
+  .disc-track__refs { color: var(--brass); }
+
+  @media (max-width: 640px) {
+    .disc-track { grid-template-columns: 1fr; }
+    .disc-track__matrix { grid-column: 1; }
+    .disc-track__title, .disc-track__notes, .disc-track__refs { grid-column: 1; }
+  }
+</style>

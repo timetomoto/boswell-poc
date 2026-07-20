@@ -84,16 +84,30 @@ const trio = await getEntry('timelines', 'trio');
   )}
 
 
-  {bioLinks && (
-    <section class="section ground-gold">
-      <div class="container-narrow bio-links-teaser">
-        {page.data.bioResourcesEyebrow && <span class="eyebrow eyebrow--purple">{page.data.bioResourcesEyebrow}</span>}
-        <h2 class="bio-links-teaser__title">{bioLinks.data.title}</h2>
-        {bioLinks.data.subtitle && <p class="bio-links-teaser__subtitle">{bioLinks.data.subtitle}</p>}
-        <a href="/sisters/bio-resources/" class="btn btn--purple">{page.data.bioResourcesCtaLabel || 'Explore'}</a>
-      </div>
-    </section>
-  )}
+  <section class="section ground-gold sisters-subpages">
+    <div class="container sisters-subpages__grid">
+      {bioLinks && (
+        <a href="/sisters/bio-resources/" class="subpage-card">
+          {page.data.bioResourcesEyebrow && <span class="eyebrow subpage-card__eyebrow">{page.data.bioResourcesEyebrow}</span>}
+          <h3 class="subpage-card__title">{bioLinks.data.title}</h3>
+          {bioLinks.data.subtitle && <p class="subpage-card__body">{bioLinks.data.subtitle}</p>}
+          <span class="subpage-card__cta">
+            {page.data.bioResourcesCtaLabel || 'Explore'}
+            <svg width="20" height="10" viewBox="0 0 20 10" aria-hidden="true"><path d="M0 5 H17 M13 1 L17 5 L13 9" stroke="currentColor" stroke-width="1" fill="none"/></svg>
+          </span>
+        </a>
+      )}
+      <a href="/sisters/career-timeline/" class="subpage-card">
+        <span class="eyebrow subpage-card__eyebrow">{page.data.timelineEyebrow || 'Career Timeline'}</span>
+        <h3 class="subpage-card__title">{page.data.timelineTitle || 'Their story, year by year'}</h3>
+        <p class="subpage-card__body">{page.data.timelineBody || 'From Martha\'s 1905 birth in Kansas City through the trio\'s final broadcast in 1936 — every recording, tour, and turning point in one scrollable timeline.'}</p>
+        <span class="subpage-card__cta">
+          {page.data.timelineCtaLabel || 'Open the timeline'}
+          <svg width="20" height="10" viewBox="0 0 20 10" aria-hidden="true"><path d="M0 5 H17 M13 1 L17 5 L13 9" stroke="currentColor" stroke-width="1" fill="none"/></svg>
+        </span>
+      </a>
+    </div>
+  </section>
 </Base>
 
 <style>
@@ -195,22 +209,52 @@ const trio = await getEntry('timelines', 'trio');
   .sister-card__link:hover .sister-card__cta svg { transform: translateX(4px); }
   .sister-card__cta svg { transition: transform var(--dur) var(--ease-out-quart); }
 
-  /* Bio Resources teaser */
-  .bio-links-teaser { text-align: center; }
-  .bio-links-teaser__title {
-    font-family: var(--font-display);
-    font-size: clamp(var(--step-4), 3vw + 0.4rem, var(--step-6));
-    font-weight: 300;
-    margin-top: var(--space-3);
+  /* Sisters sub-page teasers — two-card grid on bourbon-gold */
+  .sisters-subpages { position: relative; overflow: hidden; }
+  .sisters-subpages__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(var(--space-4), 2.4vw, var(--space-6));
+    position: relative; z-index: 1;
+  }
+  @media (max-width: 820px) { .sisters-subpages__grid { grid-template-columns: 1fr; } }
+
+  .subpage-card {
+    display: flex; flex-direction: column; gap: var(--space-3);
+    padding: clamp(var(--space-5), 2.4vw, var(--space-6));
+    border: 1px solid color-mix(in oklab, var(--purple) 55%, black);
+    background: color-mix(in oklab, var(--purple) 92%, black);
+    color: var(--paper-warm);
+    text-decoration: none;
+    transition: transform var(--dur) var(--ease-out-quart), background var(--dur) var(--ease-out-quart);
+  }
+  .subpage-card:hover, .subpage-card:focus-visible { transform: translateY(-3px); background: var(--oxblood); color: var(--paper-warm); }
+  .subpage-card__eyebrow { color: var(--yellow-soft); }
+  .subpage-card__title {
+    font-family: var(--font-display); font-weight: 400;
+    font-size: clamp(var(--step-3), 2.4vw, var(--step-4));
     letter-spacing: var(--track-tight);
-    color: var(--ink);
+    color: var(--paper-warm);
+    margin: 0;
+    max-width: var(--measure-title);
   }
-  .bio-links-teaser__subtitle {
-    max-width: 46ch;
-    margin: var(--space-3) auto 0;
-    font-family: var(--font-body);
-    color: var(--ink);
+  .subpage-card__body {
+    font-family: var(--font-body); font-size: var(--step-0);
+    line-height: var(--leading-normal);
+    color: rgba(245, 234, 209, 0.9);
+    margin: 0;
+    max-width: var(--measure-body);
   }
+  .subpage-card__cta {
+    margin-top: auto;
+    display: inline-flex; align-items: center; gap: var(--space-2);
+    color: var(--yellow-soft);
+    font-family: var(--font-ui); font-weight: 500; font-size: var(--step--1);
+    letter-spacing: var(--track-caps); text-transform: uppercase;
+    padding-top: var(--space-3);
+  }
+  .subpage-card__cta svg { transition: transform var(--dur) var(--ease-out-quart); }
+  .subpage-card:hover .subpage-card__cta svg { transform: translateX(4px); }
   .btn {
     display: inline-block;
     margin-top: var(--space-5);

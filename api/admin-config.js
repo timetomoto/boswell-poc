@@ -74,6 +74,33 @@ collections:
           - { name: "attribution", label: "Attribution", widget: "string" }
       - { name: "body", label: "Notes", widget: "markdown", required: false }
 
+  - name: "discographySessions"
+    label: "Media — discography"
+    label_singular: "Discography section"
+    folder: "src/content/discography"
+    format: "frontmatter"
+    extension: "md"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Section title", widget: "string" }
+      - { name: "subtitle", label: "Section subtitle", widget: "text", required: false }
+      - { name: "attribution", label: "Attribution / source note", widget: "text", required: false }
+      - name: "sessions"
+        label: "Sessions"
+        widget: "list"
+        fields:
+          - { name: "header", label: "Session header (date + personnel + location)", widget: "text" }
+          - name: "tracks"
+            label: "Tracks"
+            widget: "list"
+            required: false
+            fields:
+              - { name: "matrix", label: "Matrix number", widget: "string", required: false }
+              - { name: "title", label: "Song title", widget: "string" }
+              - { name: "notes", label: "Notes (composer, label, catalog)", widget: "text", required: false }
+              - { name: "refs", label: "Cross-references (e.g. [BSC2])", widget: "string", required: false }
+
   - name: "pressHubs"
     label: "Press — sub-hub labels"
     label_singular: "Sub-hub"
@@ -170,8 +197,12 @@ collections:
           - { name: "sistersEyebrow", label: "Sisters grid — Eyebrow", widget: "string", required: false }
           - { name: "sistersSectionTitle", label: "Sisters grid — Section title", widget: "string", required: false }
           - { name: "bioReadLabel", label: "Sisters grid — Card CTA label", widget: "string", required: false }
-          - { name: "bioResourcesEyebrow", label: "Further-reading section — Eyebrow", widget: "string", required: false }
-          - { name: "bioResourcesCtaLabel", label: "Further-reading section — CTA label", widget: "string", required: false }
+          - { name: "bioResourcesEyebrow", label: "Bio Biography teaser — Eyebrow", widget: "string", required: false }
+          - { name: "bioResourcesCtaLabel", label: "Bio Biography teaser — CTA label", widget: "string", required: false }
+          - { name: "timelineEyebrow", label: "Timeline teaser — Eyebrow", widget: "string", required: false }
+          - { name: "timelineTitle", label: "Timeline teaser — Title", widget: "string", required: false }
+          - { name: "timelineBody", label: "Timeline teaser — Body", widget: "text", required: false }
+          - { name: "timelineCtaLabel", label: "Timeline teaser — CTA label", widget: "string", required: false }
           - { name: "body", label: "Body (intro markdown)", widget: "markdown" }
       - name: "bio-resources"
         label: "The Sisters — Boz Biography subpage"
@@ -209,6 +240,10 @@ collections:
           - { name: "reviewsTeaserTitle", label: "Reviews teaser — Title", widget: "string", required: false }
           - { name: "reviewsTeaserBody", label: "Reviews teaser — Body", widget: "text", required: false }
           - { name: "reviewsTeaserCta", label: "Reviews teaser — CTA label", widget: "string", required: false }
+          - { name: "discographyTeaserEyebrow", label: "Discography teaser — Eyebrow", widget: "string", required: false }
+          - { name: "discographyTeaserTitle", label: "Discography teaser — Title", widget: "string", required: false }
+          - { name: "discographyTeaserBody", label: "Discography teaser — Body", widget: "text", required: false }
+          - { name: "discographyTeaserCta", label: "Discography teaser — CTA label", widget: "string", required: false }
           - { name: "body", label: "Body (intro markdown)", widget: "markdown" }
       - name: "press-landing"
         label: "Press — landing"

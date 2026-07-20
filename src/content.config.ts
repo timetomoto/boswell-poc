@@ -42,12 +42,20 @@ const pages = defineCollection({
     reviewsTeaserTitle: z.string().optional(),
     reviewsTeaserBody: z.string().optional(),
     reviewsTeaserCta: z.string().optional(),
+    discographyTeaserEyebrow: z.string().optional(),
+    discographyTeaserTitle: z.string().optional(),
+    discographyTeaserBody: z.string().optional(),
+    discographyTeaserCta: z.string().optional(),
     /* Sisters landing */
     sistersEyebrow: z.string().optional(),
     sistersSectionTitle: z.string().optional(),
     bioReadLabel: z.string().optional(),
     bioResourcesEyebrow: z.string().optional(),
     bioResourcesCtaLabel: z.string().optional(),
+    timelineEyebrow: z.string().optional(),
+    timelineTitle: z.string().optional(),
+    timelineBody: z.string().optional(),
+    timelineCtaLabel: z.string().optional(),
     /* Bio-resources */
     bioBookUrl: z.string().optional(),
     bioBookLabel: z.string().optional(),
@@ -284,6 +292,25 @@ const voices = defineCollection({
   }),
 });
 
+// Discography — one file per scope (trio-era / connee-solo), each with sessions[]
+const discographySessions = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/discography' }),
+  schema: z.object({
+    title: z.string(),
+    subtitle: z.string().optional(),
+    attribution: z.string().optional(),
+    sessions: z.array(z.object({
+      header: z.string(),
+      tracks: z.array(z.object({
+        matrix: z.string().optional(),
+        title: z.string(),
+        notes: z.string().optional(),
+        refs: z.string().optional(),
+      })).optional(),
+    })),
+  }),
+});
+
 // Press sub-hub descriptors — one entry per article sub-hub (vintage, in-their-own-words, etc.)
 const pressHubs = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/press-hubs' }),
@@ -312,4 +339,5 @@ export const collections = {
   voices,
   pressHubs,
   donate,
+  discographySessions,
 };
